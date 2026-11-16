@@ -608,3 +608,146 @@ Antes de concluir, fazer uma verificação cruzada entre os seis documentos (inc
 - O estado atual do código deve continuar separado do comportamento desejado.
 
 **Não implementar código nesta rodada.** Primeiro consolidar os documentos, revisar as contradições e devolver os arquivos para auditoria. A implementação será planejada depois dessa auditoria e de autorização explícita.
+
+
+---
+
+# PARTE F — REFINAMENTOS ADICIONAIS E CONTROLE DE CADA ATUALIZAÇÃO
+
+## 20. Regra geral de rolagem e densidade de informação
+
+O NEXUS deve minimizar a rolagem vertical necessária para compreender e executar ações.
+
+- Ao abrir uma tela, o usuário deve encontrar as informações mais relevantes e ações principais sem atravessar grandes áreas vazias, cabeçalhos repetidos ou cartões desnecessariamente altos.
+- Rolagem vertical continua permitida quando uma lista real possui muitos itens. Não esconder, cortar ou paginar artificialmente informações necessárias apenas para evitar rolagem.
+- Usar navegação horizontal somente quando houver uma justificativa funcional clara: por exemplo, percorrer os dias de uma semana, comparar cartões relacionados ou visualizar itens de uma mesma seção.
+- Não transformar cada módulo em uma sequência de carrosséis. Evitar carrosséis aninhados e conteúdo essencial escondido fora da primeira visualização.
+- Não exigir vários gestos laterais para acessar indicadores prioritários.
+- Preferir composição compacta, hierarquia visual clara, resumos úteis e expansão sob demanda.
+- Reduzir espaços entre elementos relacionados; manter distância maior somente para separar assuntos diferentes.
+- Densidade não significa texto minúsculo: preservar legibilidade, contraste e áreas de toque.
+
+**Critério:** a interface deve reduzir rolagem vertical sem criar uma quantidade exagerada de navegação horizontal. Cada gesto precisa ter uma finalidade clara.
+
+## 21. Cabeçalho de Início — saudação, data e frase diária integradas
+
+A saudação e a frase diária devem compor um único bloco de cabeçalho, sem transformar a frase em um cartão separado.
+
+- Manter a saudação contextual, por exemplo “Boa tarde, [nome]”.
+- Exibir o dia da semana e a data logo abaixo, com hierarquia visual clara.
+- A frase diária aparece discretamente integrada ao mesmo cabeçalho, preferencialmente abaixo da data.
+- A frase deve usar tipografia secundária, tamanho menor ou peso mais leve, sem caixa, card, fundo elevado, borda ou espaçamento próprio de seção.
+- A frase não deve competir com os gráficos, indicadores, tarefas ou informações financeiras.
+- Se não houver frase disponível, o cabeçalho deve se ajustar sem deixar espaço vazio.
+- Preservar o acesso contextual à frase/biblioteca já definido, sem adicionar um botão fixo que aumente a altura do cabeçalho.
+
+A frase funciona como detalhe humano e estético, não como bloco principal de dados. O objetivo é manter o cabeçalho agradável e discreto, ocupando pouca altura.
+
+## 22. Início/Dashboard — ordem das abas de navegação
+
+A navegação principal inferior deve seguir esta ordem, mantendo cinco destinos:
+
+1. **Tarefas**
+2. **Agenda**
+3. **Início**
+4. **Financeiro**
+5. **Eventos**
+
+Regras:
+
+- **Início fica exatamente na posição central** da barra inferior.
+- **Agenda permanece na posição em que já está atualmente** (segunda posição).
+- **Tarefas passa para a primeira posição**, ocupando a posição anteriormente usada por Início.
+- Financeiro e Eventos permanecem nas posições atuais à direita.
+- Ajustar a navegação e o estado selecionado com segurança, preservando rotas, deep-links, editores e comportamento de retorno.
+- Não recriar telas ou módulos só por causa da troca de ordem.
+
+## 23. Dashboard — gráficos e indicadores prioritários no alto
+
+Os gráficos e indicadores úteis devem aparecer mais perto do início da tela, depois do cabeçalho de saudação/data/frase.
+
+- Não deixar gráficos e indicadores importantes escondidos abaixo de todas as listas de tarefas, vencimentos ou outros conteúdos extensos.
+- Priorizar a leitura dos dados essenciais assim que o usuário abrir o aplicativo.
+- Reposicionar os indicadores visuais de tarefas e Financeiro para a parte superior do Dashboard, próximos ao cabeçalho.
+- Preferir gráficos compactos, integrados e fáceis de interpretar, sem adicionar cartões altos e repetitivos.
+- O anel/resumo de tarefas deve refletir Concluídas, Pendentes e Em andamento; atrasadas aparecem como indicador separado, conforme a seção 9.
+- O resumo financeiro deve apresentar de maneira clara receitas, despesas e resultado, distinguindo realizado de previsto.
+- Projetos, objetivos, próximos compromissos/eventos e alertas permanecem acessíveis, mas a ordem deve priorizar os dados que ajudam a entender a situação geral.
+- Listas como “Prioridades de hoje” e “Tarefas atrasadas” devem ser compactas e limitadas na Home, com acesso ao módulo completo ao tocar em “Ver todas” ou equivalente.
+- Não empurrar conteúdo essencial para uma fileira horizontal escondida. Se uma seção exigir navegação lateral, deve ser claro que existem mais elementos e a primeira visualização precisa continuar útil.
+- A Home é um painel de leitura rápida, não uma cópia longa das abas Tarefas, Agenda ou Financeiro.
+
+## 24. Build e testes — cada atualização deve terminar em estado compilável
+
+Esta regra vale para cada **lote/versão de atualização**, não para cada pequeno arquivo editado individualmente.
+
+- O Google AI Studio deve trabalhar em alterações coerentes e incrementais.
+- Não entregar uma atualização parcialmente integrada que deixe o projeto em estado que não compila, esperando consertar apenas em uma etapa posterior.
+- Ao concluir cada lote, todos os arquivos relacionados devem estar consistentes entre si e o projeto deve continuar compilável.
+- Antes de iniciar o próximo lote, corrigir falhas de compilação e testes introduzidas pelo lote anterior.
+- Preservar uma base funcional entre lotes; não empilhar várias alterações grandes sobre uma versão já quebrada.
+- Mudanças interdependentes podem ser agrupadas num mesmo lote, mas esse lote precisa terminar com código integrado e validado.
+- Não afirmar que o app compila apenas porque os arquivos foram gerados, porque a análise estática não apontou erro ou porque o código parece correto.
+
+### 24.1 GitHub Actions e artefato APK
+
+O fluxo atual observado em `integracao-google` usa GitHub Actions para configurar Java 17, Android SDK e Gradle 8.10.2, executar `gradle :app:assembleDebug` e publicar o APK Debug como artefato.
+
+- O Google AI Studio produz/altera os arquivos do projeto.
+- O GitHub Actions é o processo que efetivamente executa a compilação Android e gera o APK para download.
+- Cada lote deve acionar esse processo depois que os arquivos completos forem sincronizados para a branch correta.
+- A existência do workflow não prova que o build passou; verificar o resultado da execução e o artefato.
+- O workflow atual consultado executa `assembleDebug`, mas **não executa `testDebugUnitTest`**. Avaliar e incorporar testes unitários ao CI após identificar e resolver o estado dos testes existentes.
+- A compilação Debug bem-sucedida é necessária, mas não prova funcionamento de todos os fluxos no aparelho. Registrar separadamente testes automatizados, build e validação manual em dispositivo.
+
+### 24.2 Falhas e bloqueios
+
+Se o build falhar:
+
+1. Não iniciar o próximo lote de funcionalidades.
+2. Registrar a primeira falha real do Gradle, o arquivo/linha e a causa provável.
+3. Corrigir somente o que for necessário, sem refatorar o projeto inteiro.
+4. Reexecutar testes/build afetados.
+5. Prosseguir somente depois de obter um estado estável, ou declarar explicitamente o bloqueio técnico e a evidência disponível.
+
+Se testes já falhavam antes do lote atual, registrar como falha preexistente e separar do que foi introduzido pela atualização. Não ocultar testes quebrados nem desativá-los apenas para obter build verde.
+
+### 24.3 Proteção de dados e versão instalada
+
+- Não alterar `applicationId`, assinatura, banco Room, migrações, versão de backup ou estrutura de dados sem necessidade demonstrada e plano de compatibilidade.
+- Preservar dados de instalações anteriores.
+- Não recomendar desinstalar o app para contornar problemas de atualização sem explicar o risco de perda de dados e exigir backup verificado.
+- Não trocar chaves de assinatura de forma que impeça atualização in-place.
+- Antes de alterações estruturais, verificar migrações e backups reais.
+- Entregar APK como artefato somente quando o workflow efetivamente o tiver produzido.
+
+## 25. Identificação e histórico das atualizações
+
+Cada entrega futura deve ter um nome estável e descritivo, permitindo localizar o escopo sem abrir todos os arquivos.
+
+Convenção sugerida:
+
+`NEXUS_UPDATE_01_CONTROL_CENTER.md`
+
+Nome da primeira atualização: **NEXUS Update 01 — Control Center & Mobile Experience**.
+
+Próximas entregas devem incrementar o número e resumir o escopo, por exemplo:
+
+- `NEXUS_UPDATE_02_TASK_RECURRENCE.md`
+- `NEXUS_UPDATE_03_EVENTS_AND_BACKUP.md`
+
+Não usar nomes vagos como `final.md`, `new.md`, `changes2.md` ou `latest_prompt.md`.
+
+O documento de cada atualização deve registrar:
+
+- Baseline exata da branch/commit usado.
+- Objetivo do lote.
+- Escopo incluído e explicitamente excluído.
+- Arquivos/áreas que podem mudar.
+- Preservações obrigatórias.
+- Critérios de aceite.
+- Testes e build necessários.
+- Resultado real de validação.
+- Limitações conhecidas e itens adiados.
+
+O arquivo `lista.md` permanece como consolidação das decisões de produto. O arquivo `NEXUS_UPDATE_01_CONTROL_CENTER.md` será o prompt operacional da primeira entrega de implementação. Não confundir os papéis dos dois documentos.
