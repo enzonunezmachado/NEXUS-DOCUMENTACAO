@@ -317,3 +317,46 @@ Preferências de colaboração:
 
 ---
 **Regra final:** este arquivo é a memória documental central do NEXUS. Atualize-o continuamente em vez de iniciar uma nova memória em cada conversa.
+
+
+## 12. Inventário documental do repositório legado (revisado em 20/11/2026)
+
+O conteúdo Markdown preexistente foi lido e classificado. Estes arquivos são preservados como documentação; nem todos representam o estado atual do código.
+
+| Arquivo | Papel e uso correto | Confiabilidade temporal |
+|---|---|---|
+| `NEXUS_MASTER_CONTEXT.md` | Documento mestre atual: decisões, estado reportado, backlog e continuidade. Atualizar este arquivo continuamente. | Atual; sempre verificar código antes de declarar implementação. |
+| `NEXUS_PRODUCT_SPEC.md` | Especificação de produto dos 13 módulos, regras de negócio, fluxos, QuickAdd, Agenda, financeiro, eventos, Mercado e backup. | Referência de comportamento desejado; alguns requisitos antecedem os lotes recentes. |
+| `lista.md` | Consolidação detalhada das decisões do usuário sobre UX mobile, Agenda, tarefas, Financeiro, Dashboard, filtros, densidade, navegação e validação. | Fonte forte de decisões de UX; prevalece sobre preferências antigas quando houver conflito. |
+| `NEXUS_DESIGN_SYSTEM.md` | Identidade visual, paletas, tipografia, espaçamento, ícones, estados e componentes/gráficos Compose. | Diretriz visual; conferir implementação atual antes de marcar aderência. |
+| `NEXUS_INTEGRATION_MAP.md` | Relações entre módulos, fonte única, fluxos de dados, integridade referencial e lista INT-01..INT-10. | Auditoria histórica; bugs e pendências podem ter sido corrigidos em lotes posteriores. |
+| `NEXUS_IMPLEMENTATION_ROADMAP.md` | Plano técnico antigo de cinco lotes: estabilização, financeiro visual, recorrência, eventos+ZIP, Dashboard/identidade/Mercado. | Roadmap anterior; sequência foi superada pelas decisões e entregas posteriores. Usar apenas como histórico de dependências. |
+| `NEXUS_CURRENT_STATE.md` | Auditoria factual de uma baseline 5.2.0 / Room 5 / Backup 5 / 25 entidades, com classificação implementada/parcial/pendente e bugs. | Snapshot histórico anterior aos Lotes recentes; não é o estado atual. |
+| `NEXUS_UPDATE_01_CONTROL_CENTER.md` | Prompt operacional antigo de continuidade e implementação, referenciando branch `integracao-google` e commit histórico. | Arquivo histórico; não executar literalmente nem assumir branch/commit atuais. |
+| `NEXUS_ARCHITECTURE_AND_PROGRESS.md` | Documento técnico de fases antigas, schema Room v4, Backup v4 e recursos iniciais. | Snapshot antigo; preservar como histórico, nunca usar para inferir versão atual. |
+| `reviewchat.md` | Registro bruto de ações, inspeções e edições realizadas em uma sessão anterior de desenvolvimento. | Log histórico, não especificação normativa nem evidência de estado atual. |
+| `README.md` (raiz) | Entrada do repositório e link para o documento mestre. | Atual. |
+| `docs/README.md` | Índice da pasta documental. | Atualizar para apontar os documentos e explicar seus papéis. |
+
+### Divergências históricas que não devem ser confundidas
+
+- Documentos antigos descrevem Room v4/v5, 25 tabelas/entidades, Backup v4/v5 e ausência de Mercado, banners, ou recorrência de compromissos/eventos. O estado mais recente relatado pelo Google AI Studio informa Room `DATABASE_VERSION = 6`, 27 entidades, Backup JSON v7 e Mercado implementado nos Lotes 01–09. Para código atual, o workspace do Google AI Studio é a fonte da verdade; este documento registra os relatórios recebidos, não substitui inspeção do código.
+- A especificação e o roadmap antigos descrevem Mercado como bloco limitado no Dashboard e colocam sua implementação no fim do roadmap. Os Lotes 01–09 posteriores ampliaram o Mercado para módulo dedicado e o encerraram. Não reabrir essa frente por causa de texto antigo.
+- O roadmap antigo priorizava recorrência completa e Eventos+ZIP em uma sequência diferente. A sequência recomendada atual, após encerrar Mercado, é: Eventos evoluídos; recorrência de compromissos/eventos; Backup ZIP com mídias; revisão da Agenda; Dashboard/Home; Financeiro e identidade visual.
+- A auditoria `NEXUS_CURRENT_STATE.md` enumera INT-01..INT-10. Não assumir que esses bugs continuam presentes: conferir o código atual antes de reabrir qualquer correção.
+- `NEXUS_PRODUCT_SPEC.md` é especificação de produto, não relatório de conclusão. `NEXUS_CURRENT_STATE.md` é retrato antigo de código, não lista atual de desejos. `lista.md` registra decisões de UX, não prova implementação.
+
+## 13. Higienização e identidade deste repositório
+
+- Objetivo: manter a branch padrão como repositório de documentação Markdown do NEXUS.
+- Manter todos os arquivos `.md` encontrados no histórico da branch principal e arquivar versões distintas do documento de arquitetura que existiam em branches antigas.
+- Remover da árvore atual da branch padrão código Android, Gradle, workflows e demais arquivos que não sejam documentação Markdown. O histórico Git anterior permanece nos commits; esta limpeza não reescreve nem apaga os commits antigos.
+- A limpeza da branch padrão não deve tocar no repositório ativo `PROJETO-NEXUS-`.
+- O nome pretendido para distinguir este repositório do repositório ativo é `NEXUS-DOCUMENTACAO`. A integração GitHub disponível nesta sessão não oferece uma operação de renomeação de repositório; até que o proprietário altere o nome em GitHub Settings, o endereço/canonical slug continua `PROJECT_NEXUS`. Não fingir que o nome foi alterado.
+- Depois de cada lote, atualizar este documento mestre em vez de criar outra memória central.
+
+## 14. Atualização do inventário
+
+| Data | Alteração |
+|---|---|
+| 20/11/2026 | Leitura e classificação dos documentos preexistentes; registro das divergências de baseline; preparação do repositório para permanecer documental, preservando arquivos Markdown e histórico Git. |
