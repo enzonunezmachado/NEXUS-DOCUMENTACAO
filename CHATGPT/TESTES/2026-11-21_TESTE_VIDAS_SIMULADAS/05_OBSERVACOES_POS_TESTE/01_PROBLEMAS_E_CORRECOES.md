@@ -40,10 +40,8 @@
 
 Não são bugs; são comportamentos apreciados que não devem ser removidos acidentalmente:
 
-- Alertas vermelhos para atrasos e pendências vencidas.
-- Alertas amarelos para sobreposição/conflito de horários.
-- Exibição dos alertas na página inicial.
-- Fluxo da Agenda em que o usuário seleciona uma data e consulta seus itens abaixo.
+- **OBS-001:** alertas vermelhos para atrasos e pendências vencidas e amarelos para sobreposição/conflito de horários, exibidos na página inicial.
+- **OBS-002:** fluxo da Agenda em que o usuário seleciona uma data e consulta seus itens abaixo.
 
 Qualquer refatoração futura deve preservar a distinção semântica entre atraso e conflito, salvo decisão explícita em contrário.
 
