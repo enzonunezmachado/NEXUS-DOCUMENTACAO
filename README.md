@@ -41,6 +41,8 @@ Não modificar o repositório ativo ao realizar manutenção documental neste re
 
 ## Conteúdo legado
 
+O arquivo [NEXUS_ARCHITECTURE_AND_PROGRESS.md](NEXUS_ARCHITECTURE_AND_PROGRESS.md) na raiz também é um registro histórico de uma fase anterior; não representa a arquitetura atual sem confirmação técnica.
+
 A pasta [docs/](docs/README.md) preserva documentos e registros da organização documental anterior, incluindo o Documento Mestre histórico, decisões de UX, especificações antigas e logs de revisão. Ela é fonte histórica de recuperação, não uma terceira área de documentação vigente. Consulte os índices de GOOGLE_IA e CHATGPT para saber onde cada informação foi consolidada.
 
 ## Processo de manutenção
