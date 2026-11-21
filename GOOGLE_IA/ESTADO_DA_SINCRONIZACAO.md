@@ -22,8 +22,8 @@ Nesta rodada foram adicionados ao espelho:
 - `docs/13_GOVERNANCA_DOCUMENTAL.md`;
 - `docs/HISTORICO_DOCUMENTACAO.md`.
 
-Também foram corrigidos no repositório ativo:
-- o índice `docs/README.md`, incluindo os novos documentos e corrigindo quebras de linha literais;
+Também foram corrigidos no repositório ativo e sincronizados para o espelho:
+- o índice `docs/README.md`, incluindo os novos documentos, corrigindo quebras de linha literais e atualizando o nome do repositório;
 - a formatação da seção de evolução documental em `docs/01_DOCUMENTO_MESTRE.md`.
 
 ## Separação de responsabilidades confirmada
