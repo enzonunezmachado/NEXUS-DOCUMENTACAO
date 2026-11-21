@@ -9,7 +9,7 @@
 
 ## Resultado desta sincronização
 
-<badge> Os documentos técnicos atualizados foram encontrados no GitHub após a publicação do commit do Google AI Studio/Hugo. A leitura anterior, feita antes desse commit, estava desatualizada.
+Os documentos técnicos atualizados foram encontrados no GitHub após a publicação do commit do Google AI Studio/Hugo. A leitura anterior, feita antes desse commit, estava desatualizada.
 
 Foram copiados para `GOOGLE_IA/docs/`, preservando a estrutura relativa original:
 
