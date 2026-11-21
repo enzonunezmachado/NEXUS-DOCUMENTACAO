@@ -2,19 +2,32 @@
 
 Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas.
 
+## 2026-11-21 — Organização pós-exploração do perfil Gabriel
+
+- Registrado o resultado positivo relatado pelo usuário após restaurar e explorar Gabriel no aplicativo.
+- Preservados como comportamentos positivos o fluxo de selecionar uma data na Agenda e consultar os itens abaixo, a densidade moderada de registros e a distinção de alertas vermelhos (atraso) e amarelos (conflito).
+- Criada a pasta 05_OBSERVACOES_POS_TESTE dentro do experimento para separar problemas/correções, ideias de evolução, visão futura e observações positivas.
+- Registrado BUG-001: rotação do dispositivo retorna à Home e perde conteúdo/progresso de edição, conforme relato do usuário. Causa técnica ainda desconhecida; correção não implementada.
+- Registrado COR-001: solicitação de remover o N verde redundante antes do nome NEXUS, mantendo o ícone atual N branco sobre fundo preto.
+- Capturadas IDEA-001 a IDEA-011, cobrindo Agenda configurável, feriados BR/EUA, onboarding, Financeiro, Mercado, layouts adaptativos, temas, splash, animações, imagens em eventos e integração financeira.
+- Separadas FUT-001 a FUT-003 como possibilidades futuras de IA e WhatsApp, sem prioridade ou aprovação.
+- Atualizado o catálogo central apenas com um índice das ideias; detalhes e evidências continuam na pasta do experimento.
+- A presença dos três JSONs foi conferida no repositório ativo em test-backups/. Os arquivos não foram duplicados no repositório documental.
+- Nenhuma alteração de código do aplicativo foi feita nesta operação.
+
 ## 2026-11-21 — Organização do experimento de três vidas simuladas
 
-- Criada a pasta `CHATGPT/TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/` para manter juntos o contexto do experimento, os três perfis, o registro de acompanhamento e os resultados.
-- Separados o relatório de geração/validação estática e o relatório futuro de testes reais no aplicativo.
+- Criada a pasta CHATGPT/TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/ para manter juntos o contexto do experimento, os três perfis, o registro de acompanhamento e os resultados.
+- Separados o relatório de geração/validação estática e o relatório de testes reais no aplicativo.
 - Criado relatório específico explicando os motivos e o escopo das mudanças documentais.
 - Atualizado o índice desta área para incluir experimentos e testes.
 - Registrado em propostas ao AI Studio que a geração dos três backups foi reportada como executada.
-- Decisão de organização: não criar um segundo catálogo de ideias. O catálogo central continua sendo `03_IDEIAS_E_BRAINSTORMS.md`; observações do experimento poderão apontar para ele quando houver uma oportunidade de produto realmente nova.
-- Os arquivos JSON não foram duplicados neste repositório documental. A publicação no repositório ativo ainda precisa ser conferida.
+- Decisão de organização: não criar um segundo catálogo de ideias. O catálogo central continua sendo 03_IDEIAS_E_BRAINSTORMS.md; observações do experimento poderão apontar para ele quando houver uma oportunidade de produto realmente nova.
 - O prompt original integral não foi recuperado; o arquivo de prompt registra uma reconstrução fiel e identifica essa limitação.
-- Nenhuma documentação técnica do aplicativo ou código foi alterada nesta operação.
+- Nenhuma documentação técnica do aplicativo ou código foi alterada naquela operação.
 
 ## 2026-11-20 — Primeira consolidação estratégica
+
 - Criada a estrutura inicial de CHATGPT.
 - Registrada a visão do NEXUS como centro de comando pessoal e profissional.
 - Separados princípios estratégicos, ideias, decisões, propostas encaminhadas e pendências.
@@ -23,6 +36,7 @@ Este arquivo registra consolidações realizadas nesta pasta. Não é um log int
 - Fontes consultadas: contexto persistente disponível, recuperação de conversas e documentos legados no repositório.
 
 ## Lacunas conhecidas
+
 - A cronologia de todas as conversas ainda não foi reconstruída.
 - Nem todos os prompts antigos foram recuperados em texto integral.
 - Alguns estados de ideias antigas precisam de confirmação.
