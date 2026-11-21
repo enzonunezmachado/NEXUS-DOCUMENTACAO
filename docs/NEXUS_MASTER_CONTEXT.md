@@ -1,3 +1,5 @@
+> **AVISO HISTÓRICO — NÃO É MAIS A FONTE CENTRAL VIGENTE.** Este Documento Mestre pertence à organização documental anterior. Foi preservado para recuperar visão, decisões e evolução do projeto. A navegação atual começa no [README principal](../README.md); consulte [CHATGPT](../CHATGPT/README.md) para memória estratégica e [GOOGLE_IA](../GOOGLE_IA/README.md) para documentação técnica espelhada. O estado real deve ser confirmado no código e na documentação técnica atual versionada no repositório ativo.
+
 # NEXUS — Documento Mestre de Continuidade
 
 > **Fonte central de contexto, decisões, estado e próximos passos do projeto.**
