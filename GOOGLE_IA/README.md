@@ -26,6 +26,8 @@ A árvore `docs/` reproduz os caminhos da origem:
 - [10 — Roadmap](docs/10_ROADMAP.md)
 - [11 — ADRs](docs/11_DECISOES_ADRS.md)
 - [12 — Rastreabilidade](docs/12_RASTREABILIDADE.md)
+- [13 — Governança Documental](docs/13_GOVERNANCA_DOCUMENTAL.md)
+- [Histórico de evolução documental](docs/HISTORICO_DOCUMENTACAO.md)
 - [Arquivo histórico](docs/archive/)
 
 ## Regra de sincronização
