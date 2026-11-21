@@ -27,3 +27,11 @@ Esta pasta contém especificações, decisões, arquitetura, integração, roadm
 5. Current State, Architecture and Progress, Update 01 e reviewchat como registros históricos. Nunca inferir implementação atual apenas deles.
 
 O código atual deve ser conferido no workspace ativo do Google AI Studio e no repositório `PROJETO-NEXUS-`, não neste repositório documental.
+
+
+## Arquivo de versões antigas
+
+- [Arquitetura — branch integracao-google](archive/NEXUS_ARCHITECTURE_AND_PROGRESS__integracao-google.md)
+- [Arquitetura — branch diagnostico-feature-base](archive/NEXUS_ARCHITECTURE_AND_PROGRESS__diagnostico-feature-base.md)
+
+As cópias preservam versões distintas do documento de arquitetura encontradas em branches históricas. São referências de época, não baseline atual.
