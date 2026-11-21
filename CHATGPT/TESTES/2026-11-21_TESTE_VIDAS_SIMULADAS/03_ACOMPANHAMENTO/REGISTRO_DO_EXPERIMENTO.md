@@ -1,7 +1,7 @@
 # Registro do experimento — Três vidas simuladas
 
 **Data de abertura:** 21/11/2026  
-**Estado:** geração concluída segundo relatório recebido; validação no aplicativo pendente.
+**Estado:** backups gerados e validados estaticamente segundo relatório recebido; publicação dos JSONs no repositório ativo conferida; exploração inicial de Gabriel realizada pelo usuário; Helena e Ricardo pendentes.
 
 ## Objetivo
 
@@ -17,26 +17,33 @@ A proposta surgiu da decisão de criar três perfis independentes, cada qual com
 |---|---|---|
 | Definição dos três contextos humanos | Concluída | Perfis documentados nesta pasta |
 | Investigação do contrato de backup e regras | Reportada como concluída | Lista de arquivos-fonte consultados no relatório de geração |
-| Geração dos três JSONs | Reportada como concluída | Caminhos e tamanhos informados no relatório |
-| Validação estática | Reportada como aprovada | JSON, estrutura, enums, IDs, referências e regras verificadas pelo AI Studio |
-| Restauração real no Android | Pendente | Não havia emulador/dispositivo Android no ambiente informado |
-| Observação de uso e interface | Pendente | Depende da restauração de cada perfil |
+| Geração dos três JSONs | Reportada como concluída | Relatório de geração |
+| Validação estática | Reportada como aprovada | JSON, estrutura, enums, IDs, referências e regras verificados pelo AI Studio |
+| Publicação dos JSONs | Conferida no GitHub | Três arquivos presentes em PROJETO-NEXUS-/test-backups/ |
+| Restauração/exploração de Gabriel | Realizada pelo usuário | Relato positivo de Agenda, densidade de dados e alertas; ver resultado pós-teste |
+| Restauração/exploração de Helena | Pendente | Nenhum resultado recebido |
+| Restauração/exploração de Ricardo | Pendente | Nenhum resultado recebido |
+| Auditoria funcional completa | Pendente | O teste de Gabriel foi exploração inicial, não cobertura integral |
 
 ## Registro de observações
 
-As observações devem ser numeradas (OBS-001, OBS-002...) e conter: perfil/arquivo, tela ou fluxo, comportamento observado, evidência reproduzível, impacto, classificação (problema técnico, dúvida, oportunidade ou comportamento esperado) e estado.
+As observações deste experimento estão organizadas em [05_OBSERVACOES_POS_TESTE](../05_OBSERVACOES_POS_TESTE/README.md). Use IDs estáveis:
+- BUG para defeitos observados;
+- COR para correções solicitadas;
+- OBS para comportamentos positivos ou fatos de uso;
+- IDEA para oportunidades de produto;
+- FUT para possibilidades de longo prazo.
 
-Uma observação não é automaticamente uma ideia. Antes de criar uma nova entrada no catálogo central, verificar se ela já está contemplada em `CHATGPT/03_IDEIAS_E_BRAINSTORMS.md`. Quando uma ideia realmente nova for identificada, relacioná-la à observação de origem.
+Cada observação deve indicar origem, perfil/arquivo, tela ou fluxo, comportamento, evidência reproduzível, impacto, estado e próximo passo. Uma observação não é automaticamente uma ideia.
 
 ## Próximas ações
 
-1. Conferir se os três arquivos estão publicados no repositório ativo em `/test-backups/`.
-2. Fazer backup dos dados pessoais atuais.
-3. Restaurar Gabriel, explorar e registrar evidências.
-4. Restaurar Helena, explorar e registrar evidências.
-5. Restaurar Ricardo, explorar e registrar evidências.
-6. Consolidar observações e avaliar se alguma merece investigação ou entrada no catálogo de ideias.
+1. Preservar os dados pessoais locais antes de cada restauração.
+2. Explorar Helena e Ricardo, se o usuário decidir continuar.
+3. Analisar tecnicamente BUG-001 e COR-001 antes de implementar.
+4. Consolidar as ideias pós-teste em análise técnica, sem presumir aprovação.
+5. Atualizar os estados dos registros quando houver evidência de proposta, aprovação, implementação e validação.
 
 ## Limites
 
-Nenhum teste de restauração Android foi confirmado até o momento. Os resultados de geração e validação descritos aqui são atribuídos ao relatório fornecido pelo Google AI Studio, não a uma execução independente do ChatGPT.
+Os resultados de geração e validação estática são atribuídos ao relatório fornecido pelo Google AI Studio, não a uma execução independente do ChatGPT. O resultado de Gabriel deriva do relato do usuário. Nenhum teste automatizado de rotação ou correção visual foi executado por esta atualização documental.
