@@ -1,3 +1,7 @@
+> **AVISO DE AUDITORIA HISTÓRICA (20/11/2026):** os fluxos e IDs INT-01..INT-10 foram levantados em uma baseline anterior aos lotes mais recentes. Preserve como mapa de referência, mas confirme cada item no código atual antes de reabrir correções. O Documento Mestre contém o status mais recente relatado.
+
+---
+
 # NEXUS — Mapa de Integração e Dependências (`NEXUS_INTEGRATION_MAP`)
 
 > **Finalidade:** mapear formalmente como cada módulo do NEXUS lê, altera, dispara e depende dos demais módulos, garantindo o princípio **"registrar uma vez, ver em vários lugares"**, além de catalogar duplicações e inconsistências hoje existentes no código.
