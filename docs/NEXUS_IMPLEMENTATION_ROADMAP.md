@@ -1,3 +1,7 @@
+> **AVISO DE ROADMAP SUPERADO (20/11/2026):** este plano antecede a conclusão dos Lotes 01–09 do Mercado e decisões posteriores. Preserve como histórico técnico/dependências; não siga sua sequência antiga. Use a ordem recomendada em `NEXUS_MASTER_CONTEXT.md`.
+
+---
+
 # NEXUS — Roadmap Definitivo de Implementação e Viabilidade Técnica (`NEXUS_IMPLEMENTATION_ROADMAP`)
 
 > **Finalidade:** servir como roteiro técnico executável em lotes grandes e seguros de desenvolvimento, conectando a análise arquitetural do código real (`NEXUS_CURRENT_STATE.md`), a proposta funcional (`NEXUS_PRODUCT_SPEC.md`), o sistema visual (`NEXUS_DESIGN_SYSTEM.md`) e as dependências entre módulos (`NEXUS_INTEGRATION_MAP.md`).
