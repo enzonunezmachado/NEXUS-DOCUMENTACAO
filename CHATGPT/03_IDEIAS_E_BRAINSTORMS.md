@@ -25,7 +25,15 @@ Este documento é o catálogo central de ideias do NEXUS. Ele separa direções 
 | Calendários de feriados BR e EUA | Capturada / em análise | IDEA-002 |
 | Splash e animações discretas | Capturada / em análise | IDEA-008 e IDEA-009 |
 
-## 2. Módulos e capacidades futuras discutidas
+## 2. Identidade visual e tipografia
+
+| Ideia / direção | Estado registrado | Observação |
+|---|---|---|
+| Wordmark próprio NEXUS, monocromático e geométrico | Aprovada para exploração visual; identidade final não escolhida | Explorar segmentos, cortes e espaços negativos com desenho original; referência HUMANICA apenas como inspiração de linguagem, sem cópia. Ver [direção tipográfica](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_IDENTIDADE_TIPOGRAFICA.md) |
+| Tipografia de destaque em áreas selecionadas | Em exploração | Testar saudações e títulos; preservar fonte funcional em textos densos. Não implica criar família tipográfica completa nem editor complexo |
+| Preservar ícone N branco sobre fundo preto | Diretriz de preservação nesta etapa | Não redesenhar nem substituir sem autorização separada |
+
+## 3. Módulos e capacidades futuras discutidas
 
 | Ideia | Estado registrado | Observação |
 |---|---|---|
@@ -40,25 +48,25 @@ Este documento é o catálogo central de ideias do NEXUS. Ele separa direções 
 | Personalização mais ampla do Dashboard | Em análise | Não antecipar decisões de comportamento |
 | Refinamentos de widgets e notificações | Direção de evolução | Verificar estado técnico antes de propor novo trabalho |
 
-## 3. Inteligência artificial no NEXUS
+## 4. Inteligência artificial no NEXUS
 
 Foi discutida a possibilidade de um assistente simples, capaz de responder perguntas contextuais e executar operações limitadas sobre dados do próprio aplicativo — por exemplo, consultar quando uma parcela começa ou termina.
 
 A ideia é tornar os dados acessíveis por linguagem natural sem transformar o aplicativo em um serviço dependente de IA paga. Ainda não há especificação aprovada de arquitetura, modelo, permissões, execução local ou custo. Status: **ideia futura / em avaliação**.
 
-## 4. Gratuidade e sustentabilidade
+## 5. Gratuidade e sustentabilidade
 
 A gratuidade do desenvolvimento e do uso essencial foi uma preocupação explícita. O Google AI Studio foi considerado uma ferramenta importante para iniciar o projeto, mas a estratégia é evitar dependência estrutural de serviços com cobrança por uso.
 
 Isso não significa que todo provedor externo atual ou futuro terá disponibilidade garantida. Dependências, limites e alternativas devem ser documentados tecnicamente.
 
-## 5. Origem e rastreabilidade das ideias pós-teste
+## 6. Origem e rastreabilidade das ideias pós-teste
 
 As ideias IDEA-001 a IDEA-011 foram capturadas após a exploração do backup Gabriel. Seus contextos, ressalvas e detalhes estão em [Ideias de evolução — pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/02_IDEIAS_DE_EVOLUCAO.md). O registro detalhado é a referência de origem; esta tabela funciona como índice.
 
 As correções BUG-001 e COR-001 não são ideias de produto e permanecem em [Problemas e correções](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/01_PROBLEMAS_E_CORRECOES.md).
 
-## 6. Regra de atualização
+## 7. Regra de atualização
 
 Ao surgir uma nova ideia:
 1. Registrar contexto, origem e evidência.
