@@ -35,3 +35,12 @@ O código atual deve ser conferido no workspace ativo do Google AI Studio e no r
 - [Arquitetura — branch diagnostico-feature-base](archive/NEXUS_ARCHITECTURE_AND_PROGRESS__diagnostico-feature-base.md)
 
 As cópias preservam versões distintas do documento de arquitetura encontradas em branches históricas. São referências de época, não baseline atual.
+
+
+### Documentos históricos importados do repositório ativo de código (20/11/2026)
+
+- [NEXUS_ARCHITECTURE_AND_PROGRESS — snapshot do repositório de código](archive/NEXUS_ARCHITECTURE_AND_PROGRESS__snapshot_repositorio_codigo_2026-11-20.md) — variante arquitetural divergente, preservada para comparação; declara baseline 5.0.0 / 25 entidades.
+- [NEXUS_SPEC — especificação de evolução encontrada no repositório de código](archive/NEXUS_SPEC__encontrado_no_repositorio_codigo_2026-11-20.md) — etapas e decisões antigas; conferir o Documento Mestre antes de reutilizar.
+- [Diagnóstico de compilação](archive/DIAGNOSTICO_COMPILACAO__encontrado_no_repositorio_codigo_2026-11-20.md) — histórico de erros e correções de CI, não diagnóstico atual.
+
+A comparação integral dos arquivos Markdown das duas branches `main` está registrada na seção 16 do [Documento Mestre](NEXUS_MASTER_CONTEXT.md). O repositório ativo de código foi somente lido; estas cópias e atualizações existem apenas no repositório documental.
