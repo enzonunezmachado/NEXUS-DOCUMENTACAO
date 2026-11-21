@@ -32,7 +32,18 @@
 ## 4. Histórico de prompts anteriores
 O repositório legado contém `docs/NEXUS_UPDATE_01_CONTROL_CENTER.md`, `docs/lista.md` e `docs/reviewchat.md`. Esses arquivos preservam instruções e discussões anteriores, mas não constituem inventário completo de todos os prompts enviados. Devem ser consultados antes de declarar que um prompt histórico foi perdido ou substituído.
 
-## 5. Regra de registro futuro
+## 5. Diagnóstico de rotação e exploração da identidade visual tipográfica
+- **Identificador:** NEXUS-AI-2026-11-21-ROTACAO-IDENTIDADE-01.
+- **Data:** 21/11/2026.
+- **Estado:** prompt preparado e aprovado pelo usuário para encaminhamento; envio ao Google AI Studio ainda não confirmado.
+- **Objetivo:** investigar o BUG-001 (perda de tela e estado ao girar o dispositivo) e explorar três direções originais de wordmark NEXUS, incluindo estudos de aplicação seletiva da tipografia na interface.
+- **Preservações:** considerar os pontos positivos relatados no teste de Gabriel — fluxo da Agenda, densidade moderada de registros e alertas vermelhos para atrasos/amarelos para conflitos.
+- **Direção visual:** wordmark monocromático, geométrico e original, explorando segmentos, cortes e espaços negativos. A referência HUMANICA é apenas inspiração de linguagem; não deve ser copiada. Preservar o ícone atual N branco sobre fundo preto.
+- **Limites:** diagnóstico e protótipos isolados nesta etapa; não alterar código de produção, navegação, banco, fontes globais ou ícone; não implementar correções definitivas antes de revisão e autorização.
+- **Pacote documental:** [prompt integral e direção tipográfica](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md).
+- **Resultado:** ainda não há diagnóstico técnico, protótipos, implementação ou validação. O prompt está preparado, não enviado.
+
+## 6. Regra de registro futuro
 
 Para cada prompt relevante, registrar:
 - Identificador e data.
