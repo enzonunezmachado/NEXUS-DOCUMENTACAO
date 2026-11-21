@@ -2,13 +2,24 @@
 
 Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas.
 
+## 2026-11-21 — Preparação do prompt de rotação e identidade visual
+
+- Consolidado o pedido para investigar o BUG-001, sem implementar a correção antes de apresentar diagnóstico, evidências e plano.
+- Registrada a direção de identidade tipográfica do NEXUS: wordmark original, monocromático, geométrico, com possibilidade de segmentos, cortes e espaços negativos.
+- A imagem HUMANICA foi registrada somente como referência de linguagem visual, não como modelo a copiar.
+- Preservado o ícone atual N branco sobre fundo preto; a remoção do N verde redundante deve ser tratada dentro de uma solução de identidade, sem substituição automática do ícone.
+- Definida exploração de três direções visuais e aplicações seletivas em saudação/títulos, mantendo tipografia funcional no restante da interface.
+- O prompt também incorpora os pontos positivos relatados na exploração de Gabriel: fluxo de seleção de data na Agenda, densidade moderada de registros e distinção entre alertas vermelhos (atraso) e amarelos (conflito).
+- Criado pacote em `CHATGPT/PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/`, com prompt integral e documento de direção tipográfica.
+- Estado correto: prompt preparado e aprovado para encaminhamento; envio ao Google AI Studio ainda não confirmado. Nenhuma alteração de código foi realizada por este registro.
+
 ## 2026-11-21 — Organização pós-exploração do perfil Gabriel
 
 - Registrado o resultado positivo relatado pelo usuário após restaurar e explorar Gabriel no aplicativo.
 - Preservados como comportamentos positivos o fluxo de selecionar uma data na Agenda e consultar os itens abaixo, a densidade moderada de registros e a distinção de alertas vermelhos (atraso) e amarelos (conflito).
 - Criada a pasta 05_OBSERVACOES_POS_TESTE dentro do experimento para separar problemas/correções, ideias de evolução, visão futura e observações positivas.
-- Registrado BUG-001: rotação do dispositivo retorna à Home e perde conteúdo/progresso de edição, conforme relato do usuário. Causa técnica ainda desconhecida; correção não implementada.
-- Registrado COR-001: solicitação de remover o N verde redundante antes do nome NEXUS, mantendo o ícone atual N branco sobre fundo preto.
+- Registrado BUG-001: rotação do dispositivo retorna à Home e perde conteúdo/progresso de edição, conforme relato do usuário. Causa técnica ainda desconhecida, não implementado.
+- Registrado COR-001: remover o N verde redundante antes do nome NEXUS, mantendo o ícone atual N branco sobre fundo preto.
 - Capturadas IDEA-001 a IDEA-011, cobrindo Agenda configurável, feriados BR/EUA, onboarding, Financeiro, Mercado, layouts adaptativos, temas, splash, animações, imagens em eventos e integração financeira.
 - Separadas FUT-001 a FUT-003 como possibilidades futuras de IA e WhatsApp, sem prioridade ou aprovação.
 - Atualizado o catálogo central apenas com um índice das ideias; detalhes e evidências continuam na pasta do experimento.
@@ -33,7 +44,7 @@ Este arquivo registra consolidações realizadas nesta pasta. Não é um log int
 - Separados princípios estratégicos, ideias, decisões, propostas encaminhadas e pendências.
 - Incorporado o relatório de reorganização documental técnica como proposta enviada/executada no workspace, com limitações de Git, build, testes e ZIP preservadas.
 - Registradas as regras de governança para não confundir ideias com decisões e decisões com implementação.
-- Fontes consultadas: contexto persistente disponível, recuperação de conversas e documentos legados no repositório.
+- Fontes consultadas: contexto persistente disponível, recuperação de conversas e documentos legados do repositório.
 
 ## Lacunas conhecidas
 
