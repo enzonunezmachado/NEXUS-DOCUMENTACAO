@@ -42,6 +42,6 @@ Em cada sincronização:
 
 Não copiar relatórios resumidos no lugar dos documentos originais. Não declarar build, teste, ZIP ou sincronização de artefatos internos sem evidência.
 
-## Observação de nomenclatura
+## Nomenclatura
 
-O índice original da origem ainda contém uma referência textual antiga a `PROJECT_NEXUS`. O nome atual do repositório ativo é `PROJETO-NEXUS-`. O espelho mantém os documentos de origem fiéis; esta observação evita confusão até que a origem seja corrigida pelo mantenedor do projeto.
+O índice da origem foi corrigido para identificar o repositório ativo como `PROJETO-NEXUS-`. O espelho acompanha essa versão atualizada.
