@@ -1,3 +1,7 @@
+> **AVISO DE CONTEXTO (20/11/2026):** este documento descreve a especificação de produto e requisitos desejados, não o estado atual do código. Alguns detalhes e o plano de Mercado refletem decisões anteriores; o módulo Mercado foi ampliado e encerrado nos Lotes 01–09. Consulte o Documento Mestre para estado e sequência atual.
+
+---
+
 # NEXUS — Especificação Definitiva do Produto (`NEXUS_PRODUCT_SPEC`)
 
 > **Finalidade:** fonte definitiva da proposta funcional, comportamental e estrutural do NEXUS como centro de controle pessoal e profissional offline-first (com exceção opcional e isolada do bloco Mercado).
