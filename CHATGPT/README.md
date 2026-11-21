@@ -1,7 +1,6 @@
 # CHATGPT — Memória estratégica do NEXUS
 
-> Área dedicada à memória conceitual, estratégica e histórica construída nas conversas com o ChatGPT.
-> Esta pasta registra como o projeto foi pensado, discutido e direcionado — não substitui a documentação técnica nem comprova implementação.
+> Área dedicada à memória conceitual, estratégica e histórica construída nas conversas com o ChatGPT. Não substitui a documentação técnica nem comprova implementação.
 
 ## Como navegar
 
@@ -13,7 +12,8 @@
 6. [Pendências e direção futura](06_PENDENCIAS_E_DIRECAO_FUTURA.md)
 7. [Histórico de registros](07_HISTORICO_DE_REGISTROS.md)
 8. [Decisões de UX e produto](08_DECISOES_DE_UX_E_PRODUTO.md)
-9. [Experimentos e testes](TESTES/README.md) — registros de cenários, evidências e resultados de validação.
+9. [Experimentos e testes](TESTES/README.md) — cenários, evidências e resultados.
+10. [Problemas, correções e ideias após os testes](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md).
 
 ## Regra de interpretação
 
@@ -22,20 +22,18 @@
 - **Aprovada** significa que o usuário decidiu seguir com a direção, não que esteja implementada.
 - **Enviada** significa que a proposta foi encaminhada ao ambiente de desenvolvimento.
 - **Implementada** exige confirmação técnica no código ou documentação técnica atual.
+- **Validada** exige teste adequado e evidência.
 - **Pausada/descartada** permanece no histórico, com motivo quando conhecido.
 
 ## Estados
 
-Capturada → Em análise → Consolidada → Aprovada → Enviada → Implementada.
-Estados alternativos: Pausada e Descartada.
+Capturada → Em análise → Consolidada → Aprovada → Enviada → Implementada → Validada. Estados alternativos: Pausada e Descartada.
 
 Os estados não são necessariamente lineares. Uma proposta pode ser substituída ou reaberta. Não inventar datas, justificativas ou aprovações.
 
 ## Fontes e limitações
 
-Esta primeira consolidação foi montada a partir do contexto persistente disponível, de conversas recuperadas e de documentos históricos que já estavam no repositório, especialmente `docs/NEXUS_MASTER_CONTEXT.md`, `docs/NEXUS_PRODUCT_SPEC.md`, `docs/lista.md` e `docs/reviewchat.md`.
-
-A recuperação não equivale a uma transcrição integral de todas as conversas. Datas e estados não confirmados são marcados como aproximados ou não confirmados. Registros históricos antigos devem ser confrontados com decisões posteriores.
+Esta memória é uma consolidação construída a partir do contexto persistente disponível, de conversas recuperadas e de documentos históricos do repositório. Não equivale a uma transcrição integral de todas as conversas. Datas e estados não confirmados devem permanecer identificados como aproximados ou não confirmados.
 
 ## Relação com GOOGLE_IA
 
