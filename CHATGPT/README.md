@@ -12,6 +12,7 @@
 5. [Propostas enviadas ao Google AI Studio](05_PROPOSTAS_ENVIADAS_AI_STUDIO.md)
 6. [Pendências e direção futura](06_PENDENCIAS_E_DIRECAO_FUTURA.md)
 7. [Histórico de registros](07_HISTORICO_DE_REGISTROS.md)
+8. [Decisões de UX e produto](08_DECISOES_DE_UX_E_PRODUTO.md)
 
 ## Regra de interpretação
 
