@@ -19,10 +19,20 @@
 - **Regra:** todo lote de implementação deve consultar documentação, avaliar impacto, registrar mudanças reais, atualizar documentos afetados, registrar testes e limitações e sincronizar os artefatos internos relevantes.
 - **Hierarquia:** código = implementação real; Markdown versionado = documentação oficial; artefatos internos = memória operacional complementar.
 
-## 3. Histórico de prompts anteriores
+## 3. Geração de três backups para teste com vidas simuladas
+- **Data:** 21/11/2026.
+- **Estado:** encaminhada e executada no workspace, conforme relatório fornecido pelo usuário.
+- **Objetivo:** criar três arquivos JSON independentes, compatíveis com o formato oficial de backup, representando Gabriel (universitário e assistência técnica), Helena (aposentada, comunidade, casas familiares e bolos) e Ricardo (empresário de distribuição, casado e sem filhos).
+- **Autonomia solicitada:** investigar código e documentação reais, descobrir estruturas e regras suportadas e gerar dados abrangentes sem uma lista rígida de registros.
+- **Restrições:** não alterar código, banco, DAOs, migrations, navegação, interface ou arquitetura; não inventar campos/formato; não sobrescrever dados pessoais; não publicar/commitar sem autorização.
+- **Resultado reportado:** três JSONs em `/test-backups/`, formato v7, banco v6 e app 5.2.0; 563 registros somados; validação estática declarada PASS (0 errors).
+- **Limitações:** restauração real no Android não executada; presença/publicação dos arquivos no GitHub ainda não confirmada.
+- **Registro detalhado:** [pasta do experimento](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/README.md).
+
+## 4. Histórico de prompts anteriores
 O repositório legado contém `docs/NEXUS_UPDATE_01_CONTROL_CENTER.md`, `docs/lista.md` e `docs/reviewchat.md`. Esses arquivos preservam instruções e discussões anteriores, mas não constituem inventário completo de todos os prompts enviados. Devem ser consultados antes de declarar que um prompt histórico foi perdido ou substituído.
 
-## 4. Regra de registro futuro
+## 5. Regra de registro futuro
 
 Para cada prompt relevante, registrar:
 - Identificador e data.
