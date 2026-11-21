@@ -56,7 +56,8 @@ A pasta [docs/](docs/README.md) preserva documentos e registros da organização
 
 ## Estado da primeira organização
 
-- Estrutura inicial de CHATGPT criada e preenchida com a memória estratégica recuperável.
-- Estrutura GOOGLE_IA criada, mas a importação dos 12 documentos técnicos definitivos aguarda sua publicação na branch `main` do repositório ativo.
+- Estrutura CHATGPT criada e preenchida com memória estratégica recuperável, incluindo decisões de UX e marcos históricos.
+- GOOGLE_IA sincronizada com a branch `main` do repositório ativo: índice, 12 documentos vigentes e 3 documentos arquivados (16 arquivos no total).
+- Os 16 arquivos espelhados foram comparados com a origem e confirmados idênticos byte a byte.
 - Os documentos legados em `docs/` foram preservados.
 - A recuperação estratégica é parcial: não representa transcrição integral de todas as conversas.
