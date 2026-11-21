@@ -3,39 +3,42 @@
 **Última sincronização:** 2026-11-21  
 **Origem:** `enzonunezmachado/PROJETO-NEXUS-`  
 **Branch:** `main`  
-**Commit de origem sincronizado:** `2ab01d5d653a786ca2386375d94187b2eeb72fd1`  
 **Destino:** `enzonunezmachado/NEXUS-DOCUMENTACAO`  
 **Branch de destino:** `main`
 
 ## Resultado desta sincronização
 
-Os documentos técnicos atualizados foram encontrados no GitHub após a publicação do commit do Google AI Studio/Hugo. A leitura anterior, feita antes desse commit, estava desatualizada.
+A pasta `GOOGLE_IA/docs/` foi atualizada para refletir a documentação técnica versionada no repositório ativo. Foram preservados os caminhos relativos da origem.
 
-Foram copiados para `GOOGLE_IA/docs/`, preservando a estrutura relativa original:
+Conteúdo espelhado:
+- `README.md` do diretório `docs/`;
+- 13 documentos numerados (`01` a `13`);
+- `HISTORICO_DOCUMENTACAO.md`;
+- três documentos em `docs/archive/`.
 
-- `README.md` do diretório docs;
-- os 12 documentos vigentes, de `01_DOCUMENTO_MESTRE.md` a `12_RASTREABILIDADE.md`;
-- os três documentos em `docs/archive/`.
+**Total esperado: 18 arquivos Markdown** (índice + 13 documentos numerados + histórico metodológico + 3 arquivos arquivados).
 
-**Total: 16 arquivos Markdown espelhados.**
+Nesta rodada foram adicionados ao espelho:
+- `docs/13_GOVERNANCA_DOCUMENTAL.md`;
+- `docs/HISTORICO_DOCUMENTACAO.md`.
 
-## Baseline de origem identificada
+Também foram corrigidos no repositório ativo:
+- o índice `docs/README.md`, incluindo os novos documentos e corrigindo quebras de linha literais;
+- a formatação da seção de evolução documental em `docs/01_DOCUMENTO_MESTRE.md`.
 
-- App: `com.nexus.app`.
-- A documentação declara baseline `versionCode = 7`, `versionName = 5.2.0`, Room v6 (27 entidades) e Backup JSON v7.
-- Os detalhes acima são afirmações da documentação sincronizada; a presente tarefa não executou nova auditoria integral do código nem build/testes Android.
+## Separação de responsabilidades confirmada
 
-## Divergência textual identificada
-
-O cabeçalho de `docs/README.md` na origem ainda usa o identificador antigo `PROJECT_NEXUS`. O repositório atual é `PROJETO-NEXUS-`. O arquivo espelhado foi mantido fiel ao original e esta divergência foi registrada aqui; nenhuma alteração foi feita no repositório ativo.
-
-## Artefatos internos do Google AI Studio
-
-Os artefatos internos, incluindo `NEXUS_CONTINUIDADE`, não são acessíveis por esta sincronização GitHub. Portanto, não afirmamos que foram consultados ou atualizados nesta etapa. O relatório anterior do AI Studio dizia que foram sincronizados em 20/11, mas isso não foi verificado independentemente agora.
+- `PROJETO-NEXUS-/docs/`: documentação técnica vigente do aplicativo, mantida junto ao repositório ativo.
+- `NEXUS-DOCUMENTACAO/GOOGLE_IA/`: espelho dessa documentação técnica para consulta e continuidade.
+- `NEXUS-DOCUMENTACAO/CHATGPT/`: memória estratégica, conceitual e histórica das conversas, ideias, propostas e decisões.
+- `NEXUS-DOCUMENTACAO/docs/`: acervo legado/histórico da organização documental anterior; não é uma terceira área vigente.
+- Artefatos internos do Google AI Studio: memória operacional complementar; não foram acessados nem alterados nesta sincronização.
 
 ## Limites desta verificação
 
-- A comparação foi feita na branch `main` e nos arquivos Markdown de `docs/` e `docs/archive/`.
-- Não foram comparadas branches secundárias nem todo o histórico Git.
+- A sincronização foi feita na branch `main`.
+- Os dois novos documentos foram copiados do repositório ativo para `GOOGLE_IA/docs/`.
+- Os índices foram atualizados para refletir a nova contagem e os novos caminhos.
+- Não foi realizada comparação byte a byte dos 18 arquivos nesta etapa; portanto, não declarar identidade integral de todo o espelho.
 - Não foram executados build, testes Android, exportação ou inspeção de ZIP.
-- Nenhum arquivo do código do aplicativo ou do repositório ativo foi modificado nesta tarefa.
+- Nenhum código Android foi alterado.
