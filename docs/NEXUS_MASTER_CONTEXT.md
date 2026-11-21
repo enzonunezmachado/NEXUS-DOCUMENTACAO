@@ -370,3 +370,39 @@ O conteúdo Markdown preexistente foi lido e classificado. Estes arquivos são p
 - Os 70 arquivos não-Markdown que estavam na árvore principal foram removidos da árvore ativa. Os commits anteriores não foram reescritos; entretanto, commits exclusivos de branches que perderam suas referências podem deixar de estar alcançáveis por branches. Esta limpeza atende ao pedido de manter o repositório visivelmente documental.
 - A renomeação do repositório não foi executada: as ferramentas GitHub disponíveis nesta sessão permitem ler e alterar arquivos/refs, mas não expõem a operação administrativa de renomear o repositório. Nome atual confirmado: `PROJECT_NEXUS`. Nome desejado documentado: `NEXUS-DOCUMENTACAO`. Para concluir, o proprietário precisa alterar o campo Repository name em GitHub → Settings → General e confirmar Rename.
 - Repositório ativo `PROJETO-NEXUS-` não foi acessado para escrita nem modificado.
+
+
+## 16. Comparação com o repositório ativo de código (20/11/2026)
+
+**Escopo e proteção:** foi feita leitura da branch `main` de `enzonunezmachado/PROJETO-NEXUS-` e comparação com a branch `main` deste repositório documental. Nenhum arquivo, branch, commit ou configuração do repositório ativo foi alterado. As únicas gravações desta revisão ocorreram em `enzonunezmachado/PROJECT_NEXUS`.
+
+### Inventário encontrado
+
+- Repositório documental: 14 arquivos Markdown na árvore principal.
+- Repositório ativo de código: 8 arquivos Markdown na árvore principal.
+- Seis caminhos são comuns aos dois repositórios: `NEXUS_ARCHITECTURE_AND_PROGRESS.md`, `docs/NEXUS_CURRENT_STATE.md`, `docs/NEXUS_DESIGN_SYSTEM.md`, `docs/NEXUS_IMPLEMENTATION_ROADMAP.md`, `docs/NEXUS_INTEGRATION_MAP.md` e `docs/NEXUS_PRODUCT_SPEC.md`.
+- No repositório ativo existem dois documentos sem equivalente no documental: `docs/NEXUS_SPEC.md` e `docs/DIAGNOSTICO_COMPILACAO.md`.
+- No repositório documental existem documentos próprios de continuidade, índice, decisões do usuário e arquivo histórico que não estão no repositório ativo: Documento Mestre, índices/README, `lista.md`, `reviewchat.md`, `NEXUS_UPDATE_01_CONTROL_CENTER.md` e duas variantes de arquitetura já arquivadas.
+
+### Resultado da comparação dos seis documentos comuns
+
+- `docs/NEXUS_DESIGN_SYSTEM.md`: conteúdo idêntico byte a byte.
+- `docs/NEXUS_CURRENT_STATE.md`, `docs/NEXUS_IMPLEMENTATION_ROADMAP.md`, `docs/NEXUS_INTEGRATION_MAP.md` e `docs/NEXUS_PRODUCT_SPEC.md`: após remover o aviso histórico inicial acrescentado no repositório documental, o restante do conteúdo é idêntico. Portanto, não havia conteúdo técnico exclusivo a importar desses quatro arquivos.
+- `NEXUS_ARCHITECTURE_AND_PROGRESS.md`: conteúdo materialmente diferente. A versão do repositório ativo é maior e descreve uma baseline versionName 5.0.0 / 25 entidades; a versão documental é outra fotografia histórica e está contextualizada por avisos. Como ambas divergem dos relatórios posteriores de evolução registrados neste Documento Mestre, nenhuma foi promovida como estado atual. A variante do repositório ativo foi preservada em `docs/archive/NEXUS_ARCHITECTURE_AND_PROGRESS__snapshot_repositorio_codigo_2026-11-20.md`.
+
+### Documentos exclusivos do repositório ativo preservados
+
+- `docs/NEXUS_SPEC.md` foi copiado para `docs/archive/NEXUS_SPEC__encontrado_no_repositorio_codigo_2026-11-20.md`. Contém decisões arquiteturais e etapas de evolução; como a sequência pode ter sido superada pelos lotes posteriores, fica arquivado, não normativo.
+- `docs/DIAGNOSTICO_COMPILACAO.md` foi copiado para `docs/archive/DIAGNOSTICO_COMPILACAO__encontrado_no_repositorio_codigo_2026-11-20.md`. É um registro histórico de falhas/correções de CI, não evidência de falha atual.
+
+### Regra de precedência após a comparação
+
+1. Código e estado técnico atual do workspace/CI são a evidência para o que realmente está implementado.
+2. Este Documento Mestre consolida os relatórios mais recentes conhecidos, decisões e próximos passos, indicando quando algo é apenas reportado e ainda não validado.
+3. `NEXUS_PRODUCT_SPEC.md` e `lista.md` registram comportamento desejado e decisões explícitas de produto/UX.
+4. Os documentos de arquitetura, estado, roadmap, integração e especificações arquivados são referências históricas; não executar etapas nem reabrir bugs apenas porque aparecem neles.
+5. O repositório ativo `PROJETO-NEXUS-` permanece intocado em tarefas documentais. Novas comparações podem ler seu conteúdo, mas qualquer consolidação será feita somente neste repositório.
+
+### Limites desta revisão
+
+A comparação cobriu todos os arquivos `.md` presentes na árvore recursiva da branch `main` de ambos os repositórios. Não comparou branches secundárias, histórico completo de commits, arquivos não-Markdown nem o conteúdo interno de anexos binários. O estado descrito nos documentos não foi tratado automaticamente como estado real do aplicativo.
