@@ -1,35 +1,60 @@
 # NEXUS — CENTRAL DE DOCUMENTAÇÃO
 
-> **Nome pretendido do repositório:** `NEXUS-DOCUMENTACAO`.
-> **Nome atual no GitHub:** `PROJECT_NEXUS` (a renomeação não pôde ser executada pela integração disponível).
-> **Finalidade exclusiva:** documentação Markdown, decisões, especificações, arquitetura histórica e continuidade do projeto NEXUS.
+> **Repositório:** [enzonunezmachado/NEXUS-DOCUMENTACAO](https://github.com/enzonunezmachado/NEXUS-DOCUMENTACAO)
+> **Finalidade:** preservar a memória técnica, estratégica e histórica do projeto NEXUS.
 
-## Documento principal
+Este repositório é a memória duradoura do NEXUS. Ele separa duas fontes complementares para que uma nova pessoa ou IA consiga compreender tanto a engenharia do aplicativo quanto a evolução das ideias e decisões que orientam o produto.
 
-**[NEXUS — Documento Mestre de Continuidade](docs/NEXUS_MASTER_CONTEXT.md)**
+## Comece por aqui
 
-Leia o documento mestre antes de continuar qualquer trabalho. Atualize o mesmo arquivo ao concluir cada lote; não crie memórias centrais paralelas.
+1. **[GOOGLE_IA/](GOOGLE_IA/README.md)** — documentação técnica produzida pelo ambiente de desenvolvimento, sincronizada a partir do repositório ativo.
+2. **[CHATGPT/](CHATGPT/README.md)** — memória estratégica das conversas: visão, princípios, ideias, brainstorms, decisões, propostas, histórico e pendências.
 
-## Documentos de referência
+## Duas áreas independentes
 
-- [Especificação do produto](docs/NEXUS_PRODUCT_SPEC.md)
-- [Decisões consolidadas de UX](docs/lista.md)
-- [Design system](docs/NEXUS_DESIGN_SYSTEM.md)
-- [Mapa de integração](docs/NEXUS_INTEGRATION_MAP.md)
-- [Roadmap histórico](docs/NEXUS_IMPLEMENTATION_ROADMAP.md)
-- [Estado atual — snapshot histórico](docs/NEXUS_CURRENT_STATE.md)
-- [Prompt operacional Update 01 — histórico](docs/NEXUS_UPDATE_01_CONTROL_CENTER.md)
-- [Arquitetura e progresso — snapshot histórico](NEXUS_ARCHITECTURE_AND_PROGRESS.md)
-- [Log histórico de revisão](docs/reviewchat.md)
-- [Índice completo e precedência documental](docs/README.md)
+### GOOGLE_IA — Engenharia e realidade técnica
 
-## Separação obrigatória dos repositórios
+Espelho da documentação técnica mantida no repositório ativo Projeto Nexus. Registra arquitetura, especificação, dados, fluxos, Design System, estado real, qualidade, guia de desenvolvimento, roadmap, ADRs e rastreabilidade.
 
-- **Este repositório (`PROJECT_NEXUS`, nome pretendido `NEXUS-DOCUMENTACAO`):** somente documentação Markdown.
-- **Repositório ativo do Google AI Studio:** `enzonunezmachado/PROJETO-NEXUS-`.
+### CHATGPT — Memória estratégica e evolução do pensamento
 
-**Nunca editar, renomear, apagar ou gravar arquivos em `PROJETO-NEXUS-` ao atualizar a documentação.** Para evitar confusão, confirme sempre o slug antes de qualquer escrita: este repositório é `PROJECT_NEXUS`, e o ativo é `PROJETO-NEXUS-`.
+Preserva por que o NEXUS está sendo construído, quais caminhos foram considerados, o que foi discutido, quais decisões foram aprovadas, quais propostas foram encaminhadas e quais questões continuam abertas.
 
-Todas as branches foram alinhadas ao snapshot documental. A árvore atual contém somente arquivos `.md`; o histórico de commits anteriores foi preservado no Git quando ainda alcançável.
+**Regra essencial:** uma ideia não é uma funcionalidade; uma proposta não é uma decisão; uma decisão aprovada não é uma implementação. A implementação só é confirmada pela fonte técnica.
 
-A renomeação para `NEXUS-DOCUMENTACAO` ainda exige ação manual em GitHub → Settings → General → Repository name → Rename.
+## Hierarquia de confiança
+
+1. Código do repositório ativo: fonte de verdade da implementação real.
+2. Markdown versionado em `docs/` no repositório ativo: documentação técnica oficial.
+3. `GOOGLE_IA/`: espelho técnico e histórico no repositório documental.
+4. `CHATGPT/`: intenção, raciocínio, decisões e memória estratégica.
+5. Artefatos internos do Google AI Studio: memória operacional complementar, nunca fonte única de informação essencial.
+
+Em caso de divergência, registrar o conflito e verificar a fonte correspondente. Não inventar uma resolução.
+
+## Repositórios
+
+- **Este repositório documental:** `enzonunezmachado/NEXUS-DOCUMENTACAO`.
+- **Repositório ativo do aplicativo:** `enzonunezmachado/PROJETO-NEXUS-`.
+
+Não modificar o repositório ativo ao realizar manutenção documental neste repositório. A sincronização de GOOGLE_IA é uma cópia controlada, não uma autorização para alterar o código.
+
+## Conteúdo legado
+
+A pasta [docs/](docs/README.md) preserva documentos e registros da organização documental anterior, incluindo o Documento Mestre histórico, decisões de UX, especificações antigas e logs de revisão. Ela é fonte histórica de recuperação, não uma terceira área de documentação vigente. Consulte os índices de GOOGLE_IA e CHATGPT para saber onde cada informação foi consolidada.
+
+## Processo de manutenção
+
+- Registrar novas ideias em CHATGPT com contexto e estado.
+- Atualizar decisões estratégicas somente após confirmação explícita.
+- Sincronizar GOOGLE_IA após a documentação técnica atualizada estar versionada no repositório ativo.
+- Preservar documentos históricos e registrar o que os substituiu.
+- Não declarar testes, builds, ZIPs ou implementações sem evidência.
+- Manter este README como porta de entrada e revisar os índices após mudanças estruturais.
+
+## Estado da primeira organização
+
+- Estrutura inicial de CHATGPT criada e preenchida com a memória estratégica recuperável.
+- Estrutura GOOGLE_IA criada, mas a importação dos 12 documentos técnicos definitivos aguarda sua publicação na branch `main` do repositório ativo.
+- Os documentos legados em `docs/` foram preservados.
+- A recuperação estratégica é parcial: não representa transcrição integral de todas as conversas.
