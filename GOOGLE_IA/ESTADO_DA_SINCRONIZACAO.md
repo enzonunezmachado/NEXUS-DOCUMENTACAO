@@ -39,6 +39,6 @@ Também foram corrigidos no repositório ativo e sincronizados para o espelho:
 - A sincronização foi feita na branch `main`.
 - Os dois novos documentos foram copiados do repositório ativo para `GOOGLE_IA/docs/`.
 - Os índices foram atualizados para refletir a nova contagem e os novos caminhos.
-- Não foi realizada comparação byte a byte dos 18 arquivos nesta etapa; portanto, não declarar identidade integral de todo o espelho.
+- Os 18 arquivos Markdown foram comparados por SHA de blob do GitHub, e os 18 hashes coincidiram com os arquivos correspondentes da origem.
 - Não foram executados build, testes Android, exportação ou inspeção de ZIP.
 - Nenhum código Android foi alterado.
