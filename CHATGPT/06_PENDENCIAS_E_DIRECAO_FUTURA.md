@@ -1,42 +1,74 @@
 # Pendências estratégicas e direção futura
 
 **Tipo:** quadro de acompanhamento estratégico  
-**Status:** inicial; validar contra estado técnico atual antes de abrir novos lotes
+**Status:** atualizado em 21/11/2026; estados precisam ser confrontados com a implementação antes de abrir lotes.
 
-## 1. Pendências e ideias futuras registradas
+## 1. Correções e verificações prioritárias surgidas no teste
 
-| Tema | Estado estratégico | Observação / próximo critério |
+| ID | Tema | Estado | Próximo passo |
+|---|---|---|---|
+| BUG-001 | Perda da tela e dos dados de edição ao girar o dispositivo | Observado; correção solicitada; causa desconhecida | Análise técnica abrangente no código e proposta de correção |
+| COR-001 | Remover N verde redundante antes do nome NEXUS | Correção visual solicitada; não implementada | Localizar ocorrências e propor ajuste sem mudar o ícone N branco |
+| OBS-001 | Preservar alertas vermelhos para atraso e amarelos para conflitos | Comportamento positivo observado | Manter semântica em futuras mudanças |
+| OBS-002 | Preservar fluxo da Agenda de selecionar data e consultar itens abaixo | Comportamento positivo observado | Não quebrar durante evolução da visualização |
+
+Detalhes e critérios: [Problemas e correções pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/01_PROBLEMAS_E_CORRECOES.md) e [resultado da exploração Gabriel](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/04_RESULTADO_EXPLORACAO_GABRIEL.md).
+
+## 2. Melhorias de produto capturadas para análise consolidada
+
+| ID | Tema | Estado |
 |---|---|---|
-| Recorrência de compromissos | Planejada | Definir regras e exceções; confirmar implementação antes de novo lote |
-| Recorrência de eventos | Planejada | Evitar duplicidade e preservar série/ocorrências |
-| Eventos com local e banner | Planejada | Definir experiência, armazenamento e backup |
-| Backup ZIP com mídias | Planejada | Complementar, não quebrar JSON legado |
-| Assistente de IA contextual | Em avaliação | Definir escopo, privacidade, custo e autonomia |
-| Integrações externas opcionais | Futuro | Não comprometer operação offline nem exigir conta |
-| Personalização da Home | Em análise | Fechar regras de reordenação e ativação de blocos |
-| Refinamentos de Agenda e Financeiro | Em evolução | Consultar especificação e estado técnico atual |
+| IDEA-001 | Agenda com visão inicial semanal e opção configurável Dia/Semana/Mês | Capturada / em análise |
+| IDEA-002 | Calendários de feriados Brasil e EUA | Capturada / em análise |
+| IDEA-003 | Onboarding: tutorial e integração da vida em fluxos separados | Capturada / em análise |
+| IDEA-004 | Central Financeira personalizável | Capturada / em análise |
+| IDEA-005 | Bloco Mercado no Financeiro independente dos favoritos | Capturada / em análise |
+| IDEA-006 | Layout adaptativo para celular, tablet e telas maiores | Capturada / em análise |
+| IDEA-007 | Temas visuais harmonizados e personalizáveis | Capturada / em análise |
+| IDEA-008 | Splash screen e entrada visual | Capturada / em análise |
+| IDEA-009 | Animações discretas e acessíveis | Capturada / em análise |
+| IDEA-010 | Pesquisa opcional de imagens em eventos | Capturada / em análise |
+| IDEA-011 | Open Finance/importação de extratos | Capturada / análise de viabilidade |
 
-## 2. Débitos e verificações técnicas reportadas em 20/11/2026
+Detalhes: [Ideias de evolução pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/02_IDEIAS_DE_EVOLUCAO.md).
+
+## 3. Direções futuras sem prioridade definida
+
+- Assistente de IA opcional.
+- Automação de tarefas por IA.
+- Integração conversacional por WhatsApp.
+
+Ver [Visão de longo prazo](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/03_VISAO_DE_LONGO_PRAZO.md). Não tratar como escopo do próximo lote.
+
+## 4. Débitos e verificações técnicas reportadas anteriormente
 
 Estes itens vieram do relatório de reorganização técnica e não são decisões estratégicas novas:
 - Build, testes unitários e APK não verificados no ambiente utilizado.
 - Testes instrumentados ausentes para migrações Room reais, SAF, Doze, BootReceiver, notificações/deep-links e Glance.
 - Risco residual na coordenação física Room × arquivos/SharedPreferences durante interrupção abrupta.
 - Arquivos centrais extensos, incluindo NexusRepository.kt e EntityEditors.kt.
-- Ausência de `gradlew` e de `app/schemas/` no estado inspecionado.
+- Ausência de gradlew e de app/schemas/ no estado inspecionado.
 - ZIP real não exportado/inspecionado.
 - Commit Git não realizado no container.
 
 Consultar GOOGLE_IA para detalhes e confirmar se houve atualização posterior. Não converter automaticamente esses débitos em tarefas aprovadas.
 
-## 3. Próximos marcos do trabalho documental
+## 5. Próximos marcos
 
-1. Publicar/sincronizar a documentação técnica atualizada em `GOOGLE_IA/` quando os arquivos versionados atualizados estiverem disponíveis no repositório ativo.
-2. Completar a recuperação do histórico estratégico usando conversas e documentos legados.
-3. Relacionar decisões e propostas com documentos técnicos e ADRs quando houver correspondência.
-4. Manter um registro de mudanças por sincronização.
-5. Revisar este quadro após cada nova decisão relevante.
+1. Solicitar análise técnica consolidada ao Google AI Studio, sem autorização de implementação nesta etapa.
+2. Revisar a causa e a abrangência do BUG-001.
+3. Avaliar a proposta de COR-001 e confirmar todos os locais do símbolo redundante.
+4. Revisar a proposta de UX e priorizar melhorias sem quebrar os comportamentos positivos observados.
+5. Após aprovação explícita de escopo, criar lotes de implementação separados e registrar testes reais.
+6. Atualizar o estado de cada ID com evidências, commit/versão e resultado.
 
-## 4. Direção de longo prazo
+## 6. Débitos documentais e continuidade
+
+- Manter o catálogo central sem duplicar documentos detalhados dos experimentos.
+- Registrar propostas ao AI Studio somente quando forem efetivamente enviadas.
+- Após cada lote, confrontar código, docs técnicos versionados e artefatos internos relevantes do AI Studio.
+- Preservar histórico e distinguir solicitado, aprovado, implementado e validado.
+
+## 7. Direção de longo prazo
 
 O NEXUS deve continuar evoluindo. Módulos, tecnologias e interfaces podem mudar profundamente. A memória deve preservar por que decisões foram tomadas e como o produto evoluiu, sem obrigar versões futuras a reproduzir escolhas antigas.
