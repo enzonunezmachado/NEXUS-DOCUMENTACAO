@@ -44,3 +44,14 @@ A Home deve funcionar como centro de comando, não como uma lista interminável 
 ## 5. Limites entre visão e implementação
 
 Os princípios acima representam a direção estratégica registrada. Eles não significam que todos os recursos necessários já estejam implementados ou validados. Para saber o estado real do aplicativo, consultar `GOOGLE_IA/` e o código ativo.
+
+
+## 6. Contexto de origem e uso
+
+Nas conversas de 15/11/2026, o NEXUS também foi descrito como um projeto pessoal, funcional e instalável, priorizando o uso diário do próprio usuário, não a comercialização como objetivo inicial. Foi considerada a possibilidade de disponibilizar o código como open source, permitindo modificações e até comercialização por terceiros; isso foi discutido como possibilidade, não como decisão de licença formal já definida.
+
+Cada instalação deve começar vazia e manter seus próprios dados locais isolados. A experiência e a arquitetura não devem pressupor uma conta compartilhada ou uma base central que misture dados de diferentes instalações.
+
+## 7. Identidade visual de origem
+
+A direção visual inicial registrada em 15/11/2026 foi uma identidade escura, com base preta, tipografia branca e símbolo/logo “N”. Essa direção deve ser lida junto ao Design System técnico vigente, que pode ter evoluído em tokens, temas e componentes.
