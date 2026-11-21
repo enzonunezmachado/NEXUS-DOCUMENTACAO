@@ -1,3 +1,7 @@
+> **AVISO: PROMPT OPERACIONAL HISTÓRICO (20/11/2026).** Este arquivo referencia branch/commit antigos e instruções de uma rodada anterior. Não execute literalmente nem faça checkout/reset com base nele. Consulte `NEXUS_MASTER_CONTEXT.md` para a continuidade atual.
+
+---
+
 # NEXUS Update 01 — Control Center & Mobile Experience
 
 **Arquivo:** `docs/NEXUS_UPDATE_01_CONTROL_CENTER.md`  
