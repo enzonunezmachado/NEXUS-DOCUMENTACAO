@@ -116,3 +116,31 @@ O documento `lista.md` registrou a ordem: Tarefas | Agenda | Início | Financeir
 As decisões também estabeleceram que cada lote deve terminar integrado e compilável, com testes executados e limitações honestamente registradas. Isso é uma diretriz de processo; não significa que os testes históricos tenham sido executados.
 
 Fonte histórica detalhada: [`docs/lista.md`](../docs/lista.md).
+
+
+## 11. Decisões de origem — Meu Dia e identidade
+
+Em conversas de 15/11/2026, o usuário aprovou conceitualmente a experiência “Meu Dia”, com navegação inicialmente discutida como Início, Agenda, Tarefas, Finanças e Mais. A saudação deveria ser branca (“Olá, [nome]”), enquanto frase e autoria seriam pequenas, cinzas e opcionais. O cabeçalho deveria ser discreto e integrado, não um cartão grande.
+
+A mesma conversa descreveu quatro conceitos de widget/resumo:
+- **Meu Dia:** compromissos, horários, tarefas e itens concluídos/pendentes.
+- **Minhas Tarefas:** visão dedicada às tarefas.
+- **Financeiro:** resumo financeiro.
+- **Resumo integrado:** tarefas, compromissos, eventos, finanças e metas.
+
+Esses rótulos e conteúdos registram a intenção de produto da época; verificar a implementação técnica atual antes de assumir que todos correspondem a widgets existentes.
+
+### Evolução da navegação
+
+- **15/11/2026:** conceito inicial de navegação: Início, Agenda, Tarefas, Finanças e Mais.
+- **Documento consolidado de UX posterior (docs/lista.md):** ordem atualizada para Tarefas, Agenda, Início, Financeiro e Eventos, mantendo Início central.
+
+A ordem posterior substitui a proposta inicial de navegação, mas a navegação real deve ser confirmada na documentação técnica e no código. A mudança de “Mais” para “Eventos” também deve ser entendida como evolução do desenho de navegação, não como prova de que um destino foi implementado ou removido em determinada data.
+
+## 12. Registro de build e integração — 15/11/2026
+
+Em uma etapa de integração, o usuário relatou que o build Debug chegou a compileDebugKotlin e falhou com 18 erros distribuídos entre Dashboard/Quotes, Home, Backup/Diagnostics e Goals. Foram citados incompatibilidades de nomes de propriedades, nulabilidade e campos de restauração/progresso.
+
+Na mesma etapa, arquivos novos do Google AI Studio diferiam dos arquivos existentes no GitHub. A preocupação explícita era integrar mudanças sem perder configurações e workflows existentes, especialmente .github/workflows/, Gradle e Actions. A proposta de comparar ZIP e preservar arquivos relevantes foi uma estratégia sugerida, não uma integração concluída naquele momento; o ZIP corrigido ainda não havia sido recebido no registro recuperado.
+
+Este registro é histórico e não descreve o estado atual do build.
