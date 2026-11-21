@@ -1,3 +1,7 @@
+> **AVISO DE SNAPSHOT HISTÓRICO (20/11/2026):** a auditoria abaixo é da baseline antiga 5.2.0 / Room 5 / Backup 5. Os Lotes posteriores alteraram o estado do produto, incluindo recorrência, Mercado e Backup v7. Bugs e pendências listados aqui não devem ser considerados atuais sem nova verificação. Consulte `NEXUS_MASTER_CONTEXT.md`.
+
+---
+
 # NEXUS — Estado Real do Sistema (`NEXUS_CURRENT_STATE`)
 
 > **Finalidade:** inventário factual, verificado diretamente no código-fonte atual do repositório `PROJECT_NEXUS` (sem suposições e sem considerar documentação antiga como verdade automática).
