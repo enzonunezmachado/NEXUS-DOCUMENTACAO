@@ -1,31 +1,41 @@
 # Estado da sincronização GOOGLE_IA
 
-**Data do diagnóstico:** 2026-11-20  
-**Repositório de origem:** `enzonunezmachado/PROJETO-NEXUS-`  
-**Branch consultada:** `main`  
-**Repositório de destino:** `enzonunezmachado/NEXUS-DOCUMENTACAO`  
+**Última sincronização:** 2026-11-21  
+**Origem:** `enzonunezmachado/PROJETO-NEXUS-`  
+**Branch:** `main`  
+**Commit de origem sincronizado:** `2ab01d5d653a786ca2386375d94187b2eeb72fd1`  
+**Destino:** `enzonunezmachado/NEXUS-DOCUMENTACAO`  
 **Branch de destino:** `main`
 
-## Resultado
+## Resultado desta sincronização
 
-- O relatório do Google AI Studio informa que a reorganização documental foi concluída no workspace, com `docs/README.md`, documentos 01–12 e `docs/archive/`.
-- A árvore GitHub consultada do repositório ativo ainda apresenta os documentos antigos em `docs/` (incluindo `NEXUS_CURRENT_STATE.md`, `NEXUS_DESIGN_SYSTEM.md`, `NEXUS_IMPLEMENTATION_ROADMAP.md`, `NEXUS_INTEGRATION_MAP.md`, `NEXUS_PRODUCT_SPEC.md`, `NEXUS_SPEC.md` e `DIAGNOSTICO_COMPILACAO.md`).
-- A reorganização atualizada ainda não está publicada na branch `main` do repositório ativo.
-- Por isso, não foi possível copiar os 12 documentos definitivos completos para esta pasta sem usar o relatório como substituto indevido.
-- Nenhum arquivo do repositório ativo foi modificado.
+<badge> Os documentos técnicos atualizados foram encontrados no GitHub após a publicação do commit do Google AI Studio/Hugo. A leitura anterior, feita antes desse commit, estava desatualizada.
 
-## Próxima ação de sincronização
+Foram copiados para `GOOGLE_IA/docs/`, preservando a estrutura relativa original:
 
-Quando a nova documentação for publicada no repositório ativo:
-1. Inventariar novamente `docs/` e `docs/archive/`.
-2. Baixar o índice e os documentos 01–12 completos.
-3. Comparar com qualquer conteúdo existente nesta pasta.
-4. Atualizar o espelho preservando versões e histórico.
-5. Registrar arquivos sincronizados, data, commit de origem e limitações.
-6. Verificar links relativos e consistência.
+- `README.md` do diretório docs;
+- os 12 documentos vigentes, de `01_DOCUMENTO_MESTRE.md` a `12_RASTREABILIDADE.md`;
+- os três documentos em `docs/archive/`.
 
-## Artefatos internos
+**Total: 16 arquivos Markdown espelhados.**
 
-O relatório recebido declara que `NEXUS_CONTINUIDADE.md`, `NEXUS_CURRENT_STATE.md`, `NEXUS_DESIGN_SYSTEM.md`, `NEXUS_IMPLEMENTATION_ROADMAP.md`, `NEXUS_INTEGRATION_MAP.md` e `NEXUS_PRODUCT_SPEC.md` foram atualizados, enquanto `NEXUS_UPDATE_01_CONTROL_CENTER.md` e `lista.md` foram preservados como históricos.
+## Baseline de origem identificada
 
-Esses artefatos internos não foram acessados diretamente por esta sincronização GitHub. A declaração acima é atribuída ao relatório do AI Studio, não a uma verificação independente.
+- App: `com.nexus.app`.
+- A documentação declara baseline `versionCode = 7`, `versionName = 5.2.0`, Room v6 (27 entidades) e Backup JSON v7.
+- Os detalhes acima são afirmações da documentação sincronizada; a presente tarefa não executou nova auditoria integral do código nem build/testes Android.
+
+## Divergência textual identificada
+
+O cabeçalho de `docs/README.md` na origem ainda usa o identificador antigo `PROJECT_NEXUS`. O repositório atual é `PROJETO-NEXUS-`. O arquivo espelhado foi mantido fiel ao original e esta divergência foi registrada aqui; nenhuma alteração foi feita no repositório ativo.
+
+## Artefatos internos do Google AI Studio
+
+Os artefatos internos, incluindo `NEXUS_CONTINUIDADE`, não são acessíveis por esta sincronização GitHub. Portanto, não afirmamos que foram consultados ou atualizados nesta etapa. O relatório anterior do AI Studio dizia que foram sincronizados em 20/11, mas isso não foi verificado independentemente agora.
+
+## Limites desta verificação
+
+- A comparação foi feita na branch `main` e nos arquivos Markdown de `docs/` e `docs/archive/`.
+- Não foram comparadas branches secundárias nem todo o histórico Git.
+- Não foram executados build, testes Android, exportação ou inspeção de ZIP.
+- Nenhum arquivo do código do aplicativo ou do repositório ativo foi modificado nesta tarefa.
