@@ -1,3 +1,7 @@
+> **AVISO DE HISTÓRICO (20/11/2026):** este documento descreve fases antigas, incluindo Room v4 / Backup v4. Foi preservado como registro histórico. Não use seus números de versão ou status como baseline atual; consulte `docs/NEXUS_MASTER_CONTEXT.md` e verifique o código no repositório ativo do Google AI Studio.
+
+---
+
 # NEXUS — Documento Vivo de Arquitetura e Controle de Progresso
 
 > **Princípio permanente:** Nenhuma funcionalidade é marcada como concluída apenas porque sua tela existe. Este documento registra arquitetura, schema completo, decisões técnicas, status por fase e matriz de testes (aprovados, reprovados, pendentes e limitações de ambiente).
