@@ -360,3 +360,13 @@ O conteúdo Markdown preexistente foi lido e classificado. Estes arquivos são p
 | Data | Alteração |
 |---|---|
 | 20/11/2026 | Leitura e classificação dos documentos preexistentes; registro das divergências de baseline; preparação do repositório para permanecer documental, preservando arquivos Markdown e histórico Git. |
+
+
+## 15. Resultado da limpeza documental do repositório (20/11/2026)
+
+- A branch `main` foi convertida em árvore documental: permanecem 14 arquivos Markdown (`.md`) e nenhum arquivo de código, configuração, workflow ou recurso não-Markdown na árvore atual.
+- As 14 branches que não eram `main` também foram movidas para o mesmo commit documental, usando atualização com verificação do SHA anterior. Assim, todas as pontas de branch agora apresentam a mesma árvore composta somente por documentos Markdown.
+- Os documentos de arquitetura diferentes encontrados nas branches `integracao-google` e `diagnostico-feature-base` foram preservados em `docs/archive/`. A versão que estava na `main` permanece na raiz.
+- Os 70 arquivos não-Markdown que estavam na árvore principal foram removidos da árvore ativa. Os commits anteriores não foram reescritos; entretanto, commits exclusivos de branches que perderam suas referências podem deixar de estar alcançáveis por branches. Esta limpeza atende ao pedido de manter o repositório visivelmente documental.
+- A renomeação do repositório não foi executada: as ferramentas GitHub disponíveis nesta sessão permitem ler e alterar arquivos/refs, mas não expõem a operação administrativa de renomear o repositório. Nome atual confirmado: `PROJECT_NEXUS`. Nome desejado documentado: `NEXUS-DOCUMENTACAO`. Para concluir, o proprietário precisa alterar o campo Repository name em GitHub → Settings → General e confirmar Rename.
+- Repositório ativo `PROJETO-NEXUS-` não foi acessado para escrita nem modificado.
