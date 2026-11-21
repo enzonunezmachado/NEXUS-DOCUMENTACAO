@@ -2,7 +2,7 @@
 
 **Data de referência:** 21/11/2026  
 **Tipo:** teste exploratório de cobertura e adequação do produto com dados fictícios  
-**Estado:** backups gerados e validados estaticamente segundo relatório do Google AI Studio; restauração real no aplicativo pendente.
+**Estado:** três backups gerados; validação estática reportada como aprovada; presença dos arquivos no GitHub conferida; exploração manual inicial de Gabriel concluída com observações positivas; Helena e Ricardo ainda sem resultado registrado.
 
 ## Objetivo
 
@@ -16,19 +16,21 @@ Avaliar como o NEXUS representa três contextos de vida muito diferentes, usando
 - [Ricardo — empresário](02_PERFIS/RICARDO_EMPRESARIO.md)
 - [Registro do experimento](03_ACOMPANHAMENTO/REGISTRO_DO_EXPERIMENTO.md)
 - [Relatório de geração e validação](04_RESULTADOS/RELATORIO_GERACAO_E_VALIDACAO.md)
-- [Relatório de testes no aplicativo](04_RESULTADOS/RELATORIO_TESTES_NO_APLICATIVO.md) — aguardando execução.
+- [Relatório de testes no aplicativo](04_RESULTADOS/RELATORIO_TESTES_NO_APLICATIVO.md)
+- [Observações pós-teste](05_OBSERVACOES_POS_TESTE/README.md)
+- [Relatório de mudanças documentais](RELATORIO_DE_MUDANCAS_DOCUMENTAIS.md)
 
-## Arquivos JSON
+## Arquivos JSON publicados no repositório ativo
 
-O relatório do Google AI Studio informa que os arquivos foram criados em `/test-backups/` no repositório ativo do aplicativo:
+A presença dos três arquivos foi conferida em enzonunezmachado/PROJETO-NEXUS-/test-backups/:
 
-- `NEXUS_TESTE_GABRIEL_UNIVERSITARIO.json`
-- `NEXUS_TESTE_HELENA_COMUNIDADE.json`
-- `NEXUS_TESTE_RICARDO_EMPRESARIO.json`
+- [NEXUS_TESTE_GABRIEL_UNIVERSITARIO.json](https://github.com/enzonunezmachado/PROJETO-NEXUS-/blob/main/test-backups/NEXUS_TESTE_GABRIEL_UNIVERSITARIO.json)
+- [NEXUS_TESTE_HELENA_COMUNIDADE.json](https://github.com/enzonunezmachado/PROJETO-NEXUS-/blob/main/test-backups/NEXUS_TESTE_HELENA_COMUNIDADE.json)
+- [NEXUS_TESTE_RICARDO_EMPRESARIO.json](https://github.com/enzonunezmachado/PROJETO-NEXUS-/blob/main/test-backups/NEXUS_TESTE_RICARDO_EMPRESARIO.json)
 
-Os JSONs não são duplicados neste repositório documental. A presença e publicação deles no GitHub ainda precisam ser conferidas.
+Os JSONs não são duplicados neste repositório documental.
 
-## Como executar o teste no aplicativo
+## Como executar os testes restantes
 
 1. Preserve o backup atual do usuário antes de qualquer restauração.
 2. Transfira apenas um JSON de teste por vez para o dispositivo.
@@ -42,7 +44,8 @@ A restauração deve ser feita isoladamente para cada perfil. Não importar os t
 ## Limites do experimento
 
 - Os perfis e registros são fictícios.
-- A validação estática não equivale a uma restauração real no Android.
+- A validação estática foi relatada pelo Google AI Studio; não equivale a uma restauração real.
+- A experiência de Gabriel é um relato manual inicial do usuário, não uma auditoria completa de todos os módulos.
+- Helena e Ricardo ainda não têm resultados de exploração registrados.
 - Observações não se tornam automaticamente ideias, decisões ou requisitos.
-- Problemas técnicos devem ser separados de oportunidades de produto.
 - Nenhuma mudança no código do aplicativo é autorizada ou registrada por esta documentação.
