@@ -2,6 +2,15 @@
 
 Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas.
 
+## 2026-11-22 — Registro do refinamento do tema claro
+
+- Após a revisão da segunda iteração visual isolada, registrada no repositório ativo como `design-explorations/nexus_identidade_tipografica_2026_11_21_v2.html`, o usuário apontou que o tema claro continua branco demais e excessivamente luminoso.
+- A inspeção do CSS da prévia identificou fundo `#F6F6F6`, barras e cartões comuns em `#FFFFFF` e cartões elevados em `#EDEDED`; o registro deixa explícito que isso descreve a prévia, não uma auditoria completa do tema de produção.
+- A questão foi associada à ideia existente IDEA-007, sem criar um novo ID nem duplicar o catálogo.
+- Criado o documento [Direção em análise — refinamento do tema claro](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_TEMA_CLARO.md), com a observação, critérios e três famílias conceituais para prototipagem: mineral neutro, off-white quente e grafite suave.
+- Atualizados o catálogo central e o quadro de pendências para apontar ao registro detalhado.
+- Estado: capturado / em análise. Nenhuma paleta foi aprovada; nenhuma alteração no tema de produção, código Android ou documentação técnica do aplicativo foi realizada por este registro.
+
 ## 2026-11-21 — Preparação do prompt de rotação e identidade visual
 
 - Consolidado o pedido para investigar o BUG-001, sem implementar a correção antes de apresentar diagnóstico, evidências e plano.
@@ -60,6 +69,6 @@ Este arquivo registra consolidações realizadas nesta pasta. Não é um log int
 - Cada instalação deve iniciar vazia e manter dados locais isolados.
 - Identidade visual inicial: base preta, letras brancas e símbolo “N”.
 - Conceito “Meu Dia” aprovado conceitualmente, com navegação inicial Início, Agenda, Tarefas, Finanças e Mais; saudação branca e frase/autoria pequenas, cinzas e opcionais.
-- Foram discutidos resumos/widgets Meu Dia, Minhas Tarefas, Financeiro e Resumo integrado; não inferir que todos já estavam implementados.
+- Foram discutidos resumos/widgets Meu Dia, Minhas Tarefas, Financeiro e Resumo integrado; não inferir que todos estavam implementados.
 - Houve build Debug com 18 erros Kotlin reportados em Dashboard/Quotes, Home, Backup/Diagnostics e Goals. Esse é um registro histórico, não estado atual.
 - Foi discutida integração seletiva de arquivos gerados pelo Google AI Studio com o GitHub, preservando .github/workflows/, Gradle e configurações existentes. A comparação de ZIP foi proposta, mas o ZIP corrigido ainda não havia sido recebido naquele registro.
