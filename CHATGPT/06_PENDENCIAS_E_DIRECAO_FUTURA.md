@@ -1,7 +1,7 @@
 # Pendências estratégicas e direção futura
 
 **Tipo:** quadro de acompanhamento estratégico  
-**Status:** atualizado em 21/11/2026; estados precisam ser confrontados com a implementação antes de abrir lotes.
+**Status:** atualizado em 22/11/2026; estados precisam ser confrontados com a implementação antes de abrir lotes.
 
 ## 1. Correções e verificações prioritárias surgidas no teste
 
@@ -24,13 +24,13 @@ Detalhes e critérios: [Problemas e correções pós-teste](TESTES/2026-11-21_TE
 | IDEA-004 | Central Financeira personalizável | Capturada / em análise |
 | IDEA-005 | Bloco Mercado no Financeiro independente dos favoritos | Capturada / em análise |
 | IDEA-006 | Layout adaptativo para celular, tablet e telas maiores | Capturada / em análise |
-| IDEA-007 | Temas visuais harmonizados e personalizáveis | Capturada / em análise |
+| IDEA-007 | Temas visuais harmonizados e personalizáveis | Capturada / em análise; refinamento do tema claro registrado após revisão da v2 |
 | IDEA-008 | Splash screen e entrada visual | Capturada / em análise |
 | IDEA-009 | Animações discretas e acessíveis | Capturada / em análise |
 | IDEA-010 | Pesquisa opcional de imagens em eventos | Capturada / em análise |
 | IDEA-011 | Open Finance/importação de extratos | Capturada / análise de viabilidade |
 
-Detalhes: [Ideias de evolução pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/02_IDEIAS_DE_EVOLUCAO.md).
+Detalhes gerais: [Ideias de evolução pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/02_IDEIAS_DE_EVOLUCAO.md). O refinamento específico do tema claro está em [Direção em análise — refinamento do tema claro](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_TEMA_CLARO.md).
 
 ## 3. Direções futuras sem prioridade definida
 
