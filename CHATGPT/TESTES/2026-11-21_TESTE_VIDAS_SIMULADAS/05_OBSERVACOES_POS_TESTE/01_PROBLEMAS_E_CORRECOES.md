@@ -21,6 +21,7 @@
 - **Escopo da correção:** investigar o padrão arquitetural compartilhado e corrigir a causa abrangente. Não aceitar como solução apenas um workaround na tela Eventos.
 - **Distinção importante:** rotação/recriação de Activity é diferente de encerramento forçado ou morte do processo. A análise deve declarar quais cenários serão cobertos.
 - **Critério de validação futuro:** iniciar criação/edição em diferentes abas, preencher campos e seleções, girar o dispositivo em diferentes etapas e confirmar que tela, dados e progresso permanecem. Repetir em fluxos com menus/diálogos e, se suportado, após recriação do processo.
+- **Relação com IDEA-006:** além da preservação de estado, a interface deve reorganizar-se conforme orientação e tamanho da janela. Em tablet deitado, a Agenda poderá manter calendário/dias de um lado e itens do dia selecionado do outro. Essa adaptação visual deve ser especificada e validada separadamente da persistência do estado.
 - **Não confirmado:** causa exata, telas afetadas individualmente, solução técnica, cobertura de testes automatizados e versão em que será corrigido.
 
 ## COR-001 — Remover o N verde redundante antes do nome NEXUS
