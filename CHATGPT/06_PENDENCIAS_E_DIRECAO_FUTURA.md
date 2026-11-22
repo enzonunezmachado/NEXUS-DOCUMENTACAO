@@ -23,14 +23,14 @@ Detalhes e critérios: [Problemas e correções pós-teste](TESTES/2026-11-21_TE
 | IDEA-003 | Onboarding: tutorial e integração da vida em fluxos separados | Capturada / em análise |
 | IDEA-004 | Central Financeira personalizável | Capturada / em análise |
 | IDEA-005 | Bloco Mercado no Financeiro independente dos favoritos | Capturada / em análise |
-| IDEA-006 | Layout adaptativo para celular, tablet e telas maiores | Capturada / em análise |
-| IDEA-007 | Temas visuais harmonizados e personalizáveis | Capturada / em análise; refinamento do tema claro registrado após revisão da v2 |
+| IDEA-006 | Layout adaptativo para celular, tablet e telas maiores; Agenda em painel duplo no tablet deitado e adaptação para telas tipo monitor | Capturada / em análise |
+| IDEA-007 | Temas visuais harmonizados; Grafite Suave é a direção preferida até aqui, mas precisa ficar um pouco mais cinza/confortável | Capturada / em análise; paleta e tokens não aprovados |
 | IDEA-008 | Splash screen e entrada visual | Capturada / em análise |
 | IDEA-009 | Animações discretas e acessíveis | Capturada / em análise |
 | IDEA-010 | Pesquisa opcional de imagens em eventos | Capturada / em análise |
 | IDEA-011 | Open Finance/importação de extratos | Capturada / análise de viabilidade |
 
-Detalhes gerais: [Ideias de evolução pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/02_IDEIAS_DE_EVOLUCAO.md). O refinamento específico do tema claro está em [Direção em análise — refinamento do tema claro](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_TEMA_CLARO.md).
+Detalhes gerais: [Ideias de evolução pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/02_IDEIAS_DE_EVOLUCAO.md). O refinamento do tema claro está em [Direção em análise — refinamento do tema claro](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_TEMA_CLARO.md). A expansão da IDEA-006 está em [Direção de layouts adaptativos](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_LAYOUTS_ADAPTATIVOS.md).
 
 ## 3. Direções futuras sem prioridade definida
 
