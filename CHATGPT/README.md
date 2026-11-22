@@ -14,7 +14,7 @@
 8. [Decisões de UX e produto](08_DECISOES_DE_UX_E_PRODUTO.md)
 9. [Experimentos e testes](TESTES/README.md) — cenários, evidências e resultados.
 10. [Problemas, correções e ideias após os testes](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md).
-11. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md) — prompt preparado e direção tipográfica.
+11. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md) — exploração tipográfica, tema claro e layouts adaptativos.
 
 ## Regra de interpretação
 
