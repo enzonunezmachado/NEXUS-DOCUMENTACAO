@@ -64,6 +64,26 @@ Vermelho para atrasos e amarelo para conflitos devem manter seus significados. C
 - Não registrar a mudança como implementada ou validada.
 - A escolha final depende da avaliação comparativa do usuário.
 
-## 5. Relação com o catálogo estratégico
+## 5. Feedback posterior — direção Grafite Suave
+
+Na avaliação posterior, o usuário demonstrou preferência pela família **Grafite Suave**, mas considerou que a proposta ainda poderia ficar um pouco mais cinza e confortável para leitura. A paleta apresentada foi:
+
+| Token conceitual | Cor de referência |
+|---|---|
+| Fundo | #D4D7DC |
+| Superfície | #E3E5E8 |
+| Elevado | #C9CED4 |
+| Borda | #B0B6BF |
+| Texto | #121417 |
+| Atraso | #AD1E1E |
+| Conflito | #874E00 |
+| Positivo | #136B31 |
+| Informação | #1353A6 |
+
+Esses valores são referência da versão avaliada, não tokens finais aprovados. A próxima exploração deve testar um ajuste sutil em direção a cinzas mais neutros/menos luminosos, verificando leitura prolongada, contraste e separação entre superfícies. Não presumir que basta escurecer todas as cores na mesma proporção.
+
+O usuário também observou que contornos de alertas e outros elementos estão finos. Indicou como referência a espessura do contorno verde que marca o dia selecionado na visão semanal da Agenda. Aplicar esse critério na exploração visual, sem definir valor numérico antecipadamente e preservando acessibilidade e hierarquia.
+
+## 6. Relação com o catálogo estratégico
 
 Esta direção detalha a ideia existente **IDEA-007 — Temas visuais harmonizados**. Não cria uma ideia independente nem duplica o catálogo central. O catálogo e o quadro de pendências apontam para este registro como detalhamento específico do tema claro.
