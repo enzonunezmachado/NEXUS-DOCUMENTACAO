@@ -50,11 +50,15 @@ As ideias surgiram principalmente da experiência com o perfil Gabriel. A refer�
 ## IDEA-006 — Layouts adaptativos para celular, tablet e telas maiores
 
 - **Estado:** CAPTURADA / EM ANÁLISE.
-- **Necessidade:** a interface deve reorganizar componentes de forma intencional, não apenas esticar a interface de celular.
-- **Direção:** definir uma organização padrão bem resolvida para celular e adaptar painéis, colunas e distribuição de componentes em tablets/telas maiores.
-- **Exemplos iniciais a avaliar:** Agenda semanal como abertura padrão; grade de índices compacta (três colunas foi sugerido como hipótese para celular); configurações acessíveis pelo menu de três pontos.
-- **Analisar:** Jetpack Compose adaptive layouts/window size classes, orientação, tamanhos de janela, acessibilidade e preservação das preferências pessoais.
-- **Regra:** personalização de conteúdo e ordem não deve ser perdida ao mudar de tamanho de tela. O número de colunas deve ser adaptativo, não uma obrigação fixa para todos os dispositivos.
+- **Necessidade:** reorganizar componentes conforme largura, altura e orientação, não apenas esticar a interface de celular.
+- **Agenda em tablet deitado:** avaliar duas áreas lado a lado: calendário/dias da semana em uma e itens do dia selecionado na outra. Selecionar outro dia atualiza o painel de itens sem perder o contexto. A proporção entre painéis deve ser estudada, não fixada automaticamente em 50/50.
+- **Agenda em celular:** cartões da visão semanal devem aproveitar a altura útil disponível de forma proporcional, considerando barras do sistema, orientação e diferentes proporções de tela. Evitar cartões comprimidos ou excessivamente altos.
+- **Contornos:** na exploração visual, aumentar a espessura dos contornos de alertas e elementos destacados, tomando como referência o contorno verde do dia selecionado na visão semanal. Não fixar valor numérico antes da comparação e da verificação de acessibilidade.
+- **Telas tipo monitor:** estudar painéis simultâneos e densidade adequada, sem simplesmente ampliar componentes móveis. Isso não significa aprovar suporte desktop completo.
+- **Analisar:** Compose adaptive layouts/window size classes, orientação, tamanhos de janela, acessibilidade e preservação das preferências pessoais.
+- **Regra:** manter dados, seleção e contexto ao mudar a composição. O número de colunas e a proporção dos painéis devem ser adaptativos.
+- **Separação do BUG-001:** layout adaptativo trata da composição visual; a correção de rotação deve preservar rota, dados de formulários, seleções e progresso durante a recriação da Activity. Uma frente não substitui a outra.
+- **Referência detalhada:** [Direção de layouts adaptativos](../../PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_LAYOUTS_ADAPTATIVOS.md).
 
 ## IDEA-007 — Temas visuais personalizáveis e harmonizados
 
