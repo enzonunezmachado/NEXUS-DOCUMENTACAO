@@ -58,7 +58,7 @@ As ideias surgiram principalmente da experiência com o perfil Gabriel. A refer�
 - **Analisar:** Compose adaptive layouts/window size classes, orientação, tamanhos de janela, acessibilidade e preservação das preferências pessoais.
 - **Regra:** manter dados, seleção e contexto ao mudar a composição. O número de colunas e a proporção dos painéis devem ser adaptativos.
 - **Separação do BUG-001:** layout adaptativo trata da composição visual; a correção de rotação deve preservar rota, dados de formulários, seleções e progresso durante a recriação da Activity. Uma frente não substitui a outra.
-- **Referência detalhada:** [Direção de layouts adaptativos](../../PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_LAYOUTS_ADAPTATIVOS.md).
+- **Referência detalhada:** [Direção de layouts adaptativos](../../../PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_LAYOUTS_ADAPTATIVOS.md).
 
 ## IDEA-007 — Temas visuais personalizáveis e harmonizados
 
