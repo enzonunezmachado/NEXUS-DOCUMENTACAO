@@ -20,8 +20,8 @@ Este documento é o catálogo central de ideias do NEXUS. Ele separa direções 
 | Onboarding em dois fluxos | Capturada / em análise | Tutorial para conhecer o app e fluxo separado para integrar dados; IDEA-003 |
 | Central Financeira personalizável | Capturada / em análise | Reordenar/ocultar blocos e preservar visão especializada; IDEA-004 |
 | Personalização independente do bloco Mercado no Financeiro | Capturada / em análise | Separar favoritos de exibição no Financeiro; IDEA-005 |
-| Layouts adaptativos para tablets e telas maiores | Capturada / em análise | Reorganizar, não apenas esticar a UI; IDEA-006 |
-| Temas visuais harmonizados | Capturada / em análise | IDEA-007: comparar temas completos e personalização limitada. Na revisão da v2, o tema claro foi considerado branco/luminoso demais; investigar superfícies neutras em camadas e comparar famílias mineral neutra, off-white quente e grafite suave. Ver [direção de refinamento do tema claro](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_TEMA_CLARO.md) |
+| Layouts adaptativos para tablets e telas maiores | Capturada / em análise | IDEA-006: reorganizar painéis conforme largura e orientação; Agenda em duas áreas no tablet deitado e avaliação de telas tipo monitor. Ver direção detalhada no pacote de rotação/identidade visual |
+| Temas visuais harmonizados | Capturada / em análise | IDEA-007: usuário gostou da direção Grafite Suave, mas quer tonalidade um pouco mais cinza e confortável; paleta ainda em refinamento, sem valores finais aprovados. Ver [direção de refinamento do tema claro](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_TEMA_CLARO.md) |
 | Calendários de feriados BR e EUA | Capturada / em análise | IDEA-002 |
 | Splash e animações discretas | Capturada / em análise | IDEA-008 e IDEA-009 |
 
