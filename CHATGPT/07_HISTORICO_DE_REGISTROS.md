@@ -2,6 +2,16 @@
 
 Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas.
 
+## 2026-11-22 — Grafite Suave, contornos e Agenda adaptativa
+
+- O usuário gostou da direção Grafite Suave, mas pediu uma tonalidade um pouco mais cinza e confortável. A paleta apresentada foi registrada como referência inicial, não como tokens finais: fundo #D4D7DC, superfície #E3E5E8, elevado #C9CED4, borda #B0B6BF, texto #121417, atraso #AD1E1E, conflito #874E00, positivo #136B31 e informação #1353A6.
+- O usuário observou que contornos de alertas e outros elementos estão finos demais. A espessura do contorno verde do dia selecionado na visão semanal da Agenda foi indicada como referência visual.
+- Solicitou que os cartões semanais da Agenda tenham altura proporcional à área vertical disponível, considerando tamanho e orientação da tela.
+- Expandida a IDEA-006: em tablet deitado, a Agenda deve poder apresentar calendário/dias de um lado e os itens do dia selecionado do outro. A direção também considera telas maiores, inclusive formato tipo monitor.
+- A rotação permanece ligada ao BUG-001: além do layout adaptativo, é necessário preservar tela, dados e progresso ao recriar a Activity. Adaptação visual e preservação de estado são preocupações relacionadas, mas distintas.
+- Criado [Direção de layouts adaptativos](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/DIRECAO_LAYOUTS_ADAPTATIVOS.md) e atualizados os índices e detalhes das IDEA-006/007.
+- Estado: capturado / em análise. Nenhuma paleta, espessura de borda, breakpoint ou layout final foi aprovado; nenhuma implementação em produção foi autorizada.
+
 ## 2026-11-22 — Registro do refinamento do tema claro
 
 - Após a revisão da segunda iteração visual isolada, registrada no repositório ativo como `design-explorations/nexus_identidade_tipografica_2026_11_21_v2.html`, o usuário apontou que o tema claro continua branco demais e excessivamente luminoso.
