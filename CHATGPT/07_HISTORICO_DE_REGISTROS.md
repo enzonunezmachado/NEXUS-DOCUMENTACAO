@@ -1,3 +1,14 @@
+## 2026-11-23 — Formalização do papel operacional do usuário e dos limites de sincronização do AI Studio
+
+- A metodologia estratégica foi ampliada para descrever o usuário como coordenador operacional e ponte humana entre ChatGPT, Google AI Studio, GitHub e o dispositivo Android.
+- O registro deixa explícito que sua atuação inclui desenvolver ideias com ChatGPT, transportar prompts e relatórios, organizar arquivos, reconstruir contexto, criar materiais de continuidade, contornar falhas e limitações das ferramentas, controlar sincronizações, acompanhar implementações, instalar APKs e testar o aplicativo.
+- Foi registrado que desvios, improvisos e tarefas auxiliares acontecem com frequência porque o fluxo ideal nem sempre funciona de forma linear. Esse esforço deve ser considerado ao desenhar processos, evitando transferir burocracia excessiva ao usuário.
+- Foi esclarecido o limite operacional do Google AI Studio: ele trabalha sobre os arquivos presentes no ambiente conectado, mas não possui acesso autônomo ao GitHub, não decide nem aciona Pull/Push por conta própria e não deve ser descrito como responsável por criar commits autonomamente.
+- Pull e Push são acionados manualmente pelo usuário na interface: Pull atualiza o ambiente de trabalho a partir do repositório conectado; Push envia ao repositório as alterações do ambiente.
+- A formalização foi incluída em `CHATGPT/09_METODOLOGIA_DE_PESQUISA_E_DESENVOLVIMENTO.md`, nas seções 10.1–10.5.
+- Limite desta atualização: não foi documentada nem aprovada uma nova arquitetura de pastas para execução por fases com confirmações sucessivas; essa ideia foi explicitamente reservada para discussão futura e não faz parte desta formalização.
+- Nenhum código Android, documentação técnica vigente do repositório ativo, workflow, artefato interno do AI Studio ou configuração de sincronização foi alterado nesta operação.
+
 ## 2026-11-23 — Arquivamento de artefatos temporários de transferência entre IAs
 
 - O usuário esclareceu que atua como coordenador operacional da continuidade entre ChatGPT, Google AI Studio, GitHub e documentação: transporta prompts, relatórios, arquivos Markdown e instruções de retomada entre ambientes, além de acompanhar decisões e testes. A metodologia deve reconhecer esse trabalho de orquestração, não reduzir sua participação a sincronizar o repositório e instalar APKs.
