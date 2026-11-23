@@ -9,6 +9,7 @@
 - [Direção de identidade tipográfica NEXUS](DIRECAO_IDENTIDADE_TIPOGRAFICA.md)
 - [Direção em análise — refinamento do tema claro](DIRECAO_TEMA_CLARO.md)
 - [Direção em análise — layouts adaptativos](DIRECAO_LAYOUTS_ADAPTATIVOS.md)
+- [Pesquisa inicial — layouts adaptativos e rolagem](PESQUISA_LAYOUTS_ADAPTATIVOS_E_ROLAGEM.md) — fundamentos oficiais Android, padrões de painéis e limites de rolagem no Compose.
 
 ## Escopo e evolução
 
