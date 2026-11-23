@@ -109,3 +109,74 @@ Quando uma proposta for aprovada e encaminhada:
 ## 9. Exemplo aplicado — IDEA-006
 
 A melhoria dos layouts adaptativos e da Agenda semanal está em EM PESQUISA / EM ANÁLISE. Já existe feedback de uso real e uma pesquisa inicial nas diretrizes oficiais do Android. Ainda é necessário inspecionar a implementação atual, comparar a Agenda com o Kanban, prototipar a rolagem independente dos dias e avaliar diferentes dimensões de janela. Só depois disso deve ser elaborada uma proposta para aprovação. Nenhuma implementação adicional está autorizada por este registro.
+
+## 10. Coordenação operacional entre ChatGPT, Google AI Studio e GitHub
+
+### 10.1 O papel do usuário no processo real
+
+O usuário não é apenas alguém que copia um prompt, aperta sincronização e instala um APK. Ele exerce a coordenação operacional e funciona como ponte humana entre ambientes que não compartilham automaticamente contexto, estado de trabalho ou capacidade de ação.
+
+Na prática, sua participação pode incluir:
+
+- desenvolver e amadurecer ideias com o ChatGPT, discutir problemas, levantar hipóteses e decidir o que deve ser pesquisado ou implementado;
+- receber prompts, planos, análises e documentos preparados pelo ChatGPT e transportá-los para o Google AI Studio;
+- recolher respostas, relatórios, diagnósticos e resultados do AI Studio e trazê-los de volta ao ChatGPT para interpretação;
+- organizar, criar, copiar e posicionar arquivos Markdown e outros materiais nos ambientes corretos;
+- quando uma ferramenta trava, perde contexto ou não consegue executar o fluxo esperado, preparar arquivos de continuidade, reconstruir o contexto, orientar novamente a leitura dos documentos e encontrar caminhos alternativos;
+- controlar a sincronização com o GitHub pela interface do AI Studio;
+- acompanhar o que foi alterado, avaliar os resultados, instalar APKs, explorar o aplicativo em uso real, identificar problemas e comunicar evidências;
+- tomar decisões de produto e coordenar a passagem entre pesquisa, planejamento, implementação e validação.
+
+Esse trabalho de coordenação, transporte de informação, recuperação de contexto e resolução de obstáculos é parte integrante do processo de desenvolvimento. Não deve ser tratado como esforço invisível ou como uma etapa trivial.
+
+### 10.2 Limites reais do Google AI Studio e sincronização GitHub
+
+O Google AI Studio trabalha sobre os arquivos disponíveis no seu ambiente de projeto conectado. Ele não deve ser tratado como um agente com acesso autônomo ao GitHub: não navega livremente pelo repositório remoto, não decide quando sincronizar e não aciona Pull ou Push por conta própria. Também não é responsável por criar commits de forma autônoma.
+
+A sincronização disponível é operada manualmente pelo usuário na interface:
+
+- **Pull:** o usuário aciona o botão; o conteúdo remoto do repositório conectado é trazido para atualizar os arquivos do ambiente de trabalho do AI Studio.
+- **Push:** o usuário aciona o botão; as alterações presentes no ambiente de trabalho são enviadas ao repositório conectado.
+
+Portanto, não atribuir ao AI Studio a iniciativa ou o controle dessas operações. É o usuário quem decide quando fazer Pull ou Push e quem efetivamente aciona os comandos. O AI Studio pode trabalhar nos arquivos que estão no ambiente após a sincronização, mas isso não equivale a acesso independente ao GitHub.
+
+A integração considerada neste processo está vinculada ao repositório ativo `enzonunezmachado/PROJETO-NEXUS-`. Não presumir que ela também sincronize o repositório documental `NEXUS-DOCUMENTACAO` ou o ATLAS.
+
+### 10.3 Fluxo operacional habitual
+
+O fluxo mais comum é uma colaboração iterativa, não uma automação contínua:
+
+1. O usuário apresenta uma ideia, necessidade, problema ou evidência ao ChatGPT.
+2. ChatGPT ajuda a pesquisar, analisar, planejar, decidir e preparar instruções proporcionais ao trabalho.
+3. O usuário transporta o prompt ou material para o Google AI Studio.
+4. O AI Studio lê e analisa os arquivos disponíveis no ambiente conectado e executa o escopo solicitado, quando possível.
+5. O usuário recolhe o retorno do AI Studio e o traz ao ChatGPT.
+6. ChatGPT ajuda a avaliar o resultado, conferir coerência, identificar lacunas e preparar correções ou próximos passos.
+7. Quando necessário, o usuário aciona **Push** na interface do AI Studio para enviar as alterações ao repositório GitHub.
+8. O GitHub Actions pode compilar, executar verificações e publicar o APK conforme o workflow existente.
+9. O usuário acompanha o resultado, instala o APK quando disponível, testa no dispositivo e traz as observações para nova análise.
+10. Documentação, decisões e próximos passos são atualizados conforme o impacto real.
+
+As etapas podem variar. Nem todo trabalho precisa percorrer todas elas, e a ordem pode exigir ajustes conforme a situação.
+
+### 10.4 Desvios, improvisos e recuperação do fluxo
+
+O fluxo acima descreve o caminho habitual, não uma garantia de que tudo funcionará linearmente. Na prática, limitações das ferramentas, perda de contexto, falhas de sincronização, respostas incompletas, interrupções ou tarefas maiores que um único prompt podem obrigar o usuário a executar atividades adicionais.
+
+Exemplos incluem reconstruir instruções, criar arquivos intermediários, separar ou reorganizar materiais, repetir operações, investigar por que uma etapa não funcionou, transportar conteúdo manualmente e adaptar o plano para continuar. Essas ações não são exceções irrelevantes: frequentemente são necessárias para tornar o processo viável.
+
+Ao propor um fluxo novo, considerar explicitamente:
+- o esforço de coordenação que recairá sobre o usuário;
+- quais ações dependem de intervenção manual;
+- quais informações precisam ser transportadas entre ambientes;
+- como retomar o trabalho quando uma ferramenta perde contexto ou falha;
+- como evitar repetição, ambiguidade e tarefas auxiliares desnecessárias.
+
+Não pressupor que basta enviar um prompt para que todo o trabalho aconteça, nem desenhar processos que dependam de capacidades que o AI Studio não possui. A solução deve reduzir a carga operacional do usuário, não transferir para ele uma quantidade desproporcional de burocracia.
+
+### 10.5 Princípio de colaboração
+
+ChatGPT contribui com raciocínio, pesquisa, planejamento, análise, documentação e preparação de instruções. Google AI Studio trabalha nos arquivos disponíveis em seu ambiente e implementa o que consegue dentro dos limites apresentados. GitHub mantém o repositório, histórico e automações configuradas. O usuário coordena a continuidade, controla as operações manuais, transporta informações, toma decisões e valida o comportamento real.
+
+Nenhum desses papéis deve ser confundido com os demais. Sempre declarar o que foi efetivamente feito, por quem e com qual evidência.
+
