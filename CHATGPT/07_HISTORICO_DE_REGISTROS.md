@@ -1,3 +1,13 @@
+## 2026-11-23 — Arquivamento de artefatos temporários de transferência entre IAs
+
+- O usuário esclareceu que atua como coordenador operacional da continuidade entre ChatGPT, Google AI Studio, GitHub e documentação: transporta prompts, relatórios, arquivos Markdown e instruções de retomada entre ambientes, além de acompanhar decisões e testes. A metodologia deve reconhecer esse trabalho de orquestração, não reduzir sua participação a sincronizar o repositório e instalar APKs.
+- Foram localizados na raiz do repositório ativo `PROJETO-NEXUS-` dois arquivos temporários usados na passagem de contexto: `OlhaaquiGoogle aStudio.md` (prompt de implementação visual/adaptativa) e `Veja aqui chat gpt` (relatório de retorno para análise).
+- Os conteúdos integrais foram copiados para `ARQUIVO/ARTEFATOS_DE_TRANSFERENCIA/2026-11-22_LOTE_VISUAL_ADAPTATIVO/` neste repositório documental, com nomes descritivos e README explicando sua natureza histórica.
+- Os arquivos arquivados foram relidos e comparados com os originais; ambos apresentaram conteúdo idêntico antes da remoção.
+- Após a verificação, os dois arquivos temporários foram removidos da raiz do repositório ativo. Nenhum código Android, documentação técnica vigente em `docs/`, ADR ou artefato interno do AI Studio foi alterado por essa limpeza.
+- A raiz de `PROJETO-NEXUS-` fica livre desses arquivos de passagem; os registros continuam recuperáveis no arquivo histórico do repositório NEXUS-DOCUMENTACAO.
+- Esta organização não estabelece uma pasta genérica de descarte: trata-se de arquivo histórico para artefatos operacionais de transferência entre ambientes.
+
 ## 2026-11-22 — BUG-001 persiste após o lote visual/adaptativo e rastreabilidade para ATLAS
 
 - Após instalar/testar a versão com o lote visual/adaptativo, o usuário relatou que girar celular ou tablet ainda pode retornar à tela inicial em diferentes abas.
