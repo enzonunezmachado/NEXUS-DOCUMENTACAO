@@ -2,6 +2,18 @@
 
 Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas.
 
+## 2026-11-22 — Feedback real da Agenda semanal e pesquisa adaptativa
+
+- Após instalar e testar a versão atual, o usuário gostou das mudanças em geral, mas considerou insatisfatória a composição da interface do tablet em orientação horizontal.
+- O usuário aprovou a aparência atual dos cartões semanais no celular e também a aparência dos cartões do Kanban no celular. A crítica à Agenda é principalmente de densidade: as informações dos dias ficaram compactas demais.
+- Nova direção para a visão semanal: o painel principal deve ocupar praticamente toda a altura útil, chegando próximo da barra inferior de navegação; a página semanal não deve rolar verticalmente como um todo.
+- Cada cartão de dia deve possuir rolagem interna independente quando houver mais tarefas/compromissos do que cabem na área disponível.
+- A linguagem visual dos cartões da Agenda deve alcançar a qualidade percebida nos cartões Kanban, compartilhando princípios de superfície, hierarquia, espaçamento e legibilidade, sem copiar mecanicamente a proporção horizontal ou a estrutura do Kanban.
+- O usuário pediu pesquisa de como plataformas e aplicações adaptam interfaces para diferentes dimensões, orientações e proporções de tela, para orientar uma proposta melhor ao Google AI Studio.
+- Pesquisa inicial em documentação oficial Android identificou window size classes por largura e altura, layouts canônicos de múltiplos painéis e orientações específicas sobre rolagem aninhada no Compose. Fontes e achados foram registrados em DIRECAO_LAYOUTS_ADAPTATIVOS.md.
+- Criada metodologia explícita para separar ideias capturadas, pesquisa, análise, proposta, aprovação, planejamento, implementação e validação.
+- Estado da IDEA-006 atualizado para em pesquisa / em análise. Não houve autorização para implementação nesta etapa; BUG-001 continua separado.
+
 ## 2026-11-22 — Grafite Suave, contornos e Agenda adaptativa
 
 - O usuário gostou da direção Grafite Suave, mas pediu uma tonalidade um pouco mais cinza e confortável. A paleta apresentada foi registrada como referência inicial, não como tokens finais: fundo #D4D7DC, superfície #E3E5E8, elevado #C9CED4, borda #B0B6BF, texto #121417, atraso #AD1E1E, conflito #874E00, positivo #136B31 e informação #1353A6.
@@ -61,7 +73,7 @@ Este arquivo registra consolidações realizadas nesta pasta. Não é um log int
 - Criada a estrutura inicial de CHATGPT.
 - Registrada a visão do NEXUS como centro de comando pessoal e profissional.
 - Separados princípios estratégicos, ideias, decisões, propostas encaminhadas e pendências.
-- Incorporado o relatório de reorganização documental técnica como proposta enviada/executada no workspace, com limitações de Git, build, testes e ZIP preservadas.
+- Incorporado o relatório de reorganização técnica como proposta enviada/executada no workspace, com limitações de Git, build, testes e ZIP preservadas.
 - Registradas as regras de governança para não confundir ideias com decisões e decisões com implementação.
 - Fontes consultadas: contexto persistente disponível, recuperação de conversas e documentos legados do repositório.
 
