@@ -23,7 +23,7 @@ Detalhes e critérios: [Problemas e correções pós-teste](TESTES/2026-11-21_TE
 | IDEA-003 | Onboarding: tutorial e integração da vida em fluxos separados | Capturada / em análise |
 | IDEA-004 | Central Financeira personalizável | Capturada / em análise |
 | IDEA-005 | Bloco Mercado no Financeiro independente dos favoritos | Capturada / em análise |
-| IDEA-006 | Layout adaptativo para celular, tablet e telas maiores; Agenda em painel duplo no tablet deitado e adaptação para telas tipo monitor | Capturada / em análise |
+| IDEA-006 | Layout adaptativo para celular, tablet e telas maiores; melhoria da densidade, rolagem independente dos cartões semanais e composição adaptativa da Agenda | Em pesquisa / em análise |
 | IDEA-007 | Temas visuais harmonizados; Grafite Suave é a direção preferida até aqui, mas precisa ficar um pouco mais cinza/confortável | Capturada / em análise; paleta e tokens não aprovados |
 | IDEA-008 | Splash screen e entrada visual | Capturada / em análise |
 | IDEA-009 | Animações discretas e acessíveis | Capturada / em análise |
@@ -55,10 +55,10 @@ Consultar GOOGLE_IA para detalhes e confirmar se houve atualização posterior. 
 
 ## 5. Próximos marcos
 
-1. Solicitar análise técnica consolidada ao Google AI Studio, sem autorização de implementação nesta etapa.
-2. Revisar a causa e a abrangência do BUG-001.
-3. Avaliar a proposta de COR-001 e confirmar todos os locais do símbolo redundante.
-4. Revisar a proposta de UX e priorizar melhorias sem quebrar os comportamentos positivos observados.
+1. Continuar a pesquisa da IDEA-006 sobre layouts adaptativos, distribuição em painéis, linguagem visual dos cartões e rolagem interna.
+2. Inspecionar a implementação atual da Agenda e do Kanban antes de definir uma proposta técnica.
+3. Produzir uma proposta consolidada e protótipo para validação do usuário, sem autorização automática de implementação.
+4. Revisar a causa e a abrangência do BUG-001 separadamente.
 5. Após aprovação explícita de escopo, criar lotes de implementação separados e registrar testes reais.
 6. Atualizar o estado de cada ID com evidências, commit/versão e resultado.
 
