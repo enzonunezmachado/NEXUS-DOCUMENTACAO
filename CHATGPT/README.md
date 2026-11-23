@@ -12,9 +12,10 @@
 6. [Pendências e direção futura](06_PENDENCIAS_E_DIRECAO_FUTURA.md)
 7. [Histórico de registros](07_HISTORICO_DE_REGISTROS.md)
 8. [Decisões de UX e produto](08_DECISOES_DE_UX_E_PRODUTO.md)
-9. [Experimentos e testes](TESTES/README.md) — cenários, evidências e resultados.
-10. [Problemas, correções e ideias após os testes](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md).
-11. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md) — exploração tipográfica, tema claro e layouts adaptativos.
+9. [Metodologia de pesquisa e desenvolvimento](09_METODOLOGIA_DE_PESQUISA_E_DESENVOLVIMENTO.md) — ciclo de vida das ideias, pesquisa, análise, aprovação e implementação.
+10. [Experimentos e testes](TESTES/README.md) — cenários, evidências e resultados.
+11. [Problemas, correções e ideias após os testes](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md).
+12. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md) — exploração tipográfica, tema claro e layouts adaptativos.
 
 ## Regra de interpretação
 
@@ -28,7 +29,7 @@
 
 ## Estados
 
-Capturada → Em análise → Consolidada → Aprovada → Enviada → Implementada → Validada. Estados alternativos: Pausada e Descartada.
+Capturada → Em pesquisa → Em análise → Proposta → Aprovada → Planejada → Em implementação → Implementada → Validada. Estados alternativos: Pausada e Descartada.
 
 Os estados não são necessariamente lineares. Uma proposta pode ser substituída ou reaberta. Não inventar datas, justificativas ou aprovações.
 
