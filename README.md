@@ -61,3 +61,8 @@ A pasta [docs/](docs/README.md) preserva documentos e registros da organização
 - Os 18 arquivos espelhados foram comparados com a origem e confirmados idênticos byte a byte.
 - Os documentos legados em `docs/` foram preservados.
 - A recuperação estratégica é parcial: não representa transcrição integral de todas as conversas.
+
+
+## Arquivo de artefatos operacionais
+
+A pasta [ARQUIVO/ARTEFATOS_DE_TRANSFERENCIA/](ARQUIVO/ARTEFATOS_DE_TRANSFERENCIA/2026-11-22_LOTE_VISUAL_ADAPTATIVO/README.md) preserva arquivos temporários de passagem de contexto entre ferramentas que foram retirados da raiz do repositório ativo do aplicativo. São registros históricos de trabalho, não documentação técnica vigente nem fonte de verdade da implementação.
