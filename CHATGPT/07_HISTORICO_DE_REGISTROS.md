@@ -1,6 +1,19 @@
+## 2026-11-22 — BUG-001 persiste após o lote visual/adaptativo e rastreabilidade para ATLAS
+
+- Após instalar/testar a versão com o lote visual/adaptativo, o usuário relatou que girar celular ou tablet ainda pode retornar à tela inicial em diferentes abas.
+- Exemplo explícito: abrir a edição de uma tarefa já existente, girar o dispositivo e perder a tela de edição, voltando à Home.
+- O BUG-001 permanece EM ABERTO. O lote visual/adaptativo não resolveu o problema funcional de preservação da rota e do estado de edição.
+- Atualizado o registro detalhado em 01_PROBLEMAS_E_CORRECOES.md com a nova evidência e o estado correto.
+- Reforçada a necessidade de investigar o padrão transversal de navegação e editores, não corrigir apenas uma tela isolada.
+- Localizado no repositório ativo o arquivo docs/HISTORICO_DOCUMENTACAO.md. Ele foi ampliado para ser o registro central de todos os lotes relevantes de atualização documental em /docs/, com caminhos, motivação, evidências, limites e itens não alterados.
+- Atualizados no repositório ativo docs/07_ESTADO_ATUAL.md e docs/12_RASTREABILIDADE.md para registrar persistência e critérios de validação do BUG-001.
+- O estudo de caso NEXUS no ATLAS será atualizado como aprendizado metodológico contextual; não será alterado o changelog do ATLAS oficial nem criada regra universal a partir de um único caso.
+- Nenhum código Android foi alterado; nenhum build, teste ou correção funcional foi executado nesta operação.
+- Os artefatos internos do Google AI Studio não foram acessados nem atualizados.
+
 # Histórico de registros da memória estratégica
 
-Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas.
+Este arquivo registra consolidações realizadas nesta pasta. Não é um log integral de conversas. Alterações relevantes em CHATGPT devem ser registradas aqui, incluindo motivo, documentos afetados e limites.
 
 ## 2026-11-22 — Feedback real da Agenda semanal e pesquisa adaptativa
 
