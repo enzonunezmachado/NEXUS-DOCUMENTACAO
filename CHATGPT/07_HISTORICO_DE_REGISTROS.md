@@ -1,3 +1,14 @@
+## 2026-11-23 — Captura de mecanismo complementar de execução por fases no AI Studio
+
+- Após esclarecer que a ideia não deveria ser excluída do registro, foi capturada uma possibilidade de trabalho para iniciativas grandes ou multifásicas: preparar no repositório ativo um pacote organizado de documentos Markdown, com README de orientação, plano geral, instruções separadas por fase, estado de execução e histórico cumulativo.
+- O usuário faria Pull manual no Google AI Studio e enviaria uma instrução inicial para o agente ler o README e seguir o roteiro. O agente executaria a fase autorizada, registraria o que fez e atualizaria o estado dos documentos; conforme o desenho futuro, poderia mover fases concluídas para uma pasta própria. O usuário poderia liberar a próxima fase com uma confirmação curta, como “OK, pode prosseguir”.
+- O histórico proposto deve registrar não só a conclusão de cada fase, mas também arquivos criados, alterados, removidos ou movidos, verificações realmente executadas, resultados, limitações e bloqueios. Isso permitiria ao ChatGPT consultar o histórico no GitHub e compreender a execução, sem impedir que o usuário continue trazendo os relatórios conversacionais do AI Studio.
+- A estrutura de pastas e o ciclo foram documentados como proposta conceitual na seção 11 de `CHATGPT/09_METODOLOGIA_DE_PESQUISA_E_DESENVOLVIMENTO.md`. A árvore apresentada é ilustrativa e deverá ser adaptada a um caso real.
+- Estado: CAPTURADA / EM ANÁLISE. É uma opção experimental complementar ao fluxo iterativo habitual, não uma substituição, não uma adoção obrigatória e não uma autorização para criar imediatamente a estrutura no repositório ativo.
+- Critérios para decidir seu uso: tamanho e decomposição natural do trabalho, dependências entre fases, repetição de prompts, necessidade de continuidade, rastreabilidade, esforço de preparação e manutenção, supervisão humana e valor da comunicação direta entre usuário, ChatGPT e AI Studio.
+- Limites: o AI Studio continua sem acesso autônomo ao GitHub; Pull e Push permanecem operações manuais acionadas pelo usuário. O mecanismo não autoriza o agente a avançar além da fase liberada, apagar instruções sem preservar histórico ou ampliar o escopo por conta própria.
+- Nenhum código Android, repositório ativo `PROJETO-NEXUS-`, workflow ou configuração do Google AI Studio foi alterado. Esta atualização afeta somente a memória estratégica em `NEXUS-DOCUMENTACAO/CHATGPT/`.
+
 ## 2026-11-23 — Formalização do papel operacional do usuário e dos limites de sincronização do AI Studio
 
 - A metodologia estratégica foi ampliada para descrever o usuário como coordenador operacional e ponte humana entre ChatGPT, Google AI Studio, GitHub e o dispositivo Android.
@@ -6,7 +17,7 @@
 - Foi esclarecido o limite operacional do Google AI Studio: ele trabalha sobre os arquivos presentes no ambiente conectado, mas não possui acesso autônomo ao GitHub, não decide nem aciona Pull/Push por conta própria e não deve ser descrito como responsável por criar commits autonomamente.
 - Pull e Push são acionados manualmente pelo usuário na interface: Pull atualiza o ambiente de trabalho a partir do repositório conectado; Push envia ao repositório as alterações do ambiente.
 - A formalização foi incluída em `CHATGPT/09_METODOLOGIA_DE_PESQUISA_E_DESENVOLVIMENTO.md`, nas seções 10.1–10.5.
-- Limite desta atualização: não foi documentada nem aprovada uma nova arquitetura de pastas para execução por fases com confirmações sucessivas; essa ideia foi explicitamente reservada para discussão futura e não faz parte desta formalização.
+- Limite daquela atualização: o mecanismo de execução por fases ainda não fazia parte do registro naquele momento; ele foi capturado posteriormente em entrada própria de 23/11/2026, como possibilidade experimental e complementar.
 - Nenhum código Android, documentação técnica vigente do repositório ativo, workflow, artefato interno do AI Studio ou configuração de sincronização foi alterado nesta operação.
 
 ## 2026-11-23 — Arquivamento de artefatos temporários de transferência entre IAs
