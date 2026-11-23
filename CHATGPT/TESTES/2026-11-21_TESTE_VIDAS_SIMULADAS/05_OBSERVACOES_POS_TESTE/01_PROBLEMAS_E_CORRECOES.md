@@ -7,9 +7,9 @@
 
 - **Classificação:** defeito funcional observado pelo usuário.
 - **Prioridade sugerida:** alta.
-- **Estado:** OBSERVADO / SOLICITADA / investigação técnica pendente.
-- **Abrangência relatada:** comportamento recorrente em diferentes abas e fluxos, não apenas em Eventos.
-- **Comportamento relatado:** durante a criação ou edição de um registro, ao girar o telefone, o aplicativo retorna à página inicial e perde o conteúdo digitado ou o progresso da edição. O usuário precisa recomeçar.
+- **Estado:** **EM ABERTO — persistiu após o lote visual/adaptativo**, com novo relato de uso em 22/11/2026. A correção não está validada.
+- **Abrangência relatada:** comportamento recorrente em diferentes abas e fluxos, não apenas em Eventos. Em 22/11/2026, após instalar/testar a versão que continha o lote visual/adaptativo, o usuário voltou a relatar o problema em celular e tablet.
+- **Comportamento relatado:** durante a criação ou edição de um registro, ao girar o telefone/tablet, o aplicativo retorna à página inicial e perde o contexto da operação. Em novo relato de 22/11/2026, o exemplo explícito foi editar uma tarefa já existente e voltar à tela inicial ao girar o aparelho.
 - **Exemplos mencionados:** formulário de evento, edição de dados e menu de três pontos.
 - **Resultado esperado:** a rotação deve preservar a tela atual, navegação, valores preenchidos, seleções, diálogos/menus relevantes e o progresso da edição.
 - **Investigação necessária no código:**
@@ -22,7 +22,7 @@
 - **Distinção importante:** rotação/recriação de Activity é diferente de encerramento forçado ou morte do processo. A análise deve declarar quais cenários serão cobertos.
 - **Critério de validação futuro:** iniciar criação/edição em diferentes abas, preencher campos e seleções, girar o dispositivo em diferentes etapas e confirmar que tela, dados e progresso permanecem. Repetir em fluxos com menus/diálogos e, se suportado, após recriação do processo.
 - **Relação com IDEA-006:** além da preservação de estado, a interface deve reorganizar-se conforme orientação e tamanho da janela. Em tablet deitado, a Agenda poderá manter calendário/dias de um lado e itens do dia selecionado do outro. Essa adaptação visual deve ser especificada e validada separadamente da persistência do estado.
-- **Não confirmado:** causa exata, telas afetadas individualmente, solução técnica, cobertura de testes automatizados e versão em que será corrigido.
+- **Não confirmado:** causa exata, telas afetadas individualmente, solução técnica, cobertura de testes automatizados e versão em que será corrigido. O relato mais recente confirma persistência no uso após o lote visual/adaptativo, mas não substitui auditoria atual do código nem determina sozinho a abrangência completa.
 
 ## COR-001 — Remover o N verde redundante antes do nome NEXUS
 
@@ -50,7 +50,7 @@ Qualquer refatoração futura deve preservar a distinção semântica entre atra
 
 | ID | Estado atual | Quando atualizar |
 |---|---|---|
-| BUG-001 | Observado; correção solicitada; causa desconhecida | Após análise técnica, implementação e teste de rotação |
+| BUG-001 | EM ABERTO; novo relato de persistência após o lote visual/adaptativo em 22/11/2026; causa ainda não confirmada | Auditoria técnica transversal, proposta de correção, implementação autorizada e teste de rotação em dispositivo |
 | COR-001 | Correção visual solicitada; não implementada | Após localizar ocorrências, alterar e revisar telas |
 
 Ao concluir uma correção, registrar commit/versão, arquivos afetados, teste executado, resultado e limitações. Só usar **VALIDADO** quando houver evidência funcional adequada.
