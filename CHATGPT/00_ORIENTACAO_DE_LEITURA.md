@@ -8,7 +8,7 @@ Esta pasta preserva visão, decisões de produto, ideias, pesquisas, propostas, 
 - `04_DECISOES_ESTRATEGICAS.md`: decisões estratégicas aprovadas/consolidadas, dentro do escopo indicado.
 - `03_IDEIAS_E_BRAINSTORMS.md`: catálogo de ideias sem autoridade automática.
 - `06_PENDENCIAS_E_DIRECAO_FUTURA.md`: itens em avaliação e pendências; não é fila de implementação autorizada.
-- `PROPOSTAS/`: pesquisas e propostas; não substituem decisões vigentes.
+- `PROPOSTAS/`: pesquisas e propostas; não substituem decisões vigentes. A rodada de arquitetura da informação de 24/11/2026 está em `PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/`; consulte seu README e a comparação crítica antes de reutilizar ideias.
 - `TESTES/`: experimentos e evidências contextualizadas, não especificações normativas.
 - Prompts enviados e históricos registram o que foi discutido ou enviado, não provam implementação.
 
