@@ -41,9 +41,13 @@ Em caso de divergência, registrar o conflito e verificar a fonte correspondente
 
 Não modificar o repositório ativo ao realizar manutenção documental neste repositório. A sincronização de GOOGLE_IA é uma cópia controlada, não uma autorização para alterar o código.
 
+## Propostas recentes de arquitetura e experiência
+
+As análises independentes da rodada de 24/11/2026 foram organizadas em [`CHATGPT/PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/`](CHATGPT/PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md). A pasta contém a proposta do Claude, relatórios anteriores, uma comparação crítica e um prompt-base para novas análises. Tudo permanece em estado **EM ANÁLISE**; nenhuma proposta foi aprovada ou implementada.
+
 ## Conteúdo legado
 
-O arquivo [NEXUS_ARCHITECTURE_AND_PROGRESS.md](NEXUS_ARCHITECTURE_AND_PROGRESS.md) na raiz também é um registro histórico de uma fase anterior; não representa a arquitetura atual sem confirmação técnica.
+O registro histórico [NEXUS_ARCHITECTURE_AND_PROGRESS.md](ARQUIVO/LEGADO_RAIZ/2026-11-20_NEXUS_ARCHITECTURE_AND_PROGRESS.md) foi retirado da raiz e preservado em `ARQUIVO/LEGADO_RAIZ/`; descreve uma fase anterior e não representa a arquitetura atual sem confirmação técnica.
 
 A pasta [docs/](docs/README.md) preserva documentos e registros da organização documental anterior, incluindo o Documento Mestre histórico, decisões de UX, especificações antigas e logs de revisão. Ela é fonte histórica de recuperação, não uma terceira área de documentação vigente. Consulte os índices de GOOGLE_IA e CHATGPT para saber onde cada informação foi consolidada.
 
