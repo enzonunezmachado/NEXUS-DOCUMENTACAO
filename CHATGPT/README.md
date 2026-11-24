@@ -1,5 +1,7 @@
 # CHATGPT — Memória estratégica do NEXUS
 
+> **Leitura obrigatória:** consulte primeiro [`00_ORIENTACAO_DE_LEITURA.md`](./00_ORIENTACAO_DE_LEITURA.md). Ideias, pesquisas e propostas não substituem decisões aprovadas nem autorizam implementação.
+
 > Área dedicada à memória conceitual, estratégica e histórica construída nas conversas com o ChatGPT. Não substitui a documentação técnica nem comprova implementação.
 
 ## Como navegar
