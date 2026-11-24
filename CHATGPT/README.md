@@ -18,6 +18,7 @@
 10. [Experimentos e testes](TESTES/README.md) — cenários, evidências e resultados.
 11. [Problemas, correções e ideias após os testes](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md).
 12. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md) — exploração tipográfica, tema claro e layouts adaptativos.
+13. [Rodada de arquitetura da informação — 24/11/2026](PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md) — proposta do Claude, alternativas anteriores, comparação crítica e prompt-base para novas IAs.
 
 ## Regra de interpretação
 
