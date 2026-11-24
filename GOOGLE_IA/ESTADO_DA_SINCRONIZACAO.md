@@ -1,6 +1,6 @@
 # Estado da sincronização GOOGLE_IA
 
-**Última sincronização:** 2026-11-21  
+**Última sincronização:** 2026-11-23  
 **Origem:** `enzonunezmachado/PROJETO-NEXUS-`  
 **Branch:** `main`  
 **Destino:** `enzonunezmachado/NEXUS-DOCUMENTACAO`  
@@ -16,9 +16,10 @@ Conteúdo espelhado:
 - `HISTORICO_DOCUMENTACAO.md`;
 - três documentos em `docs/archive/`.
 
-**Total esperado: 18 arquivos Markdown** (índice + 13 documentos numerados + histórico metodológico + 3 arquivos arquivados).
+**Total esperado: 19 arquivos Markdown** (índice + 13 documentos numerados + histórico metodológico + 3 arquivos arquivados).
 
-Nesta rodada foram adicionados ao espelho:
+Nesta rodada (2026-11-23) foram adicionados ao espelho:
+- `docs/00_ORIENTACAO_E_AUTORIDADE.md` (orientação obrigatória de leitura e autoridade).
 - `docs/13_GOVERNANCA_DOCUMENTAL.md`;
 - `docs/HISTORICO_DOCUMENTACAO.md`.
 
@@ -42,3 +43,18 @@ Também foram corrigidos no repositório ativo e sincronizados para o espelho:
 - Os 18 arquivos Markdown foram comparados por SHA de blob do GitHub, e os 18 hashes coincidiram com os arquivos correspondentes da origem.
 - Não foram executados build, testes Android, exportação ou inspeção de ZIP.
 - Nenhum código Android foi alterado.
+
+
+## Atualização de autoridade documental — 2026-11-23
+
+O espelho técnico recebeu as atualizações de governança do repositório ativo:
+- novo `GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md`;
+- atualização do índice técnico, Documento Mestre, ADR-003, governança e histórico documental.
+
+A memória estratégica recebeu:
+- `CHATGPT/00_ORIENTACAO_DE_LEITURA.md`;
+- referências obrigatórias nos READMEs;
+- alinhamento da visão estratégica sobre profundidade acessível, clareza das conexões e adaptação a telas maiores;
+- esclarecimento de que a diretriz local-first/offline-first está vigente e pode ser revista formalmente, mas não é revogada por propostas em análise.
+
+**Limites:** commits documentais realizados nos dois repositórios; nenhum código Android foi alterado. Os artefatos internos do Google AI Studio não foram acessados nem atualizados. A sincronização dos arquivos Markdown do espelho técnico foi realizada a partir dos arquivos do repositório ativo; a comparação de hashes completa deverá ser verificada separadamente.
