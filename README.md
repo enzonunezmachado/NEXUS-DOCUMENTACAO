@@ -1,5 +1,7 @@
 # NEXUS — CENTRAL DE DOCUMENTAÇÃO
 
+> **Leitura obrigatória:** consulte [`GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md`](GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md) para autoridade técnica e [`CHATGPT/00_ORIENTACAO_DE_LEITURA.md`](CHATGPT/00_ORIENTACAO_DE_LEITURA.md) para interpretar a memória estratégica. Propostas e brainstorms não revogam decisões vigentes.
+
 > **Repositório:** [enzonunezmachado/NEXUS-DOCUMENTACAO](https://github.com/enzonunezmachado/NEXUS-DOCUMENTACAO)
 > **Finalidade:** preservar a memória técnica, estratégica e histórica do projeto NEXUS.
 
