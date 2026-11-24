@@ -17,10 +17,12 @@ Este arquivo registra decisões estratégicas discutidas com o usuário. Não su
 - **Contexto:** preocupação explícita com custo de criação e utilização do NEXUS.
 - **Consequência:** avaliar dependências externas pelo custo, limites, disponibilidade e possibilidade de fallback. Não prometer gratuidade irrestrita de serviços de terceiros.
 
-## DEC-STR-003 — Autonomia dos dados e funcionamento offline
-- **Status:** Diretriz estratégica consolidada
-- **Decisão:** priorizar dados locais, operação offline-first, sem conta obrigatória e sem backend/Firebase obrigatório.
-- **Consequência:** backup e restauração são capacidades essenciais; integrações externas devem ser opcionais.
+## DEC-STR-003 — Autonomia dos dados e funcionamento local-first/offline-first
+- **Status:** Diretriz estratégica vigente e revisável; não é proibição permanente.
+- **Decisão atual:** priorizar dados locais e funcionamento offline-first, sem conta, backend proprietário ou sincronização em nuvem obrigatórios para o uso essencial.
+- **Alcance:** integrações externas opcionais podem utilizar rede quando agregarem valor e forem avaliadas; o módulo Mercado já utiliza provedores externos com cache local.
+- **Regra de revisão:** propostas de sincronização, backend, IA remota ou integrações financeiras não alteram esta diretriz até aprovação explícita e atualização do ADR-003/documentos técnicos afetados.
+- **Consequência:** backup e restauração são capacidades essenciais; serviços externos devem ter custos, limites, privacidade, segurança e alternativas avaliados.
 
 ## DEC-STR-004 — Separação entre intenção estratégica e realidade técnica
 - **Status:** Aprovada como regra documental
