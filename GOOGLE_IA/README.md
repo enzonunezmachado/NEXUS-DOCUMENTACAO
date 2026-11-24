@@ -9,6 +9,10 @@ Esta pasta preserva a documentação técnica produzida e mantida pelo ambiente 
 3. `GOOGLE_IA/docs/` aqui: espelho dos arquivos técnicos versionados, para continuidade e consulta.
 4. Artefatos internos do AI Studio, especialmente `NEXUS_CONTINUIDADE`: memória operacional complementar, nunca fonte única.
 
+## Orientação obrigatória
+
+Antes de consultar este espelho, leia [`docs/00_ORIENTACAO_E_AUTORIDADE.md`](docs/00_ORIENTACAO_E_AUTORIDADE.md). A origem continua sendo o diretório `docs/` do repositório ativo.
+
 ## Estrutura espelhada
 
 A árvore `docs/` reproduz os caminhos da origem:
