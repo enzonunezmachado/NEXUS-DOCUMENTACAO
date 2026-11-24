@@ -6,6 +6,8 @@
 
 ## 1. O que é o NEXUS
 
+**Leitura de autoridade:** esta visão é estratégica. Para interpretar estados, propostas e conflitos, consulte [`00_ORIENTACAO_DE_LEITURA.md`](./00_ORIENTACAO_DE_LEITURA.md). Para a realidade implementada, prevalecem o código e os documentos técnicos vigentes.
+
 NEXUS é concebido como um centro de comando pessoal e profissional. Não é apenas um gerenciador de tarefas, calendário ou aplicativo financeiro. Sua ambição é reunir informações e responsabilidades que normalmente ficam espalhadas entre ferramentas, conversas e lembranças, oferecendo uma visão coerente do que está acontecendo, do que vem a seguir e do que exige atenção.
 
 O valor central é reduzir a carga mental de lembrar, acompanhar e coordenar responsabilidades. O sistema deve oferecer segurança e tranquilidade operacional para que a pessoa possa agir, criar e viver sem precisar manter tudo na cabeça.
@@ -22,11 +24,13 @@ O NEXUS busca centralizar esse contexto sem apagar as diferenças entre os tipos
 - **Segurança operacional:** transmitir confiança de que informações, prazos e responsabilidades estão organizados.
 - **Visão integrada:** módulos podem compartilhar contexto, sem criar registros duplicados.
 - **Fonte única de verdade:** um mesmo fato não deve ser cadastrado várias vezes apenas para aparecer em telas diferentes.
-- **Offline-first:** funções essenciais devem continuar úteis sem conexão.
+- **Local-first / offline-first:** funções essenciais devem continuar úteis sem conexão. A arquitetura técnica vigente está registrada no ADR-003; propostas de sincronização ou serviços externos não a alteram sem aprovação formal.
 - **Gratuidade como princípio de produto:** a criação e o uso essencial devem ser gratuitos; não depender de APIs pagas, assinatura ou infraestrutura obrigatória.
 - **Autonomia e controle dos dados:** priorizar armazenamento local, sem conta obrigatória, backend ou Firebase obrigatório, com backup/exportação sob controle do usuário.
 - **Clareza acima de quantidade:** apresentar muita informação com pouca confusão.
-- **Divulgação progressiva:** a tela inicial resume; módulos especializados oferecem detalhes.
+- **Profundidade acessível:** a experiência deve ser concisa e agradável sem esconder complexidade útil. Gráficos, indicadores, históricos e relações entre registros devem estar disponíveis quando necessários, sem despejar tudo na tela inicial.
+- **Clareza das conexões:** não basta reunir módulos; a experiência deve tornar perceptível como tempo, atividades, eventos, projetos e dinheiro se relacionam.
+- **Adaptação ao espaço:** tablets em retrato/paisagem e ambientes como Samsung DeX devem aproveitar espaço adicional para mostrar mais contexto e permitir operações simultâneas, sem simplesmente esticar a interface.
 - **Evolução incremental:** desenvolver em lotes, preservando dados e funcionalidades.
 - **Honestidade informacional:** não inventar registros, cotações, status ou resultados para preencher lacunas.
 
