@@ -1,113 +1,152 @@
 # 05 — Plano de evolução e questões abertas
 
 **Estado:** EM ANÁLISE  
-**Natureza:** plano preparatório; não é roadmap técnico aprovado nem autorização de implementação.
+**Natureza:** sequência de investigação e preparação; não é roadmap técnico aprovado nem autorização de implementação.
 
-## 1. Sequência de trabalho proposta
+## 1. Ordem de trabalho recomendada
 
-### Fase 1 — Auditoria do aplicativo real
-- Inspecionar telas, componentes, navegação, ícones, cores, contornos, estados e interações atuais.
-- Mapear divergências entre Agenda, Tarefas, Home, Eventos, Financeiro e Mercado.
-- Verificar responsividade e comportamento com poucos/muitos registros.
-- Confrontar documentação com código e registrar fatos, hipóteses e inconsistências separadamente.
+A reformulação não deve começar por redesenhar telas isoladas. Primeiro é necessário entender o produto real, depois definir arquitetura e linguagem, e só então especificar e aplicar componentes.
 
-**Saída esperada:** inventário de experiência atual e mapa de problemas com evidências.
+### Fase 1 — Auditoria da experiência e da implementação atual
 
-### Fase 2 — Validação da arquitetura da informação
-- Avaliar a proposta Claude contra os módulos, dados e fluxos reais.
-- Revisar destinos, nomenclaturas, hierarquia e relações.
-- Testar fluxos ponta a ponta: organizar semana, preparar evento, acompanhar projeto, executar tarefas e consultar finanças.
-- Preservar funções importantes que não se encaixem naturalmente na proposta sem forçar agrupamentos.
+- Inspecionar o aplicativo Android real, não apenas protótipos ou referências.
+- Inventariar áreas, telas, fluxos, componentes, ícones, cores, bordas e estados.
+- Registrar o comportamento real de consulta, edição, conclusão, expansão e navegação.
+- Verificar celular, tablet, retrato e paisagem.
+- Avaliar telas com poucos e muitos registros.
+- Confrontar interface, código, modelo de dados e documentação técnica.
 
-**Saída esperada:** arquitetura candidata comparada com alternativas, ainda sujeita à decisão humana.
+**Saída:** diagnóstico com evidências, separando fatos, problemas observados, hipóteses e lacunas.
 
-### Fase 3 — Linguagem visual
-- Definir princípios de identidade, tipografia, espaçamento, superfícies, bordas, cores e ícones.
-- Resolver responsabilidades de cores de tipo, estado, categoria, relação e seleção.
-- Fazer remapeamento de símbolos da Agenda e comparar com os demais módulos.
-- Preservar a sobriedade e evitar agressividade visual.
+### Fase 2 — Modelo mental e mapa de entidades
 
-**Saída esperada:** proposta de linguagem visual e matriz semântica para validação.
+- Mapear o que são Tarefa, Evento, Projeto, Objetivo, Meta e registros financeiros.
+- Identificar relações, cardinalidades, dependências e regras reais.
+- Distinguir domínio, destino, lente, ferramenta transversal e agrupador.
+- Verificar quais relações são diretas e quais são apenas contextuais.
+- Identificar funcionalidades e áreas que não podem desaparecer na reorganização.
 
-### Fase 4 — Sistema de componentes e interação
-- Definir padrões de cards compactos, expansíveis, linhas, chips, fichas e controles.
-- Definir contrato entre consulta, expansão, edição, conclusão e navegação.
-- Especificar regras de densidade e estados vazios.
-- Preparar componentes reutilizáveis sem apagar particularidades de cada entidade.
+**Saída:** mapa conceitual e glossário de entidades, validado contra o modelo e o código.
 
-**Saída esperada:** catálogo de padrões e comportamentos.
+### Fase 3 — Arquitetura da informação
 
-### Fase 5 — Experiências das entidades
-Explorar primeiro:
-1. Ficha/apresentação de Evento.
-2. Ficha de Projeto.
-3. Ficha de Objetivo.
-4. Ficha de Tarefa.
-5. Ficha de registro financeiro.
+- Comparar a proposta Claude com alternativas realmente diferentes.
+- Revisar destinos, nomes, agrupamentos e descoberta.
+- Avaliar Hoje, Agenda, Tarefas, Planejamento, Dinheiro, Mercado e demais áreas.
+- Testar fluxos ponta a ponta: organizar semana, preparar evento, acompanhar projeto, executar tarefas, revisar o dia e consultar finanças.
+- Avaliar celular e tablet desde a arquitetura, não apenas no final.
 
-A escolha inicial de Evento, Projeto e Financeiro foi sugerida por oferecerem contrastes úteis de apresentação. A inclusão de Objetivo e Tarefa é necessária para validar a rede de relações e a densidade operacional.
+**Saída:** alternativas comparadas e uma arquitetura candidata para decisão humana.
 
-**Saída esperada:** fluxos e protótipos conceituais validados antes de implementação.
+### Fase 4 — Linguagem visual e semântica
 
-### Fase 6 — Aplicação por área
-Aplicar a direção aprovada nas áreas principais, sem perder requisitos, filtros, ferramentas, histórico ou regras atuais.
+- Auditar o Design System existente antes de propor substituições.
+- Definir princípios de tipografia, espaçamento, superfícies, bordas, raios e hierarquia.
+- Separar as responsabilidades de tipo, estado, relação, categoria e seleção.
+- Remapear ícones da Agenda e comparar com os demais módulos.
+- Explorar personalidade por domínio sem fragmentar a identidade.
+- Validar contraste, tema claro/escuro e acessibilidade.
 
-### Fase 7 — Adaptação e refinamento
-- Celular retrato/paisagem e tablets.
-- Transições, microinterações e animações.
-- Acessibilidade, contraste, movimento reduzido e desempenho.
-- Revisão de estados vazios e listas grandes.
+**Saída:** proposta visual, inventário semântico e exemplos em contextos reais.
 
-### Fase 8 — Validação
-- Testar cenários com poucos e muitos registros.
-- Testar registros com múltiplos vínculos.
-- Testar conclusão, edição, navegação e retorno.
-- Verificar consistência de status e cores em todos os contextos.
-- Executar testes funcionais e de regressão apropriados.
+### Fase 5 — Componentes, fichas e interações
+
+- Definir quando usar linha, card compacto, card expressivo, expansão ou ficha completa.
+- Criar padrões especializados por entidade.
+- Definir contrato entre concluir, consultar, expandir, editar, navegar e excluir.
+- Especificar estados vazios, poucos registros e listas densas.
+- Definir relações contextuais sem exposição excessiva.
+- Preparar componentes reutilizáveis sem abstrações prematuras.
+
+**Saída:** catálogo de componentes e comportamentos com exemplos e critérios de uso.
+
+### Fase 6 — Protótipos e validação de fluxos
+
+Explorar entidades contrastantes, por exemplo Evento, Projeto, Tarefa e registro financeiro. Validar também relações entre elas.
+
+Testar:
+- Visão compacta e ficha completa.
+- Poucos e muitos registros.
+- Um registro com múltiplos vínculos.
+- Conclusão direta e edição.
+- Navegação entre fichas e retorno.
+- Diferentes tamanhos e orientações de tela.
+
+**Saída:** experiência conceitual validada antes de qualquer implementação ampla.
+
+### Fase 7 — Planejamento técnico e implementação incremental
+
+Somente após aprovação:
+- Separar mudanças de apresentação das mudanças de domínio/dados.
+- Identificar componentes e telas afetados no código real.
+- Definir dependências, lotes pequenos, reversíveis e testáveis.
+- Especificar critérios de aceite e testes de regressão.
+- Atualizar documentação técnica oficial no repositório ativo.
+- Sincronizar o espelho e artefatos internos relevantes do AI Studio.
+
+**Saída:** plano técnico autorizado, com escopo e critérios verificáveis.
+
+### Fase 8 — Refinamento e validação contínua
+
+- Aplicar responsividade e composições para tablets.
+- Refinar transições, feedbacks e microinterações.
+- Verificar acessibilidade, desempenho e movimento reduzido.
+- Testar integridade de dados, cálculos, histórico, estados e navegação.
+- Comparar a implementação real com os protótipos e critérios aprovados.
+
+**Saída:** evidências de validação e registro do que foi efetivamente implementado.
 
 ## 2. Questões críticas ainda abertas
 
-### Cores e relações
-- Manter a semântica de status existente e adicionar canal contextual separado?
-- Como uma tarefa com vários vínculos é representada?
-- Como evitar que cor de projeto conflite com atraso, conflito ou conclusão?
-- O marcador contextual é cor, faixa, ponto, chip ou combinação?
+### Arquitetura e modelo mental
+- Qual a diferença exata entre Objetivo, Projeto, Meta e Evento?
+- Quais áreas são domínios, destinos ou lentes?
+- Cinco destinos melhoram a descoberta ou criam agrupamentos artificiais?
+- “Planos” ou “Planejamento” comunica corretamente a função?
+- Como manter Eventos, Mercado e Biblioteca de Frases fáceis de encontrar?
 
-### Modelo mental e hierarquia
-- Qual a definição de Objetivo, Projeto, Evento e Meta no modelo atual?
-- Quais relações são diretas e quais são apenas contextuais?
-- A proposta de agrupar Objetivos, Projetos e Eventos em Planos melhora descoberta?
+### Cores e símbolos
+- Qual canal deve representar relação sem competir com status?
+- Como lidar com múltiplos vínculos?
+- Quais cores, ícones e contornos atuais são regras semânticas?
+- Quais símbolos da Agenda devem mudar?
+- Como garantir reconhecimento sem depender de cor?
 
 ### Apresentação
-- Quais entidades merecem capa/imagem?
-- Quando card deve expandir e quando deve navegar?
-- Quantos itens relacionados devem aparecer antes de “Ver todas”?
-- Como lidar com espaço vazio sem inventar conteúdo?
+- Quais entidades precisam de capa ou imagem?
+- Quando expandir e quando abrir ficha?
+- Como adaptar composição a poucos e muitos registros?
+- Quais informações podem ser omitidas no resumo sem perder contexto?
 
-### Interação
-- Em quais contextos a tarefa pode ser concluída diretamente?
-- Como a ação se comporta para recorrências, tarefas bloqueadas ou estados especiais?
-- Como separar ícone de tipo de checkbox de ação?
-- Como preservar o estado ao navegar e voltar?
+### Interação e navegação
+- Em quais contextos a conclusão direta é permitida?
+- Como tratar recorrências e estados especiais?
+- Qual contexto deve ser preservado ao retornar?
+- Como evitar sobreposição de fichas e ações acidentais?
 
-### Implementação e arquitetura
-- Quais componentes atuais podem ser reaproveitados?
-- Quais telas exigem reorganização ampla?
-- Que mudanças são puramente visuais e quais alteram regras, dados ou navegação?
-- Como dividir a implementação em lotes pequenos, testáveis e reversíveis?
+### Arquitetura técnica
+- Quais mudanças são apenas de apresentação?
+- Quais exigem alteração de navegação, estado, modelo ou regras?
+- Quais componentes podem ser reaproveitados?
+- Como manter modularidade sem criar abstrações para hipóteses ainda não validadas?
 
-## 3. Critérios de conclusão da iniciativa
+## 3. Critérios para considerar a reformulação bem-sucedida
 
-A reformulação só poderá ser considerada concluída quando:
-- A arquitetura de navegação tiver sido aprovada e implementada sem perda funcional.
-- As entidades tiverem apresentação e fichas coerentes com seus papéis.
-- Símbolos e controles não produzirem expectativas contraditórias.
-- Status e relações forem distinguíveis e acessíveis.
-- O layout funcionar com volumes baixos e altos de conteúdo.
-- Os fluxos entre registros forem navegáveis e previsíveis.
-- Celular e tablet apresentarem composições adequadas.
-- Testes e validações de regressão confirmarem a integridade das regras existentes.
+- A arquitetura facilita encontrar e compreender as informações.
+- As entidades mantêm identidade e fichas coerentes.
+- A interface tem personalidade sem perder sobriedade.
+- A densidade se adapta à quantidade e à natureza dos dados.
+- Tipos, estados, relações e ações não se confundem.
+- Conclusão, consulta, edição e navegação são previsíveis.
+- A profundidade continua acessível.
+- Celular e tablet têm composições adequadas.
+- Nenhuma regra, dado, histórico ou funcionalidade é perdida sem decisão explícita.
+- Testes e evidências confirmam a integridade da implementação.
 
 ## 4. Regra de execução
 
-Cada fase deverá ter escopo, dependências, arquivos/componentes envolvidos, critérios de aceite e testes. O Google AI Studio não deve receber um pedido único e amplo para reconstruir todo o aplicativo sem decomposição, inspeção e aprovação. Nenhuma implementação começa apenas porque uma ideia foi registrada aqui.
+Nenhuma fase autoriza automaticamente a seguinte. Cada etapa precisa de escopo, evidências, decisões pendentes e critérios de aceite.
+
+Não enviar ao Google AI Studio um pedido único para reconstruir o aplicativo inteiro. A implementação deve acontecer em etapas delimitadas, com inspeção do código, documentação técnica coerente, testes e validação no app real.
+
+Registrar uma ideia nesta pasta não significa aprová-la. Aprovar uma direção visual não significa aprovar alteração no modelo de dados. E uma implementação só pode ser declarada após evidência no código e validação.
