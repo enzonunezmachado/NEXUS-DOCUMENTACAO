@@ -1,16 +1,16 @@
 # NEXUS — CENTRAL DE DOCUMENTAÇÃO
 
-> **Leitura obrigatória:** consulte [`GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md`](GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md) para autoridade técnica e [`CHATGPT/00_ORIENTACAO_DE_LEITURA.md`](CHATGPT/00_ORIENTACAO_DE_LEITURA.md) para interpretar a memória estratégica. Propostas e brainstorms não revogam decisões vigentes.
+> **Leitura obrigatória:** consulte [GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md](GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md) para autoridade técnica e [CHATGPT/00_ORIENTACAO_DE_LEITURA.md](CHATGPT/00_ORIENTACAO_DE_LEITURA.md) para interpretar a memória estratégica. Propostas e brainstorms não revogam decisões vigentes.
 
-> **Repositório:** [enzonunezmachado/NEXUS-DOCUMENTACAO](https://github.com/enzonunezmachado/NEXUS-DOCUMENTACAO)
+> **Repositório:** [enzononunezmachado/NEXUS-DOCUMENTACAO](https://github.com/enzonunezmachado/NEXUS-DOCUMENTACAO)
 > **Finalidade:** preservar a memória técnica, estratégica e histórica do projeto NEXUS.
 
 Este repositório é a memória duradoura do NEXUS. Ele separa duas fontes complementares para que uma nova pessoa ou IA consiga compreender tanto a engenharia do aplicativo quanto a evolução das ideias e decisões que orientam o produto.
 
 ## Comece por aqui
 
-1. **[GOOGLE_IA/](GOOGLE_IA/README.md)** — documentação técnica produzida pelo ambiente de desenvolvimento, sincronizada a partir do repositório ativo.
-2. **[CHATGPT/](CHATGPT/README.md)** — memória estratégica das conversas: visão, princípios, ideias, brainstorms, decisões, propostas, histórico e pendências.
+1. [GOOGLE_IA/](GOOGLE_IA/README.md) — documentação técnica produzida pelo ambiente de desenvolvimento, sincronizada a partir do repositório ativo.
+2. [CHATGPT/](CHATGPT/README.md) — memória estratégica das conversas: visão, princípios, ideias, brainstorms, decisões, propostas, histórico e pendências.
 
 ## Duas áreas independentes
 
@@ -36,20 +36,21 @@ Em caso de divergência, registrar o conflito e verificar a fonte correspondente
 
 ## Repositórios
 
-- **Este repositório documental:** `enzonunezmachado/NEXUS-DOCUMENTACAO`.
-- **Repositório ativo do aplicativo:** `enzonunezmachado/PROJETO-NEXUS-`.
+- Este repositório documental: `enzonunezmachado/NEXUS-DOCUMENTACAO`.
+- Repositório ativo do aplicativo: `enzonunezmachado/PROJETO-NEXUS-`.
 
 Não modificar o repositório ativo ao realizar manutenção documental neste repositório. A sincronização de GOOGLE_IA é uma cópia controlada, não uma autorização para alterar o código.
 
-## Propostas recentes de arquitetura e experiência
+## Iniciativas de arquitetura e experiência
 
-As análises independentes da rodada de 24/11/2026 foram organizadas em [`CHATGPT/PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/`](CHATGPT/PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md). A pasta contém a proposta do Claude, relatórios anteriores, uma comparação crítica e um prompt-base para novas análises. Tudo permanece em estado **EM ANÁLISE**; nenhuma proposta foi aprovada ou implementada.
+- [Rodada de arquitetura da informação — 24/11/2026](CHATGPT/PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md): proposta Claude, alternativas, comparação crítica e prompt-base. Estado EM ANÁLISE.
+- [ATUALIZAÇÃO — Reformulação ampla da experiência](CHATGPT/ATUALIZACAO/README.md): iniciativa que consolida propostas de reconstrução da apresentação das telas, identidade visual, componentes, fichas, relações, interações e plano de evolução. Estado EM ANÁLISE; não autoriza implementação.
 
 ## Conteúdo legado
 
 O registro histórico [NEXUS_ARCHITECTURE_AND_PROGRESS.md](ARQUIVO/LEGADO_RAIZ/2026-11-20_NEXUS_ARCHITECTURE_AND_PROGRESS.md) foi retirado da raiz e preservado em `ARQUIVO/LEGADO_RAIZ/`; descreve uma fase anterior e não representa a arquitetura atual sem confirmação técnica.
 
-A pasta [docs/](docs/README.md) preserva documentos e registros da organização documental anterior, incluindo o Documento Mestre histórico, decisões de UX, especificações antigas e logs de revisão. Ela é fonte histórica de recuperação, não uma terceira área de documentação vigente. Consulte os índices de GOOGLE_IA e CHATGPT para saber onde cada informação foi consolidada.
+A pasta [docs/](docs/README.md) preserva documentos e registros da organização documental anterior, incluindo o Documento Mestre histórico, decisões de UX, especificações antigas e logs de revisão. Ela é fonte histórica de recuperação, não uma terceira área de documentação vigente.
 
 ## Processo de manutenção
 
@@ -67,7 +68,6 @@ A pasta [docs/](docs/README.md) preserva documentos e registros da organização
 - Os 18 arquivos espelhados foram comparados com a origem e confirmados idênticos byte a byte.
 - Os documentos legados em `docs/` foram preservados.
 - A recuperação estratégica é parcial: não representa transcrição integral de todas as conversas.
-
 
 ## Arquivo de artefatos operacionais
 
