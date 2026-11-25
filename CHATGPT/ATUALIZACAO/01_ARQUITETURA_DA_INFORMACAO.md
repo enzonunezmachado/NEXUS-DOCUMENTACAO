@@ -1,77 +1,113 @@
 # 01 — Arquitetura da informação e organização das áreas
 
 **Estado:** EM ANÁLISE  
-**Referência estrutural:** proposta Claude de 24/11/2026, sujeita a confronto com o aplicativo e as regras reais.
+**Objetivo:** investigar como o NEXUS deve organizar domínios, destinos, registros e contextos de uso, sem antecipar uma arquitetura final.
 
-## 1. Hipótese estrutural de referência
+## 1. O problema que a arquitetura precisa resolver
 
-A proposta Claude organiza a navegação principal em cinco destinos orientados por perguntas:
+O NEXUS reúne informações que se afetam mutuamente: tarefas, compromissos, eventos, projetos, objetivos, dinheiro, mercado e outras áreas pessoais. O usuário não deve precisar lembrar em qual módulo cada dado foi criado para conseguir encontrá-lo ou agir sobre ele.
 
-| Destino proposto | Pergunta | Responsabilidade sugerida |
+A arquitetura precisa equilibrar:
+- Acesso rápido ao que exige atenção agora.
+- Visões temporais e operacionais.
+- Áreas especializadas para criar, organizar e aprofundar informações.
+- Relações entre registros sem duplicação.
+- Descoberta simples para uso cotidiano e profundidade para uso avançado.
+
+A navegação não deve ser definida apenas pela lista de funcionalidades existentes nem pela conveniência técnica da implementação atual. Deve refletir tarefas mentais reais do usuário.
+
+## 2. Distinguir domínio, destino e lente
+
+Antes de decidir abas ou agrupamentos, classificar cada elemento:
+
+- **Domínio:** assunto ou conjunto de entidades com regras próprias, como tarefas, finanças ou mercado.
+- **Destino:** área principal para a qual o usuário navega.
+- **Lente:** visualização de registros que continuam pertencendo a outros domínios, como Agenda ou Hoje.
+- **Ferramenta transversal:** função disponível em diferentes contextos, como busca ou criação.
+- **Contêiner/agrupador:** área que reúne entidades relacionadas sem apagar suas diferenças.
+
+Uma mesma tarefa pode aparecer em Hoje, Agenda, Tarefas e na ficha de um evento ou projeto, mas continua sendo um único registro. Agenda e Hoje não devem criar cópias independentes.
+
+## 3. Proposta Claude: referência, não estrutura predeterminada
+
+A proposta de 24/11/2026 sugeriu cinco destinos orientados por perguntas:
+
+| Destino sugerido | Pergunta | Responsabilidade hipotética |
 |---|---|---|
-| Hoje | E agora? | Contexto imediato, prioridades e visão do dia |
-| Agenda | Quando? | Visão temporal unificada |
-| Tarefas | O que fazer? | Itens acionáveis e execução |
-| Planos | Para quê e que ocasiões? | Objetivos, projetos e eventos, se a organização for validada |
-| Dinheiro | Quanto? | Finanças pessoais e análise financeira |
+| Hoje | E agora? | Contexto imediato e prioridades |
+| Agenda | Quando? | Organização temporal |
+| Tarefas | O que fazer? | Execução e acompanhamento |
+| Planos | Para quê e que ocasiões? | Objetivos, projetos e eventos |
+| Dinheiro | Quanto? | Finanças pessoais |
 
-A nomenclatura e a quantidade de destinos ainda precisam ser testadas. “Planos” pode ser abstrato; Eventos não podem ficar difíceis de descobrir; Mercado não deve ser tratado automaticamente como parte do dinheiro pessoal, pois apresenta informações externas.
+Essa proposta é uma hipótese útil para comparação, não o ponto de chegada obrigatório. Em especial:
+- Não assumir que cinco destinos são melhores que a navegação atual.
+- Não adotar “Planos” sem testar se o nome é compreendido.
+- Não tornar Eventos difíceis de descobrir.
+- Não agrupar entidades apenas porque parecem relacionadas.
+- Não encaixar Mercado em Dinheiro: Mercado é um ambiente de informações externas, distinto das finanças pessoais.
+- Não presumir que Hoje deve substituir todos os rituais, históricos ou funções da Home atual.
 
-A proposta também considera Hoje como central sintética, e Agenda/Busca como lentes que apresentam registros de outras áreas sem duplicá-los.
+A próxima análise deve comparar modelos genuinamente diferentes, incluindo a possibilidade de preservar parte da organização atual.
 
-## 2. Princípio de registro único e múltiplas aparições
+## 4. Registro único e múltiplas aparições
 
-Um registro deve ser criado uma vez e aparecer nos contextos relevantes sem gerar cópias independentes. Exemplos existentes documentados incluem tarefas na Agenda, tarefas ligadas a eventos e custos associados a projetos/eventos.
+Um registro deve ser criado uma vez e apresentado em todos os contextos relevantes, mantendo identidade, estado e regras.
 
-A reformulação deve tornar essas aparições coerentes: a mesma entidade deve manter identidade, estado e comportamento reconhecíveis em todos os lugares onde aparece.
+Exemplos:
+- Uma tarefa pode aparecer em Tarefas, Hoje, Agenda e dentro do evento ou projeto ao qual está vinculada.
+- Um evento pode apresentar tarefas, compromissos e custos relacionados.
+- Um projeto pode mostrar tarefas e progresso, sem duplicar esses registros.
+- Uma informação financeira pode ser consultada em sua área e em um contexto relacionado, sem criar um segundo lançamento.
 
-## 3. Fichas de origem e navegação entre contextos
+A interface deve deixar claro quando está exibindo o mesmo registro em outra perspectiva.
 
-Cada tipo de registro deve ter uma ficha própria de consulta, com identidade e conteúdo adequados à entidade. A ficha deve ser acessível a partir de diferentes contextos sem criar cópias do registro.
+## 5. Modelo mental e relações entre entidades
 
-A proposta Claude menciona chip de origem e faixa de conexões. São padrões a explorar, não componentes aprovados. Devem explicar relações em linguagem natural quando isso ajudar, por exemplo “parte de”, “custa”, “prepara”, “contribui para” ou “vence em”.
+A hierarquia real ainda precisa ser compreendida. Não presumir que todas as relações formam uma árvore única.
 
-## 4. Profundidade progressiva
+A documentação técnica atual indica relações como:
+- Tarefas com possíveis vínculos a projeto, evento e objetivo.
+- Projetos relacionados a objetivos.
+- Compromissos relacionados a eventos.
+- Lançamentos financeiros relacionados a tarefa, projeto ou evento, conforme o modelo.
 
-Hipótese de níveis:
-1. Resumo contextual em uma tela.
-2. Visão do módulo ou coleção.
-3. Filtro ou análise mais específica.
-4. Ficha completa do registro.
+Isso não significa que uma tarefa sempre pertença a um único projeto, nem que todo evento esteja subordinado a um objetivo. Relações e cardinalidades devem ser verificadas no modelo e no código.
+
+**Meta permanece um conceito a esclarecer.** Não tratá-la como sinônimo de Objetivo, Projeto ou marco sem confirmar sua definição no produto. A análise deve mapear o significado de cada entidade, sua finalidade, ciclo de vida, relações e diferença percebida pelo usuário.
+
+## 6. Direções por contexto
+
+Estas são responsabilidades desejadas, não layouts finais:
+
+- **Hoje/Home:** síntese do contexto atual, prioridades e próximos passos; evitar transformar a tela em dashboard de gráficos ou lista infinita.
+- **Agenda:** visão temporal coerente, preservando o que funciona na visão semanal e padronizando a leitura dos tipos de ocorrência.
+- **Tarefas:** área operacional rápida, com filtros e profundidade, sem perder eficiência em listas numerosas.
+- **Planejamento (nome provisório):** possível ambiente para organizar eventos, projetos e objetivos; precisa preservar a identidade de cada entidade e não pressupõe o nome final “Planos”.
+- **Dinheiro:** domínio financeiro pessoal, com visão cotidiana e análises aprofundadas.
+- **Mercado:** informações externas, acompanhamento e visualizações próprias; não confundir com patrimônio, orçamento ou lançamentos pessoais.
+- **Biblioteca de Frases e outras áreas próprias:** preservar sua identidade e avaliar seu lugar na arquitetura, sem apagá-las por não caberem nos cinco destinos propostos.
+
+## 7. Profundidade progressiva
+
+A experiência pode oferecer níveis de aprofundamento:
+1. Resumo no contexto em que o usuário está.
+2. Visão da coleção ou do domínio.
+3. Filtros, histórico ou análise específica.
+4. Ficha completa da entidade.
 5. Navegação para registros relacionados.
 
-Nem todo caminho precisa percorrer todos os níveis. O acesso deve ser curto quando a intenção do usuário for clara.
+Esses níveis não precisam ser uma sequência obrigatória. O usuário deve chegar diretamente ao nível adequado à intenção, sem percursos artificiais.
 
-## 5. Planos e hierarquia de entidades
+## 8. Questões que precisam de investigação
 
-A proposta Claude agrupa Projetos, Objetivos e Eventos em uma área de planejamento, mas suas diferenças funcionais precisam ser preservadas.
-
-O modelo técnico documentado atualmente indica, entre outras relações:
-- Tarefas podem ter `projectId`, `eventId` e `goalId`.
-- Projetos podem ter `goalId`.
-- Compromissos podem ter `eventId`.
-- Lançamentos podem ter vínculos com tarefa, projeto ou evento, conforme o modelo.
-
-Isso não demonstra uma hierarquia única em árvore. Uma tarefa pode participar de mais de um contexto. Não presumir herança visual ou prioridade de um vínculo sobre outro.
-
-A conversa levantou a necessidade de revisar o que exatamente significam Objetivo, Projeto, Evento e Meta no produto. A definição deve ser confrontada com `04_MODELO_DADOS.md`, especificação e código antes de qualquer mudança.
-
-## 6. Experiência por área
-
-Direções iniciais, não layouts finais:
-
-- **Hoje:** síntese contextual, leitura imediata, sem excesso de blocos ou gráficos.
-- **Agenda:** representação temporal clara, símbolos consistentes por tipo de ocorrência, preservando as qualidades da visão semanal atual.
-- **Tarefas:** apresentação compacta, fácil de executar e capaz de acomodar muitas tarefas de contextos diferentes.
-- **Planejamento/Planos:** apresentação mais visual e expressiva para eventos, projetos e objetivos, com diferenças de composição por entidade.
-- **Dinheiro:** ambiente analítico, com gráficos e indicadores; degradês podem ser explorados com moderação e legibilidade.
-- **Mercado:** ambiente de informação externa, com identidade tecnológica própria e visualizações expressivas, sem confundir ativos de mercado com finanças pessoais.
-
-## 7. Questões para validação
-
-- Cinco destinos são melhores que a navegação atual?
-- “Planos” é compreendido naturalmente?
-- Eventos precisam de entrada direta ou podem ser descobertos em Planejamento?
-- Como Mercado se encaixa na navegação sem ser confundido com patrimônio pessoal?
-- Quais informações pertencem à Home/Hoje e quais devem permanecer nos módulos?
-- Como a proposta se comporta nos fluxos reais: organizar uma semana, preparar evento, executar projeto e consultar finanças?
+- Quais são os domínios e entidades reais do aplicativo hoje?
+- Qual a diferença funcional e mental entre Objetivo, Projeto, Meta e Evento?
+- Quais relações são diretas, opcionais, múltiplas ou derivadas?
+- Quais áreas são destinos e quais são lentes?
+- A proposta de cinco destinos melhora descoberta e frequência de uso?
+- “Planos” ou “Planejamento” é compreendido sem explicação?
+- Como Eventos continuam fáceis de localizar?
+- Como Hoje preserva revisão diária, histórico e outros rituais úteis?
+- Onde Mercado, Biblioteca de Frases e ferramentas transversais devem aparecer?
+- Como a arquitetura se comporta em celular e tablet?
