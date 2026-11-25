@@ -2,7 +2,7 @@
 
 > **Leitura obrigatória:** consulte [GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md](GOOGLE_IA/docs/00_ORIENTACAO_E_AUTORIDADE.md) para autoridade técnica e [CHATGPT/00_ORIENTACAO_DE_LEITURA.md](CHATGPT/00_ORIENTACAO_DE_LEITURA.md) para interpretar a memória estratégica. Propostas e brainstorms não revogam decisões vigentes.
 
-> **Repositório:** [enzononunezmachado/NEXUS-DOCUMENTACAO](https://github.com/enzonunezmachado/NEXUS-DOCUMENTACAO)
+> **Repositório:** [enzonunezmachado/NEXUS-DOCUMENTACAO](https://github.com/enzonunezmachado/NEXUS-DOCUMENTACAO)
 > **Finalidade:** preservar a memória técnica, estratégica e histórica do projeto NEXUS.
 
 Este repositório é a memória duradoura do NEXUS. Ele separa duas fontes complementares para que uma nova pessoa ou IA consiga compreender tanto a engenharia do aplicativo quanto a evolução das ideias e decisões que orientam o produto.
