@@ -1,6 +1,6 @@
 # CHATGPT — Memória estratégica do NEXUS
 
-> **Leitura obrigatória:** consulte primeiro [`00_ORIENTACAO_DE_LEITURA.md`](./00_ORIENTACAO_DE_LEITURA.md). Ideias, pesquisas e propostas não substituem decisões aprovadas nem autorizam implementação.
+> **Leitura obrigatória:** consulte primeiro [00_ORIENTACAO_DE_LEITURA.md](./00_ORIENTACAO_DE_LEITURA.md). Ideias, pesquisas e propostas não substituem decisões aprovadas nem autorizam implementação.
 
 > Área dedicada à memória conceitual, estratégica e histórica construída nas conversas com o ChatGPT. Não substitui a documentação técnica nem comprova implementação.
 
@@ -14,21 +14,22 @@
 6. [Pendências e direção futura](06_PENDENCIAS_E_DIRECAO_FUTURA.md)
 7. [Histórico de registros](07_HISTORICO_DE_REGISTROS.md)
 8. [Decisões de UX e produto](08_DECISOES_DE_UX_E_PRODUTO.md)
-9. [Metodologia de pesquisa e desenvolvimento](09_METODOLOGIA_DE_PESQUISA_E_DESENVOLVIMENTO.md) — ciclo de vida das ideias, pesquisa, análise, aprovação e implementação.
-10. [Experimentos e testes](TESTES/README.md) — cenários, evidências e resultados.
-11. [Problemas, correções e ideias após os testes](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md).
-12. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md) — exploração tipográfica, tema claro e layouts adaptativos.
-13. [Rodada de arquitetura da informação — 24/11/2026](PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md) — proposta do Claude, alternativas anteriores, comparação crítica e prompt-base para novas IAs.
+9. [Metodologia de pesquisa e desenvolvimento](09_METODOLOGIA_DE_PESQUISA_E_DESENVOLVIMENTO.md)
+10. [Experimentos e testes](TESTES/README.md)
+11. [Observações pós-teste](TESTES/2026-11-21_TESTE_VIDAS_SIMULADAS/05_OBSERVACOES_POS_TESTE/README.md)
+12. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md)
+13. [Rodada de arquitetura da informação — 24/11/2026](PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md)
+14. [ATUALIZAÇÃO — Reformulação ampla da experiência](ATUALIZACAO/README.md) — consolidação das propostas de reconstrução da apresentação do aplicativo, linguagem visual, cores, símbolos, componentes, fichas, relações, interações e plano de evolução. Estado EM ANÁLISE.
 
 ## Regra de interpretação
 
-- **Ideia** não é requisito aprovado.
-- **Proposta** não é decisão.
-- **Aprovada** significa que o usuário decidiu seguir com a direção, não que esteja implementada.
-- **Enviada** significa que a proposta foi encaminhada ao ambiente de desenvolvimento.
-- **Implementada** exige confirmação técnica no código ou documentação técnica atual.
-- **Validada** exige teste adequado e evidência.
-- **Pausada/descartada** permanece no histórico, com motivo quando conhecido.
+- Ideia não é requisito aprovado.
+- Proposta não é decisão.
+- Aprovada significa que o usuário decidiu seguir com a direção, não que esteja implementada.
+- Enviada significa que a proposta foi encaminhada ao ambiente de desenvolvimento.
+- Implementada exige confirmação técnica no código ou documentação técnica atual.
+- Validada exige teste adequado e evidência.
+- Pausada/descartada permanece no histórico, com motivo quando conhecido.
 
 ## Estados
 
