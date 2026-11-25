@@ -1,86 +1,112 @@
 # 03 — Componentes, cards e fichas especializadas
 
 **Estado:** EM ANÁLISE  
-**Objetivo:** registrar os padrões de apresentação desejados para registros e coleções.
+**Objetivo:** definir princípios de apresentação para coleções e entidades, preservando densidade, personalidade e clareza de ação.
 
-## 1. Cards não devem ser o formato universal
+## 1. Não existe um formato universal
 
-A interface não deve transformar cada informação em um card grande. A apresentação depende da natureza do conteúdo, da quantidade de registros e da ação esperada.
+A interface não deve transformar toda informação em um card grande. O formato depende de quatro fatores:
+- Natureza da entidade.
+- Quantidade e densidade dos registros.
+- Importância da informação naquele contexto.
+- Ação que o usuário precisa realizar.
 
-- Tarefas em listas numerosas podem ser compactas.
-- Eventos podem se beneficiar de capa e apresentação visual.
-- Projetos e objetivos podem exigir progresso, marcos e relações.
-- Lançamentos financeiros precisam priorizar valor, natureza, data e estado.
-- Informações pequenas ou densas podem permanecer em linhas, chips ou agrupamentos simples.
+Exemplos:
+- Tarefas numerosas podem aparecer em linhas ou cards compactos.
+- Eventos podem merecer capas e composição visual mais expressiva.
+- Projetos podem destacar propósito, progresso e marcos.
+- Lançamentos financeiros devem priorizar valor, natureza, data e situação.
+- Informações auxiliares podem usar chips, rótulos ou agrupamentos discretos.
 
-O tamanho deve ser proporcional à importância e ao contexto.
+Consistência significa compartilhar regras de composição e comportamento, não forçar o mesmo componente para tudo.
 
-## 2. Layout que funciona com poucos ou muitos registros
+## 2. Layout adaptável à quantidade de dados
 
-Um requisito central é evitar telas que só pareçam completas quando há muitos dados. Duas tarefas não devem resultar em componentes minúsculos perdidos em um grande vazio, nem em espaços vazios que pareçam defeito.
+A tela deve funcionar bem tanto com poucos quanto com muitos registros.
 
-O layout deve:
-- Adaptar densidade e composição à quantidade de conteúdo.
-- Não inventar conteúdo para preencher espaço.
-- Usar estados vazios úteis e intencionais.
-- Permitir leitura rápida com poucos registros e eficiência com muitos.
-- Preservar a qualidade da visão semanal da Agenda, que apresenta os elementos da semana visualmente em vez de depender apenas de dias selecionáveis com listas abaixo.
+Com poucos itens:
+- Não deixar duas tarefas minúsculas isoladas no topo de uma área enorme.
+- Usar melhor a composição disponível sem inflar artificialmente os componentes.
+- Priorizar contexto e hierarquia, não preencher espaço com conteúdo inventado.
 
-## 3. Cards compactos e expansíveis
+Com muitos itens:
+- Preservar densidade, leitura rápida e ações acessíveis.
+- Evitar cards altos e repetitivos.
+- Agrupar ou filtrar quando isso realmente ajuda.
 
-Hipótese de interação para alguns registros, especialmente eventos:
-1. Estado inicial compacto, com título, identidade visual e informações essenciais.
-2. Ao expandir, o card revela conteúdo contextual e desloca naturalmente os elementos seguintes.
-3. Pode apresentar uma amostra limitada de itens relacionados (por exemplo, três de seis tarefas).
-4. Um comando “Ver todas” leva à visualização completa.
-5. A expansão não cria uma pilha de fichas sobrepostas.
+Estados vazios devem parecer intencionais e orientar o próximo passo, sem simular dados existentes.
 
-A expansão deve ser seletiva. Não é uma regra para todos os cards nem para estruturas aninhadas. Não abrir automaticamente todos os elementos internos de um projeto ou objetivo ao expandir um contêiner.
+A visão semanal atual foi apontada como referência positiva: cards compactos e visualmente organizados para os dias e seus itens, sem depender exclusivamente de cabeçalhos clicáveis com uma lista aberta abaixo. É uma referência a preservar e estudar, não um modelo a copiar para todas as áreas.
 
-## 4. Exemplo conceitual: ficha/apresentação de evento
+## 3. Cards compactos, expandidos e navegação
 
-Um evento como “Viagem para São Vicente” pode ter:
-- Capa ou imagem contextual, quando disponível.
-- Título, período e descrição curta.
-- Informações essenciais do evento.
-- Amostra de tarefas vinculadas, com checkbox funcional quando a ação for concluir.
-- “Ver todas” para acessar a coleção completa.
-- Objetivo ou projeto relacionado, se a relação existir e for relevante.
-- Atalho discreto de edição, como lápis em botão circular.
-- Acesso à ficha completa ou à tela própria do evento.
+Alguns registros podem oferecer expansão contextual:
+1. Apresentação inicial compacta com identidade e informações essenciais.
+2. Ação explícita ou área claramente indicada para expandir.
+3. Conteúdo adicional aparece no próprio fluxo e desloca naturalmente o que está abaixo.
+4. Uma amostra limitada de itens relacionados pode ser exibida.
+5. “Ver todas” leva à coleção completa ou ficha apropriada.
 
-A composição e ordem das relações devem ser definidas pelo valor para o usuário e pelo modelo real, não por uma lista fixa de campos.
+Exemplo: um evento com seis tarefas pode revelar até três tarefas, cada uma com ação de conclusão quando permitida, e oferecer acesso às demais.
 
-## 5. Fichas especializadas por entidade
+A expansão é seletiva, não obrigatória. Nem todo card deve expandir; nem toda entidade deve revelar subentidades automaticamente. Em alguns casos, abrir a ficha completa é mais claro.
 
-A proposta é que cada tipo de registro tenha uma ficha com identidade e conteúdo adequados, sem usar uma ficha genérica com campos simplesmente trocados.
+Evitar camadas infinitas de cards, fichas sobrepostas ou expansão aninhada que torne a leitura confusa.
 
-Direções iniciais:
-- **Evento:** apresentação visual, período, local/formato, participação, tarefas, compromissos, custos e relações relevantes.
-- **Projeto:** propósito, progresso derivado, prazo, tarefas, custos e objetivo relacionado.
-- **Objetivo:** resultado pretendido, progresso, marcos, prazo e projetos/tarefas relacionados, respeitando o modelo real.
-- **Tarefa:** título, contexto, prazo, prioridade, status, checklist, recorrência e ações pertinentes; apresentação compacta em coleções.
-- **Lançamento financeiro:** valor, natureza, data/vencimento, categoria, liquidação e vínculos aplicáveis, sem esconder regras financeiras.
+## 4. Fichas especializadas por entidade
 
-Essas listas são campos candidatos, não declaração de que todos existem ou devem aparecer sempre. Conferir código, modelo e especificação.
+Cada entidade deve ter uma apresentação própria, coerente com seu papel. Não usar uma ficha genérica que apenas troca os campos.
+
+Direções conceituais:
+- **Evento:** capa quando útil, título, período, local, descrição, tarefas, compromissos, custos e relações relevantes.
+- **Projeto:** propósito, progresso, prazo, tarefas, marcos e objetivo relacionado.
+- **Objetivo:** resultado pretendido, horizonte, progresso, marcos e projetos/tarefas relacionados.
+- **Tarefa:** título, prazo, prioridade, estado, recorrência, contexto e ação de conclusão quando disponível.
+- **Registro financeiro:** valor, natureza, data ou vencimento, categoria, liquidação e vínculos aplicáveis.
+
+Esses campos são candidatos para investigação, não garantia de que todos existam no modelo ou devam aparecer sempre. Confirmar no código, modelo e documentação técnica.
+
+## 5. Exemplo de apresentação contextual de evento
+
+Um evento como “Viagem para São Vicente” pode apresentar:
+- Capa ou imagem contextual, se disponível e útil.
+- Título e período.
+- Resumo curto e informações essenciais.
+- Tarefas vinculadas, com poucas linhas visíveis inicialmente.
+- Ação de concluir diretamente em cada tarefa, quando permitida.
+- Acesso “Ver todas”.
+- Projeto ou objetivo relacionado, somente se a relação existir e ajudar a compreender o contexto.
+- Ação explícita para abrir a ficha completa.
+- Edição por controle próprio e discreto.
+
+A ordem e a quantidade de informações devem ser decididas pelo contexto, não por uma lista fixa de campos.
 
 ## 6. Tarefas compactas e acionáveis
 
-Tarefas podem aparecer em listas de Hoje, Agenda, projetos, objetivos e eventos. A apresentação compacta deve permitir:
-- Identificar título e contexto.
-- Reconhecer prazo e prioridade quando relevantes.
-- Concluir diretamente quando a ação estiver disponível.
-- Abrir a ficha específica ao tocar no conteúdo principal.
-- Evitar cards altos e repetitivos quando há muitas tarefas.
+Tarefas aparecem em diferentes contextos: Hoje, Agenda, Tarefas, projetos e eventos. A apresentação compacta deve:
+- Manter título legível e contexto suficiente.
+- Exibir prazo, prioridade ou estado quando forem relevantes.
+- Permitir conclusão direta quando o contexto e as regras permitirem.
+- Abrir a ficha ao tocar no conteúdo principal.
+- Não transformar cada tarefa em um card alto.
+- Evitar repetir relações e metadados já claros no contexto.
 
-O usuário sugeriu que a cor contextual de um projeto/objetivo pudesse ajudar a reconhecer a origem de uma tarefa. Isso depende da decisão de cores e da hierarquia de vínculos; manter como evolução futura em análise.
+Ações rápidas precisam ter área de toque e feedback próprios, sem fazer o usuário abrir formulário e procurar a ação cotidiana de concluir.
 
-## 7. Imagens, capas, degradês e expressão
+## 7. Capas, imagens, degradês e ausência de imagem
 
-Imagens e capas devem acrescentar contexto, não ser decoração obrigatória. Eventos são candidatos naturais a capas; projetos/objetivos podem receber tratamento visual próprio se isso fizer sentido. Degradês podem ser explorados em Mercado e gráficos financeiros, com moderação e contraste adequado.
+Capas e imagens devem acrescentar identidade ou contexto, não ser decoração obrigatória. Eventos são candidatos naturais; projetos e objetivos podem receber tratamento próprio se houver valor.
 
-A ausência de imagem deve resultar em uma composição intencional, não em um espaço quebrado.
+Degradês podem ser explorados em gráficos financeiros e Mercado, respeitando contraste e propósito. A ausência de imagem deve produzir uma composição intencional, não um espaço vazio quebrado ou um placeholder chamativo sem função.
 
-## 8. Edição
+## 8. Bordas, raios e proporção
 
-Um lápis discreto e claramente acionável pode abrir o formulário de edição. Consulta e edição devem ser ações distintas. Não tornar todos os campos diretamente editáveis nem transformar cada toque em edição.
+Raios, espessuras, contornos e superfícies precisam respeitar a escala do componente. Um card amplo pode suportar maior presença visual; uma tarefa compacta, chip ou ícone pequeno pode precisar de borda discreta.
+
+Não aplicar uma regra de “aumentar todas as bordas” indiscriminadamente. Auditar proporcionalidade, densidade, tema claro/escuro e hierarquia.
+
+## 9. Consulta e edição
+
+A apresentação principal deve favorecer consulta. Edição é uma ação explícita, por exemplo um lápis discreto e claramente acionável que abre o formulário adequado.
+
+Não tornar toda a superfície editável nem fazer com que qualquer toque abra edição. A ficha deve distinguir conteúdo, relações, ações rápidas e comandos de manutenção.
