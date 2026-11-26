@@ -45,10 +45,10 @@
 | ID | `DOC-001` |
 | Estado | **CORRIGIDA NESTA ATUALIZAÇÃO DOCUMENTAL** |
 | Arquivo | `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md` |
-| Problema | O exemplo JSON de `TASK.subtasks` e `CHECKLIST.items` usava `isDone` e `orderIndex`, enquanto os campos reais do contrato/código são `isCompleted` e `sortOrder`. |
+| Problema | O exemplo JSON de `TASK.subtasks` e `CHECKLIST.items` usava `isDone` e `orderIndex`, enquanto os campos reais do contrato/código são `isCompleted` e `sortOrder`; na revisão seguinte também foi detectada divergência nos campos de `EVENT` no mesmo exemplo (`location`, `status`, `ticketUnitPriceCents` em vez de `locationName`, `eventStatus`, `ticketPriceCents`). |
 | Risco | O ChatGPT ou outra fonte poderia copiar o exemplo e produzir JSON rejeitado pelo parser estrito (`ignoreUnknownKeys = false`). |
-| Correção | Exemplo oficial atualizado para os nomes de campos reais. |
-| Validação restante | Conferir o exemplo com os DTOs atuais e manter teste/fixture compartilhado para impedir divergência futura. |
+| Correção | Exemplo oficial atualizado para os nomes reais dos DTOs (`isCompleted`, `sortOrder`, `locationName`, `eventStatus`, `ticketPriceCents`) e adicionada cobertura de fixture em `InboxBridgeUnitTests` (`official contract template parses strictly and discard leaves DB untouched`). |
+| Validação restante | Executar `:app:testDebugUnitTest` no GitHub Actions após sincronizar manualmente com a `main`. |
 
 ## 3. Limitação de recorrência na entrada estruturada
 
@@ -127,7 +127,7 @@ As branches abaixo foram criadas para isolar as tentativas de correção da pont
 
 Não foi localizado PR aberto para essas branches. Decisão operacional: **não fazer merge integral**. Manter as branches e seus commits como evidência; reaplicar as correções necessárias no código atual da `main` com o Google AI Studio, revisar o diff e exigir nova CI verde na `main`. Isso evita trazer histórico divergente de uma branch de teste para a linha principal.
 
-A execução #50 teve job `build` com conclusão `success`; a etapa Release foi `skipped` por ausência de secrets. Isso confirma testes unitários e APK Debug naquela branch/commit, não a integração real no aparelho nem a atualização in-place. A #47 registrou erros de compilação; a #48 registrou um teste falho posteriormente corrigido; a #49 foi tentativa intermediária. Preservar todas como histórico.
+**Reaplicação local concluída (aguardando sincronização manual e CI na `main`):** na revisão de continuidade da Rodada 3 sobre o código local deste workspace, foram reaplicadas diretamente: (1) remoção de `continue` dentro de lambdas `getOrElse` em `InboxRepository.kt`, (2) substituição de `palette.negative` por `palette.danger` e `NexusEmptyState(message = ...)` por `subtitle = ...` em `NexusInboxScreen.kt`, e (3) `val isUpdate = true` em `StructuredInputProcessor.prepareAndApplyChecklist`. A execução #50 teve job `build` com conclusão `success` apenas na branch isolada; a validação oficial nesta linha principal depende de sincronização manual para `main` e nova execução do CI. A #47 registrou erros de compilação; a #48 registrou um teste falho posteriormente corrigido; a #49 foi tentativa intermediária. Preservar todas como histórico.
 
 ## 6. Regras de manutenção deste registro
 
@@ -149,3 +149,17 @@ A execução #50 teve job `build` com conclusão `success`; a etapa Release foi 
 - Rastreabilidade: `12_RASTREABILIDADE.md`
 - Entrada estruturada: `14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`
 - Histórico: `HISTORICO_DOCUMENTACAO.md`
+
+
+## 7. Validação prática da Ponte ChatGPT → NEXUS (2026-11-26)
+
+| Campo | Registro |
+|---|---|
+| Estado | **VALIDADA NO FLUXO PRINCIPAL — Rodada 3 concluída** |
+| Evidência de CI | GitHub Actions #70, run `45792119560`, na branch `main`: testes unitários e APK Debug concluídos com sucesso. Release ignorado por ausência dos secrets de assinatura. |
+| Evidência de integração | O usuário confirmou que o aplicativo funcionou no aparelho e que conseguiu importar registros pela ponte ChatGPT → repositório privado `NEXUS-INBOX` → NEXUS Android. |
+| Commit de referência | `4041611a4ef4e111c3633790d0c09babdecb2ae8` |
+| Limite da confirmação | A confirmação comprova a importação real, mas não detalha individualmente descarte sem gravação, reconsulta sem duplicidade, execução periódica em segundo plano, notificação/deep-link, reinício/rotação ou todos os cenários de segurança do token. Não marcar esses cenários como testados sem evidência específica. |
+| Próxima etapa | Rodada 4: investigação conjunta de `GAP-001` (recorrência de Compromissos/Eventos) e `GAP-003` (checklist independente por ocorrência). `GAP-002` depende da definição dos modelos e permanece aberto. |
+
+A conclusão da Rodada 3 não encerra a manutenção da ponte. Segurança do token, idempotência, sincronização periódica, notificações e recuperação de falhas continuam no gate contínuo de confiabilidade.
