@@ -1,3 +1,12 @@
+## 2026-11-26 — Captura de pesquisa sobre Diátaxis e Obsidian
+
+- O usuário pediu registrar o framework Diátaxis para pesquisa futura sobre documentação técnica, além de explorar uma possível visualização gráfica das relações do NEXUS com Obsidian.
+- Criada a proposta `CHATGPT/PROPOSTAS/2026-11-26_DOCUMENTACAO_DIATAXIS_OBSIDIAN/README.md`, com distinção entre tutoriais, guias práticos, referência e explicação; avaliação de Graph View e Bases; alternativas; perguntas; experimento sugerido com dados fictícios; critérios de avanço.
+- Registrado que o grafo do Obsidian representa notas Markdown e links internos, não uma visualização automática/live do banco Room. Qualquer exportação ou sincronização exige IDs estáveis, política de privacidade, atualização/conflitos e avaliação de escala.
+- Atualizados README principal, índices e pendências/metodologia em CHATGPT.
+- Estado: CAPTURADA / EM PESQUISA; não aprovada para implementação.
+- Nenhum código Android, banco Room, backup, interface, ADR, roadmap técnico ou artefato interno do Google AI Studio foi alterado; nenhum dado real foi exportado.
+
 ## 2026-11-23 — Captura de mecanismo complementar de execução por fases no AI Studio
 
 - Após esclarecer que a ideia não deveria ser excluída do registro, foi capturada uma possibilidade de trabalho para iniciativas grandes ou multifásicas: preparar no repositório ativo um pacote organizado de documentos Markdown, com README de orientação, plano geral, instruções separadas por fase, estado de execução e histórico cumulativo.
