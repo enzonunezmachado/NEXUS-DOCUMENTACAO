@@ -1,7 +1,7 @@
 # Plano mestre de evolução do NEXUS
 
 **Estado:** PLANEJAMENTO CONSOLIDADO — execução por etapas  
-**Atualizado:** 26/11/2026  
+**Atualizado:** 26/11/2026 — após validação prática da Rodada 3  
 **Autoridade:** plano estratégico-operacional. Não substitui código, requisitos técnicos, ADRs ou critérios formais de aprovação.
 
 ## 1. Objetivo
@@ -18,30 +18,25 @@ O NEXUS deve permitir que informações de naturezas diferentes se conectem sem 
 |---|---|---|---|
 | 1 | Atualização e proteção dos dados | **CONCLUÍDA** | Motor de merge, preservação de dados e pipeline inicial; persistência de keystore e atualização in-place ainda pertencem ao gate contínuo de release |
 | 2 | Importação e entrada estruturada | **CONCLUÍDA** | Prévia, mesclagem, contrato de entrada e processamento estruturado implementados; validar fluxos reais conforme dependências |
-| 3 | Ponte ChatGPT → GitHub → Android | **EM ANDAMENTO** | Reaplicar na `main` as correções necessárias das branches de teste, CI verde na `main` e validar configuração/importação real no aparelho |
+| 3 | Ponte ChatGPT → GitHub → Android | **CONCLUÍDA (26/11/2026)** | Correções na `main`, GitHub Actions #70 verde e importação real confirmada pelo usuário no aplicativo. Cenários adicionais seguem no gate contínuo |
 | 4 | Completude funcional e integração entre domínios | **PRÓXIMA** | Fechar lacunas de recorrência, checklist por ocorrência, eventos e consistência transversal antes do redesign amplo |
 | 5 | Arquitetura da informação e experiência | **POSTERIOR — EM ANÁLISE** | Investigar, decidir, prototipar e implementar a experiência gradualmente; Claude é referência, não especificação final |
 
-## 3. Rodada 3 — concluir a ponte
+## 3. Rodada 3 — ponte concluída
 
-### Estado conhecido
-- A implementação da ponte Inbox foi desenvolvida em branch de correção.
-- A execução GitHub Actions #50 passou para testes unitários e APK Debug naquela branch/commit.
-- Release foi ignorado por falta de secrets de assinatura.
-- As branches de correção estão divergentes da `main`; decisão registrada: não fazer merge integral.
-- A execução #50 não prova integração final na `main`, funcionamento do token real nem importação validada no aparelho.
+### Evidências
+- Correções integradas à `main` no commit `4041611a4ef4e111c3633790d0c09babdecb2ae8`.
+- GitHub Actions #70 (run `45792119560`) concluída com sucesso na `main`, com testes unitários e APK Debug.
+- Release foi ignorado por ausência dos secrets de assinatura; isso não invalida a aprovação do build Debug e dos testes executados.
+- O usuário confirmou que o aplicativo funcionou no aparelho e que conseguiu importar registros pelo fluxo ChatGPT → repositório privado `NEXUS-INBOX` → NEXUS Android.
 
-### Sequência
-1. Trabalhar sobre a `main` atual.
-2. Inspecionar o código atual e comparar com as correções já validadas nas branches.
-3. Reaplicar apenas correções ausentes, sem merge integral.
-4. Atualizar documentação técnica e artefatos internos do AI Studio.
-5. Executar GitHub Actions na `main` e resolver todas as falhas.
-6. Configurar o repositório privado NEXUS-INBOX e PAT de leitura restrito.
-7. Validar no aparelho: conexão, leitura, prévia, confirmação, descarte, idempotência e log de importação.
-8. Registrar evidências, limites e resultado.
+### Resultado
+O gate de encerramento da Rodada 3 foi atendido: código corrigido na `main`, CI verde e importação real confirmada no dispositivo.
 
-**Gate:** CI da `main` verde e fluxo real no aparelho validado. Não confundir build verde com validação de integração.
+### Limites e acompanhamento
+A confirmação de importação não deve ser ampliada para afirmar que todos os cenários foram testados individualmente. Descarte sem gravação, reconsulta sem duplicidade, sincronização periódica em segundo plano, notificações/deep-links, reinício/rotação e verificações adicionais de segurança do token permanecem cenários de confiabilidade a acompanhar. Eles não bloqueiam o início da Rodada 4.
+
+A extensão da Inbox para regras recorrentes permanece na Rodada 4, depois da definição dos modelos de recorrência (`GAP-001`/`GAP-002`). Não fazer merge integral das antigas branches de correção.
 
 ## 4. Rodada 4 — completude funcional antes da reformulação
 
@@ -176,4 +171,4 @@ Acompanha todas as rodadas:
 
 ## 9. Próxima ação operacional
 
-Concluir a Rodada 3 na `main`. Em seguida, iniciar a Rodada 4 pelo levantamento técnico de GAP-001 e GAP-003 em conjunto, porque a semântica de recorrência e o ciclo de vida do checklist precisam ser compatíveis antes de ampliar o contrato Inbox. Não iniciar ainda a reformulação visual ampla.
+A Rodada 3 foi concluída após CI verde na `main` e importação real confirmada pelo usuário. Próxima ação: iniciar a Rodada 4 pelo levantamento técnico conjunto de GAP-001 e GAP-003, porque a semântica de recorrência e o ciclo de vida do checklist precisam ser compatíveis antes de ampliar o contrato Inbox. Não iniciar ainda a reformulação visual ampla.
