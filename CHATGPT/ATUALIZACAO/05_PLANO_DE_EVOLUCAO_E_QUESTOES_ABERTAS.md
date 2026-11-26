@@ -134,7 +134,7 @@ Somente após aprovação:
 - Quais componentes podem ser reaproveitados?
 - Como manter modularidade sem criar abstrações para hipóteses ainda não validadas?
 
-## 3. Critérios para considerar a reformulação bem-sucedida
+## 4. Critérios para considerar a reformulação bem-sucedida
 
 - A arquitetura facilita encontrar e compreender as informações.
 - As entidades mantêm identidade e fichas coerentes.
