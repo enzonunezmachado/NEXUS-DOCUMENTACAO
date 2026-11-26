@@ -274,3 +274,20 @@ Este mecanismo é uma opção complementar, não uma nova regra para todo desenv
 A execução por fases deverá ser experimentada em um caso apropriado antes de ser considerada eficaz. A avaliação deve observar não só a quantidade de prompts, mas também o esforço total do usuário, a clareza do histórico, a qualidade das alterações, a facilidade de retomada e a capacidade do ChatGPT de compreender o que aconteceu.
 
 Não há autorização permanente para criar essa estrutura em toda iniciativa. A decisão de utilizá-la deve ser tomada caso a caso, com o usuário.
+
+
+## 12. Pesquisa sobre documentação técnica e visualização do conhecimento
+
+Quando a necessidade envolver organização de documentos, classificar a finalidade de cada material e considerar Diátaxis (tutorial, how-to, referência e explicação). Aplicar de forma incremental, sem renomear ou fragmentar documentos existentes sem ganho claro.
+
+Quando surgir interesse em visualizar relações, distinguir grafo de documentos Markdown de visualização do banco de dados do aplicativo. Obsidian Graph View representa notas e links; Bases usa propriedades dos arquivos. Nenhum dos dois cria automaticamente uma integração viva com Room.
+
+Antes de propor integração:
+1. definir quais relações precisam ser exploradas e por quem;
+2. testar com dados fictícios e pequeno conjunto de notas;
+3. comparar Obsidian com Mermaid, tabelas, MkDocs e UI nativa;
+4. preservar NEXUS como fonte de verdade;
+5. definir IDs, exportação, atualização, conflitos, privacidade e exclusão;
+6. solicitar aprovação antes de alterar código, banco, backup ou dados reais.
+
+Registro detalhado: [Proposta Diátaxis e Obsidian](PROPOSTAS/2026-11-26_DOCUMENTACAO_DIATAXIS_OBSIDIAN/README.md).
