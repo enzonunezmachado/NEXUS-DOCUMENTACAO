@@ -10,6 +10,13 @@ Esta pasta reúne análises independentes sobre a organização da experiência 
 4. [Comparação crítica e síntese](00_COMPARACAO_CRITICA_E_SINTESE.md) — leitura cruzada, pontos fortes, riscos e ideias a preservar.
 5. [Prompt-base para novas análises](04_PROMPT_BASE_PARA_NOVAS_ANALISES.md) — versão consolidada para solicitar análises profundas a outras IAs.
 
+## Leitura por partes
+
+- [Mapa de leitura e desmembramento](./MAPA_DE_LEITURA_E_DESMEMBRAMENTO.md)
+- [Proposta Claude desmembrada em sete partes](./CLAUDE_DESMEMBRADO/README.md)
+
+A fonte integral permanece preservada; a divisão temática facilita consulta e não altera o conteúdo nem a autoridade da proposta.
+
 ## Como interpretar
 
 - São propostas e relatórios de exploração, não documentação técnica normativa.
