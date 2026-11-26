@@ -1,6 +1,6 @@
 # Rodada de arquitetura da informação — 24/11/2026
 
-Esta pasta reúne análises independentes sobre a organização da experiência do NEXUS, feitas a partir do dossiê de telas e módulos. O objetivo é comparar modelos mentais, navegação, hierarquia, fluxos e adaptação a telas maiores antes de qualquer decisão ou implementação.
+Esta pasta reúne análises independentes sobre a organização da experiência do NEXUS, feitas a partir do dossiê de telas e módulos. A versão integral mais extensa (duas partes, cerca de 1.447 linhas) está preservada na [raiz do repositório](../../../NEXUS%20%E2%80%94%20Proposta%20de%20Arquitetura%20da%20Informa%C3%A7%C3%A3o%20e%20Experi%C3%AAncia%20(2).md); a extração temática dessa versão está em [CLAUDE_DESMEMBRADO](./CLAUDE_DESMEMBRADO/README.md). O objetivo é comparar modelos mentais, navegação, hierarquia, fluxos e adaptação a telas maiores antes de qualquer decisão ou implementação.
 
 ## Ordem recomendada de leitura
 
