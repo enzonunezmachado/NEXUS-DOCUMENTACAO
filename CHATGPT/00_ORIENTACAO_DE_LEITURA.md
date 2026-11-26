@@ -11,6 +11,7 @@ Esta pasta preserva visão, decisões de produto, ideias, pesquisas, propostas, 
 - `PROPOSTAS/`: pesquisas e propostas; não substituem decisões vigentes. A rodada de arquitetura da informação de 24/11/2026 está em `PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/`.
 - `ATUALIZACAO/`: iniciativa de reformulação ampla da experiência do aplicativo. Reúne visão, arquitetura da informação, linguagem visual, cores, símbolos, componentes, fichas, interações, relações e plano de evolução. **Tudo permanece EM ANÁLISE**; consultar o README da pasta e não tratar seu conteúdo como especificação técnica ou autorização de implementação.
 - `TESTES/`: experimentos e evidências contextualizadas, não especificações normativas.
+- `PROPOSTAS/2026-11-26_DOCUMENTACAO_DIATAXIS_OBSIDIAN/`: pesquisa capturada sobre Diátaxis e Obsidian; não é decisão nem autorização para integração.
 - Prompts enviados e históricos registram o que foi discutido ou enviado, não provam implementação.
 
 ## Regras de interpretação
