@@ -20,6 +20,7 @@
 12. [Pacote de rotação e identidade visual](PROPOSTAS/2026-11-21_ROTACAO_E_IDENTIDADE_VISUAL/README.md)
 13. [Rodada de arquitetura da informação — 24/11/2026](PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md)
 14. [ATUALIZAÇÃO — Reformulação ampla da experiência](ATUALIZACAO/README.md) — consolidação das propostas de reconstrução da apresentação do aplicativo, linguagem visual, cores, símbolos, componentes, fichas, relações, interações e plano de evolução. Estado EM ANÁLISE.
+15. [Diátaxis e Obsidian](PROPOSTAS/2026-11-26_DOCUMENTACAO_DIATAXIS_OBSIDIAN/README.md) — proposta de pesquisa sobre documentação técnica em quatro tipos e exploração visual de relações com dados fictícios. Não aprovada para implementação.
 
 ## Regra de interpretação
 
