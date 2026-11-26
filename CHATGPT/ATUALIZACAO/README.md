@@ -55,3 +55,8 @@ A direção conceitual foi refinada e agora é coordenada pelo Plano Mestre. A i
 5. Uma evolução incremental baseada em auditoria do aplicativo real e validação humana.
 
 **Nada nesta pasta, por si só, autoriza implementação.**
+
+
+## Integração ChatGPT ↔ NEXUS
+
+A integração atual de entrada permanece funcional, mas sua finalização bidirecional foi posicionada como **Rodada 6**, após completar o domínio funcional (Rodada 4) e estabilizar a experiência (Rodada 5). O guia operacional `docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md` será gerado e validado pelo Google AI Studio a partir do código real quando os modelos estiverem estáveis. Esta pasta estratégica não substitui esse guia técnico.
