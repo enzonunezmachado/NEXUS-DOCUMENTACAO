@@ -19,7 +19,7 @@ O NEXUS deve permitir que informações de naturezas diferentes se conectem sem 
 | 1 | Atualização e proteção dos dados | **CONCLUÍDA** | Motor de merge, preservação de dados e pipeline inicial; persistência de keystore e atualização in-place ainda pertencem ao gate contínuo de release |
 | 2 | Importação e entrada estruturada | **CONCLUÍDA** | Prévia, mesclagem, contrato de entrada e processamento estruturado implementados; validar fluxos reais conforme dependências |
 | 3 | Ponte ChatGPT → GitHub → Android | **CONCLUÍDA (26/11/2026)** | Correções na `main`, GitHub Actions #70 verde e importação real confirmada pelo usuário no aplicativo. Cenários adicionais seguem no gate contínuo |
-| 4 | Completude funcional e integração entre domínios | **PRÓXIMA** | Fechar lacunas de recorrência, checklist por ocorrência, eventos e consistência transversal antes do redesign amplo |
+| 4 | Completude funcional e integração entre domínios | **EM ANDAMENTO — etapa atual** | Recorrência de compromissos/eventos, checklists por ocorrência e em compromissos/eventos, identidade contextual, demais lacunas e auditoria de completude. Não expandir a ponte nesta rodada |
 | 5 | Arquitetura da informação e experiência | **POSTERIOR — EM ANÁLISE** | Investigar, decidir, prototipar e implementar a experiência gradualmente; Claude é referência, não especificação final |
 
 ## 3. Rodada 3 — ponte concluída
@@ -90,6 +90,28 @@ Esta rodada deve verificar não só se cada módulo funciona isoladamente, mas s
 
 **Gate da Rodada 4:** fluxos críticos ponta a ponta especificados e validados, lacunas de alta prioridade fechadas ou explicitamente aceitas como pendentes, e mapa de capacidades atualizado. Não iniciar redesign amplo sobre comportamento incerto.
 
+## 6. Rodada 6 — finalizar a integração bidirecional ChatGPT ↔ NEXUS
+
+A ponte atual da Rodada 3 continua funcionando para importar entradas pelo contrato v1. A expansão não será feita agora. A integração definitiva só começa depois da Rodada 4 (domínio funcional completo) e da Rodada 5 (experiência estabilizada), para não construir contratos sobre modelos ainda sujeitos a mudanças.
+
+### Entregas
+1. **Guia operacional oficial:** completar `docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md` a partir do código real, com exemplos JSON executáveis e validados. O ChatGPT consulta esse guia antes de preparar entradas. O Google AI Studio gera/atualiza o guia com base nos DTOs, enums, validadores, relações e testes.
+2. **Catálogo de capacidades:** documento/JSON versionado que descreve o que a versão do NEXUS suporta: entidades, campos, relações, operações, limitações e versões de contrato. Separado dos dados pessoais.
+3. **Snapshot de estado:** exportação compacta, selecionável e minimizada do estado atual relevante do aplicativo, com timestamp, versão e escopo. O backup completo não será o contexto padrão.
+4. **Retorno de alterações:** recibos e/ou feed incremental das operações e mudanças produzidas pelo NEXUS.
+5. **Sincronização manual bidirecional:** uma ação pode buscar entradas pendentes, validar e mostrar prévia para confirmação, depois enviar snapshot/recibos/alterações ao repositório. Exibir claramente importações, exportações, conflitos e falhas.
+6. **Automação opcional:** avaliar sincronização periódica em segundo plano. WorkManager é best-effort; não prometer execução exata às 00h/05h. O usuário poderá pausar/desativar.
+7. **Segurança:** não ampliar automaticamente o PAT read-only atual para read/write dentro do APK. Comparar GitHub App com credenciais de curta duração, relay mínimo e token fine-grained separado, restrito ao único repositório e com expiração. Keystore protege em repouso, mas não elimina exposição durante uso pelo processo Android.
+8. **Local-first e privacidade:** NEXUS permanece útil sem internet/ChatGPT. Definir minimização de dados, escopo, retenção, exclusões, idempotência, conflitos, concorrência e fonte de verdade.
+
+### Separação de artefatos
+- Catálogo de capacidades: o que o aplicativo sabe fazer.
+- Snapshot de estado: o que existe atualmente no aplicativo.
+- Inbox: operações que o ChatGPT propõe ao NEXUS.
+- Recibos/feed de alterações: o que o NEXUS executou ou mudou.
+
+Os nomes e formatos finais serão definidos na especificação técnica da Rodada 6; não são contratos implementados hoje.
+
 ## 5. Rodada 5 — arquitetura da informação e experiência
 
 A Rodada 5 aproveita a proposta Claude e os documentos de análise já existentes, sem copiá-los integralmente. O usuário quer preservar a identidade atual do NEXUS e também manter abertas as ideias estruturais interessantes da proposta, inclusive a reorganização de destinos/abas, até que sejam comparadas e decididas.
@@ -130,7 +152,7 @@ A Rodada 5 aproveita a proposta Claude e os documentos de análise já existente
 - Tema claro e escuro, acessibilidade e contraste permanecem corretos.
 - A wordmark preservada e o novo símbolo formam uma identidade coerente, caso o símbolo seja aprovado.
 
-## 6. Gate contínuo de confiabilidade
+## 7. Gate contínuo de confiabilidade
 
 Acompanha todas as rodadas:
 - Keystore persistente e assinatura consistente de releases.
@@ -142,7 +164,7 @@ Acompanha todas as rodadas:
 - Validação manual em aparelho real para UI, notificações, permissões, navegação e fluxos Android.
 - Desempenho, acessibilidade e compatibilidade.
 
-## 7. Governança para não criar pontas soltas
+## 8. Governança para não criar pontas soltas
 
 1. Nenhuma implementação começa apenas porque uma IA sugeriu.
 2. Toda mudança é classificada como apresentação, interação, regra de domínio, modelo de dados, persistência, integração ou infraestrutura.
@@ -155,7 +177,7 @@ Acompanha todas as rodadas:
 9. Ao descobrir uma dependência nova, abrir subetapa/GAP e atualizar o plano antes de improvisar no código.
 10. Antes de iniciar qualquer nova sessão de implementação, ler este plano, o estado atual, o registro de lacunas e os documentos técnicos relevantes.
 
-## 8. Fontes de acompanhamento
+## 9. Fontes de acompanhamento
 
 - [Visão, escopo e governança](./00_VISAO_ESCOPO_E_GOVERNANCA.md)
 - [Arquitetura da informação](./01_ARQUITETURA_DA_INFORMACAO.md)
@@ -169,6 +191,6 @@ Acompanha todas as rodadas:
 - [Roadmap técnico](../../GOOGLE_IA/docs/10_ROADMAP.md)
 - [Proposta Claude desmembrada](../PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/CLAUDE_DESMEMBRADO/README.md)
 
-## 9. Próxima ação operacional
+## 10. Próxima ação operacional
 
-A Rodada 3 foi concluída após CI verde na `main` e importação real confirmada pelo usuário. Próxima ação: iniciar a Rodada 4 pelo levantamento técnico conjunto de GAP-001 e GAP-003, porque a semântica de recorrência e o ciclo de vida do checklist precisam ser compatíveis antes de ampliar o contrato Inbox. Não iniciar ainda a reformulação visual ampla.
+A Rodada 3 está concluída. A Rodada 4 está em andamento: fechar recorrência de Compromissos/Eventos, independência de checklists por ocorrência, checklists próprios para Compromissos/Eventos, identidade contextual e demais lacunas do domínio. O Google AI Studio deverá completar o guia operacional de entrada a partir do código estabilizado. Não expandir a ponte nesta etapa; a integração bidirecional definitiva é a Rodada 6, depois da Rodada 5.
