@@ -1,9 +1,13 @@
 # 05 — Plano de evolução e questões abertas
 
 **Estado:** EM ANÁLISE  
-**Natureza:** sequência de investigação e preparação; não é roadmap técnico aprovado nem autorização de implementação.
+**Natureza:** sequência de investigação e preparação da experiência; subordinada ao [Plano Mestre de Evolução](./PLANO_MESTRE_DE_EVOLUCAO.md), que ordena a completude funcional antes desta rodada. Não é autorização isolada de implementação.
 
-## 1. Ordem de trabalho recomendada
+## 1. Posição desta iniciativa no plano geral
+
+A reformulação visual e de arquitetura da informação corresponde à Rodada 5. Antes dela, concluir a ponte da Rodada 3 e a completude funcional da Rodada 4, conforme o Plano Mestre. O trabalho descrito abaixo organiza a investigação de experiência; não deve ser usado para antecipar redesign enquanto recorrência, checklist por ocorrência e relações essenciais ainda estiverem indefinidos.
+
+## 2. Ordem de trabalho recomendada
 
 A reformulação não deve começar por redesenhar telas isoladas. Primeiro é necessário entender o produto real, depois definir arquitetura e linguagem, e só então especificar e aplicar componentes.
 
@@ -96,7 +100,7 @@ Somente após aprovação:
 
 **Saída:** evidências de validação e registro do que foi efetivamente implementado.
 
-## 2. Questões críticas ainda abertas
+## 3. Questões críticas ainda abertas
 
 ### Arquitetura e modelo mental
 - Qual a diferença exata entre Objetivo, Projeto, Meta e Evento?
