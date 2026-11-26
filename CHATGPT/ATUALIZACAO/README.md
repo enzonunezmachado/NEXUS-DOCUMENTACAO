@@ -24,7 +24,7 @@ A reformulação é ampla na experiência, mas não implica reescrever o aplicat
 
 ## Como interpretar esta documentação
 
-- Os documentos 00–05 descrevem a direção atual de investigação por assunto.
+- Os documentos 00–07 descrevem a direção atual de investigação por assunto.
 - O documento 06 registra a evolução do pensamento: o que foi consolidado, reformulado, reduzido, substituído ou mantido em aberto em relação às versões anteriores.
 - A proposta Claude de 24/11/2026 continua preservada na pasta [PROPOSTAS](../PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md), como referência e alternativa, não como arquitetura escolhida. Ela também foi separada em [sete partes temáticas fiéis](../PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/CLAUDE_DESMEMBRADO/README.md), mantendo a fonte integral intacta.
 - Quando uma questão não estiver resolvida, ela deve permanecer explicitamente aberta. Não preencher lacunas com suposições.
