@@ -10,19 +10,23 @@ A reformulação é ampla na experiência, mas não implica reescrever o aplicat
 
 ## Como ler
 
-1. [00 — Visão, escopo e governança](00_VISAO_ESCOPO_E_GOVERNANCA.md)
-2. [01 — Arquitetura da informação](01_ARQUITETURA_DA_INFORMACAO.md)
-3. [02 — Linguagem visual, cores e símbolos](02_LINGUAGEM_VISUAL_CORES_E_SIMBOLOS.md)
-4. [03 — Componentes, cards e fichas](03_COMPONENTES_CARDS_E_FICHAS.md)
-5. [04 — Interações, relações e navegação](04_INTERACOES_RELACOES_E_NAVEGACAO.md)
-6. [05 — Plano de evolução e questões abertas](05_PLANO_DE_EVOLUCAO_E_QUESTOES_ABERTAS.md)
-7. [06 — Evolução conceitual e arquitetural](06_EVOLUCAO_CONCEITUAL_E_ARQUITETURAL.md)
+**Comece pelo [Plano Mestre de Evolução](PLANO_MESTRE_DE_EVOLUCAO.md)**: ele apresenta o estado das rodadas, prioridades, dependências, critérios de conclusão e próxima ação. Esta pasta é o centro de coordenação estratégica da evolução.
+
+1. [Plano Mestre de Evolução](PLANO_MESTRE_DE_EVOLUCAO.md)
+2. [00 — Visão, escopo e governança](00_VISAO_ESCOPO_E_GOVERNANCA.md)
+3. [01 — Arquitetura da informação](01_ARQUITETURA_DA_INFORMACAO.md)
+4. [02 — Linguagem visual, cores e símbolos](02_LINGUAGEM_VISUAL_CORES_E_SIMBOLOS.md)
+5. [03 — Componentes, cards e fichas](03_COMPONENTES_CARDS_E_FICHAS.md)
+6. [04 — Interações, relações e navegação](04_INTERACOES_RELACOES_E_NAVEGACAO.md)
+7. [05 — Plano de evolução e questões abertas](05_PLANO_DE_EVOLUCAO_E_QUESTOES_ABERTAS.md)
+8. [06 — Evolução conceitual e arquitetural](06_EVOLUCAO_CONCEITUAL_E_ARQUITETURAL.md)
+9. [07 — Requisitos transversais e casos de uso](07_REQUISITOS_TRANSVERSAIS_E_CASOS_DE_USO.md)
 
 ## Como interpretar esta documentação
 
 - Os documentos 00–05 descrevem a direção atual de investigação por assunto.
 - O documento 06 registra a evolução do pensamento: o que foi consolidado, reformulado, reduzido, substituído ou mantido em aberto em relação às versões anteriores.
-- A proposta Claude de 24/11/2026 continua preservada na pasta [PROPOSTAS](../PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md), como referência e alternativa, não como arquitetura escolhida.
+- A proposta Claude de 24/11/2026 continua preservada na pasta [PROPOSTAS](../PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md), como referência e alternativa, não como arquitetura escolhida. Ela também foi separada em [sete partes temáticas fiéis](../PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/CLAUDE_DESMEMBRADO/README.md), mantendo a fonte integral intacta.
 - Quando uma questão não estiver resolvida, ela deve permanecer explicitamente aberta. Não preencher lacunas com suposições.
 
 ## Fontes de contexto
@@ -43,7 +47,7 @@ A reformulação é ampla na experiência, mas não implica reescrever o aplicat
 
 ## Estado atual
 
-A direção conceitual foi refinada para deixar explícito que a iniciativa combina:
+A direção conceitual foi refinada e agora é coordenada pelo Plano Mestre. A iniciativa combina:
 1. Uma experiência visual mais expressiva e bem composta, sem perder a identidade sóbria do NEXUS.
 2. Uma arquitetura da informação ainda em investigação, sem adoção automática dos cinco destinos propostos pelo Claude.
 3. Uma linguagem de componentes proporcional à função e à densidade de cada informação.
