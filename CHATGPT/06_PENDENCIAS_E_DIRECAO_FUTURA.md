@@ -72,3 +72,12 @@ Consultar GOOGLE_IA para detalhes e confirmar se houve atualização posterior. 
 ## 7. Direção de longo prazo
 
 O NEXUS deve continuar evoluindo. Módulos, tecnologias e interfaces podem mudar profundamente. A memória deve preservar por que decisões foram tomadas e como o produto evoluiu, sem obrigar versões futuras a reproduzir escolhas antigas.
+
+
+## 8. Documentação técnica e exploração visual
+
+- **DOC-001 — Aplicar Diátaxis seletivamente à documentação:** CAPTURADA / EM PESQUISA. Avaliar se tutoriais, guias práticos, referência e explicações estão suficientemente distintos, sem reorganizar todos os documentos existentes por princípio.
+- **DOC-002 — Explorar Obsidian como visualizador de relações:** CAPTURADA / EM PESQUISA. Testar com dados fictícios e notas Markdown; não presumir sincronização ao vivo com Room nem exportar dados reais.
+- Documento principal: [Proposta Diátaxis + Obsidian](PROPOSTAS/2026-11-26_DOCUMENTACAO_DIATAXIS_OBSIDIAN/README.md).
+- Próximo passo: comparar Graph View, Bases, MkDocs, diagramas e possíveis visualizações nativas; definir problema de navegação antes de recomendar integração.
+- Nenhuma alteração de código, banco, backup, interface ou ADR foi autorizada.
