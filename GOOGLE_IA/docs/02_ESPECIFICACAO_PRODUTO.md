@@ -34,7 +34,7 @@
 | --- | --- | --- | --- |
 | `REQ-001` | Navegação por estado reativo (`MainTab` na ordem `TASKS, AGENDA, HOME, FINANCE, EVENTS`) + `BackHandler` com confirmação de descarte | Shell / Navegação | `IMPLEMENTADA` |
 | `REQ-002` | `QuickAddChooser` para criação rápida contextual (Tarefa, Compromisso, Lançamento, Evento, Projeto) | Shell / Navegação | `PARCIALMENTE IMPLEMENTADA` (5 opções e sem colapso uniforme `"Mais detalhes"` em todos os editores; `TaskEditor` possui `"Mais detalhes"` para recorrência) |
-| `REQ-003` | Identidade visual N dedicada + `androidx.core:core-splashscreen` (`Theme.NEXUS.Splash`) | Shell / Identidade | `NÃO IMPLEMENTADA` (há ícone vetorial `ic_launcher_nexus.xml`, sem `core-splashscreen`) |
+| `REQ-003` | Identidade visual N dedicada + `androidx.core:core-splashscreen` (`Theme.NEXUS.Splash`) | Shell / Identidade | `PARCIALMENTE IMPLEMENTADA` (`NexusWordmark` N-1 + Kinetik Cut e launcher icon adaptativo N-1 implementados; falta `core-splashscreen` / `Theme.NEXUS.Splash`) |
 | `REQ-004` | Dashboard modular configurável (`9` blocos ordenáveis/desligáveis, modo compacto, saudação, data e frase diária) | Módulo 1 — Dashboard | `IMPLEMENTADA` |
 | `REQ-005` | Gráfico de anel de tarefas (`TaskRingChart`), gráficos financeiros (`BarGroupChart`, `DonutChart`), alertas reais (`AlertBannerCard`), metas/projetos e próximos itens no Dashboard | Módulo 1 — Dashboard | `IMPLEMENTADA` (seletor de mês do bloco de tarefas fixo no mês atual na Home; sem bloco `MARKET` configurável na Home) |
 | `REQ-006` | CRUD completo de Tarefas + prioridades + 6 status + Kanban sobre a mesma tabela + checklist de subtarefas | Módulo 2 — Tarefas | `IMPLEMENTADA` (`INT-03`: alternar subtarefa persistida em `TaskEditorSheet` grava direto no Room antes de "Salvar") |
@@ -56,7 +56,7 @@
 | `REQ-022` | 4 Widgets Glance responsivos (`MyDay`, `MyTasks`, `Finance`, `NexusSummary`) com config isolada por ID, tema claro/escuro e deep-links | Módulo 11 — Widgets | `IMPLEMENTADA` |
 | `REQ-023` | Configurações (nome, tema claro/escuro, categorias), Personalização do Dashboard e Biblioteca de Frases (JSON/TXT sem frases embutidas) | Módulo 12 — Config/Personalização | `IMPLEMENTADA` |
 | `REQ-024` | Busca Global unificada (`GlobalSearchScreen`) | Módulo 12 / Busca | `IMPLEMENTADA` |
-| `REQ-025` | Backup JSON `v7` transacional via SAF (27 tabelas + `marketConfig` opcional com rollback), retrocompatibilidade `v1..v6`, CSV financeiro 15 colunas e Diagnóstico (`error_logs`) | Módulo 13 — Backup/Diagnóstico | `IMPLEMENTADA` |
+| `REQ-025` | Backup JSON `v7` transacional via SAF (27 tabelas + `marketConfig` com rollback): **Modo 1** restauração completa e **Modo 2** mesclagem incremental idempotente sem apagar dados locais, retrocompatibilidade `v1..v6`, CSV financeiro 15 colunas e Diagnóstico (`error_logs`) | Módulo 13 — Backup/Diagnóstico | `IMPLEMENTADA` |
 | `REQ-026` | Backup completo `.zip` (`data.json` + pasta `banners/`) | Módulo 13 — Backup | `NÃO IMPLEMENTADA` |
 
 ---
@@ -166,7 +166,40 @@
 - **Biblioteca de Frases (`QuoteLibraryScreen`):** começa vazia (zero frases fictícias), suporta CRUD e importação/exportação SAF em JSON ou TXT (`texto - autor` / `texto | autor`).
 - **Busca Global (`GlobalSearchScreen`):** busca textual unificada em tempo real em tarefas, projetos, compromissos (com detecção de conflitos sobre o conjunto total), eventos, transações, cartões e objetivos.
 
-### Módulo 13 — Backup, Restauração e Diagnóstico (`BackupManager` / `MoreSettingsBackupDiagnosticsScreens`)
-- **JSON `v7` via SAF:** exporta as 27 tabelas Room + `marketConfig` (favoritos e alertas válidos). Importação valida, mostra `BackupPreview`, tolera `v1..v6` (`null` em `marketConfig` preserva dados locais existentes), sanitiza FKs órfãs e executa restauração transacional em Room com rollback coordenado Room ↔ Mercado.
+### Módulo 13 — Backup, Restauração, Mesclagem Incremental, Entrada Estruturada e Diagnóstico (`BackupManager` / `BackupMergeEngine` / `StructuredInputProcessor` / `MoreSettingsBackupDiagnosticsScreens`)
+- **JSON `v7` via SAF:** exporta as 27 tabelas Room + `marketConfig` (favoritos e alertas válidos). A importação valida o arquivo, tolera `v1..v6` (`null` em `marketConfig` preserva dados locais existentes) e oferece **dois fluxos totalmente separados na UI** (sem troca silenciosa de modo dentro do diálogo):
+  - **Modo 1 — Restauração Completa (`restoreAtomically`):** exibe diálogo dedicado com alerta explícito de ação destrutiva e **checkbox obrigatório de confirmação** antes de habilitar o botão `"Substituir tudo"`. Limpa tabelas filhas → pais, substitui o banco inteiro e aplica `marketConfig` com rollback coordenado Room ↔ Mercado.
+  - **Modo 2 — Mesclagem Incremental (`mergeBackupAtomically` com prévia `previewMerge`):** operação padrão recomendada e idempotente (`append-only` / sem exclusões implícitas). Antes de confirmar, executa **simulação real em dry-run** (`BackupMergeEngine.previewMerge`) compartilhando exatamente o mesmo planejador da mesclagem efetiva (zero gravações no Room ou Mercado), exibindo quantos registros serão adicionados, já existem, entraram em conflito (mantendo o local), foram rejeitados ou exigem revisão de vínculos. Na confirmação, insere na ordem topológica, preserva singletons e edições locais, garante coerência financeira (faturas únicas e bloqueio de dupla despesa `"pagamento de fatura"`) e exibe `MergeSummary` legível em pt-BR.
+- **Camada Interna de Entrada Estruturada (`data/ingestion/`, Etapa 2):** contrato JSON/DTO interno versionado (`contractVersion = 1`) acoplado ao `NexusRepository` (`processStructuredInputJson` / `processStructuredInputEnvelope`) para ingerir operações de `TASK`, `APPOINTMENT`, `EVENT`, `PROJECT`, `PERSONAL_GOAL` e `TRANSACTION` diretamente no Room `v6` com validação estrita, checagem de FKs e regras financeiras, idempotência por `operationId` em `audit_history`, preservação local em conflitos e rollback atômico seguro (preparado para a Etapa 3, sem acesso externo/GitHub nesta etapa).
 - **CSV Financeiro:** exporta `transactions` em UTF-8 com 15 colunas separadas por vírgula.
 - **Diagnóstico (`DiagnosticsScreen`):** exibe versão do app/DB, contagem reativa das 27 tabelas e últimos 50 registros de `error_logs` (`GlobalErrorHandler`) com opção de limpeza.
+
+
+---
+
+## Requisitos transversais em evolução — completude de registros
+
+> Os requisitos abaixo registram a direção funcional aprovada para a Rodada 4. Não significam que já existam no código. A implementação deve respeitar o modelo de dados real, os ADRs vigentes e os critérios de aceite.
+
+| ID | Requisito | Estado |
+|---|---|---|
+| `REQ-029` | Compromissos e Eventos podem possuir checklist opcional, com itens ordenados e estado de conclusão persistido. O checklist deve ser independente do checklist de tarefas vinculadas e não pode ser confundido com lembretes ou notas. | **PLANEJADA — Rodada 4** |
+| `REQ-030` | Compromissos e Eventos podem possuir identidade visual contextual (ícone/categoria visual), para diferenciar atividades como academia, corrida, consulta, viagem, show ou reunião na Agenda e nas fichas. O ícone identifica o tipo/contexto do registro; nunca substitui status, vínculo ou controle de ação. | **PLANEJADA — Rodada 4/5** |
+| `REQ-031` | A integração externa deve expor um catálogo versionado e legível por máquina das capacidades e contratos efetivamente suportados pelo aplicativo, separado de qualquer snapshot dos dados pessoais atuais. | **PLANEJADA — Rodada 6** |
+| `REQ-032` | O usuário deve poder solicitar sincronização de entrada e saída com prévia/resultado claros. O desenho deve contemplar sincronização manual bidirecional e avaliar automação periódica opcional sem prometer horário exato de execução. | **PLANEJADA — Rodada 6** |
+
+### Regras esperadas para checklists de Compromissos e Eventos (`REQ-029`)
+- O checklist é opcional; registros simples não devem ganhar campos ou etapas desnecessárias.
+- Cada item tem identidade, título, ordem e estado de conclusão próprios.
+- O checklist pertence ao compromisso/evento, não às tarefas relacionadas. Tarefas vinculadas continuam sendo entidades independentes.
+- Em registros recorrentes, cada ocorrência deve ter estado próprio; a série pode fornecer um modelo reutilizável, mas marcar um item em uma ocorrência não pode marcar as demais.
+- Definir explicitamente como alterações no checklist-base afetam ocorrências passadas, futuras e exceções.
+- Considerar backup/restauração/merge, importação estruturada, exportação de estado, notificações e histórico.
+- Não persistir mudanças de rascunho antes de salvar/confirmar o editor.
+
+### Regras esperadas para identidade contextual (`REQ-030`)
+- Permitir representar contextos reais distintos sem depender apenas do título textual.
+- Ícone é metadado de apresentação associado a uma categoria/contexto controlado; não é um emoji arbitrário que o ChatGPT inventa livremente.
+- Definir catálogo permitido, fallback, acessibilidade, tema claro/escuro, Agenda, lista, ficha, widgets e backup.
+- Diferenciar o ícone do registro do controle de concluir, pagar, editar ou abrir.
+- Exemplo de caso a suportar: uma atividade de academia pode usar um ícone de atividade física na Agenda, enquanto sua recorrência, horário e checklist continuam sendo dados estruturados independentes.
