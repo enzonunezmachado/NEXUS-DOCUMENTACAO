@@ -158,3 +158,157 @@ A varredura identificou títulos e comandos absolutos que poderiam ser interpret
 - `09_GUIA_DESENVOLVIMENTO.md`: “Regras Permanentes” passou a “Regras Vigentes”; incrementalidade foi mantida como padrão, sem proibir reescritas justificadas e aprovadas; restrições de backend/login foram explicitamente vinculadas ao ADR-003 ativo.
 
 **Limites:** não houve mudança de decisão arquitetural, código ou escopo. Os documentos foram ajustados para deixar claro que as regras atuais são obrigatórias enquanto vigentes, mas revisáveis pelo processo formal.
+
+---
+
+## 2026-11-25 — Rodada 1: Confiabilidade, Atualização In-Place e Mesclagem Incremental de Backups (`v5.3.0`)
+
+**Tipo:** evolução funcional implementada no código Android + atualização sincronizada de `/docs/` e artefatos do Google AI Studio.
+
+### Motivação e evidência
+Preparar o NEXUS para uso cotidiano contínuo resolvendo dois bloqueios operacionais reais:
+1. Conflitos de assinatura (`INSTALL_FAILED_UPDATE_INCOMPATIBLE`) em builds de CI/dispositivo que obrigavam a desinstalar o app antes de atualizar (apagando `nexus_local.db`, dado `android:allowBackup="false"`).
+2. Ausência de importação incremental de backups sem apagar o banco atual (`BackupManager.restoreAtomically` executava apenas substituição destrutiva completa).
+
+### Mudanças implementadas e documentadas
+1. **Assinatura persistente opcional e versionamento (`ADR-015`):**
+   - Preservado `applicationId = "com.nexus.app"`, atualizado `versionCode` (`7 -> 8`) e `versionName` (`"5.2.0" -> "5.3.0"`).
+   - Adicionada leitura segura opcional de `keystore.properties` / variáveis de ambiente em `app/build.gradle.kts`, criado `keystore.properties.example`, protegidas extensões sensíveis no `.gitignore` e adicionado suporte opcional a secrets (`NEXUS_DEBUG_KEYSTORE_BASE64`, `NEXUS_KEYSTORE_BASE64`) no `.github/workflows/android-build.yml`.
+2. **Mesclagem incremental idempotente (`ADR-016`):**
+   - Criados `BackupStorageGateway.kt` (`RoomBackupStorageGateway`), `BackupMergeEngine.kt` e a suíte `BackupIncrementalMergeUnitTests.kt` (`11` `@Test` cobrindo 20 cenários).
+   - Expandidos `BackupModels.kt` (`BackupImportMode`, `MergeSummary`, `MergeIssueItem`, `EntityMergeCounts`), `BackupManager.kt` (`validateForMerge`, `mergeBackupAtomically`), `NexusRepository.kt`, `NexusViewModel.kt`, `MainActivity.kt` e `MoreSettingsBackupDiagnosticsScreens.kt` (distinção explícita entre Modo 1 e Modo 2 na `BackupScreen`).
+3. **Documentação e artefatos sincronizados:**
+   - Atualizados `docs/README.md`, `02_ESPECIFICACAO_PRODUTO.md`, `03_ARQUITETURA_ENGENHARIA.md`, `04_MODELO_DADOS.md`, `07_ESTADO_ATUAL.md`, `08_QUALIDADE_SEGURANCA.md`, `10_ROADMAP.md`, `11_DECISOES_ADRS.md` (`ADR-015` e `ADR-016`), `12_RASTREABILIDADE.md`, `HISTORICO_DOCUMENTACAO.md` e os artefatos `NEXUS_CONTINUIDADE.md`, `NEXUS_CURRENT_STATE.md` e `NEXUS_IMPLEMENTATION_ROADMAP.md`.
+
+### Limites e itens não alterados
+- **Não compilado/executado localmente:** este container não possui JDK, Gradle, Android SDK (`apksigner`/`adb`) nem emulador; `:app:testDebugUnitTest` (16 arquivos, 122 `@Test`), `:app:assembleDebug` e testes em aparelho permanecem como `NÃO VERIFICADO` até execução no GitHub Actions ou máquina local.
+- **Sem secrets embutidos:** cabe ao mantenedor gerar/armazenar o arquivo `.jks` e configurar `keystore.properties` / GitHub Secrets.
+- **`web-mirror-pilot/`, `NexusDatabase` (`DATABASE_VERSION = 6`), `NexusMigrations.kt` e `CURRENT_FORMAT_VERSION = 7`** permaneceram inalterados. `BUG-001` segue em aberto para rodada própria.
+
+### Próximo passo
+Executar o workflow `.github/workflows/android-build.yml` (ou `:app:testDebugUnitTest :app:assembleDebug` com JDK 17 + Android SDK), configurar keystore persistente para validar atualização in-place (`apksigner` + `adb install -r`) e validar a mesclagem incremental com backup real em dispositivo.
+
+---
+
+## 2026-11-25 — Etapa 2: Prévia Dry-Run de Backup, Entrada Estruturada Interna (v1) e Endurecimento de Assinatura/CI
+
+**Tipo:** evolução funcional implementada no código Android + pipeline CI + atualização sincronizada de `/docs/` e artefatos do Google AI Studio.
+
+### Motivação e evidência
+Completar os 3 pilares previstos para a **Etapa 2 de 4** após a Rodada 1:
+1. Eliminar risco de restauração destrutiva acidental e oferecer prévia dry-run fiel à execução real antes de confirmar a mesclagem incremental (**Frente A**).
+2. Disponibilizar uma camada interna versionada e testável de entrada estruturada (`contractVersion = 1`) sobre o banco Room único `v6` pronta para o conector externo da Etapa 3, sem introduzir segundo banco nem acoplar rede/GitHub API antecipadamente (**Frente B**).
+3. Impedir falhas silenciosas de assinatura no Gradle e no GitHub Actions, verificando criptograficamente o SHA-256 dos APKs emitidos via `apksigner` (**Frente C**).
+
+### Mudanças implementadas e documentadas
+1. **Frente A — Prévia Dry-Run e Separação de Fluxos de Backup (`ADR-016`):**
+   - Refatorado `BackupMergeEngine.kt` com `computeMergePlan` compartilhado e `previewMerge(..., isDryRun = true)` com garantia de zero gravações no Room e nos stores do Mercado.
+   - Adicionado `BackupManager.previewMerge`, `NexusRepository.previewBackupMerge`, `BackupUiState` e prévia assíncrona em `NexusViewModel.kt`, e separados completamente os fluxos na UI (`MoreSettingsBackupDiagnosticsScreens.kt` + `MainActivity.kt`): Restauração Completa com diálogo próprio e checkbox obrigatório de confirmação destrutiva; Mesclagem Incremental com diálogo de prévia dry-run antes de aplicar e resumo legível (`MergeSummary`) em pt-BR.
+   - Expandido `BackupIncrementalMergeUnitTests.kt` para `13` `@Test`.
+2. **Frente B — Camada Interna de Entrada Estruturada (`ADR-017`):**
+   - Criados `StructuredInputModels.kt`, `StructuredInputGateway.kt` e `StructuredInputProcessor.kt` em `app/src/main/java/com/nexus/app/data/ingestion/`, conectados ao `NexusRepository.kt` (`processStructuredInputJson`, `processStructuredInputEnvelope`) sobre Room `v6` + idempotência em `audit_history` (`STRUCTURED_INPUT_OP`).
+   - Criada a suíte `StructuredInputUnitTests.kt` (`7` `@Test`) cobrindo contrato `v1`, JSON estrito, enums, FKs, regras financeiras, conflitos locais, idempotência por `operationId`, rollback de lote atômico e retentativa limpa após `FAILED_ROLLED_BACK`.
+   - Criado o guia normativo `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`.
+3. **Frente C — Endurecimento de Assinatura e CI (`ADR-015`):**
+   - Endurecido `app/build.gradle.kts` para falhar imediatamente (`GradleException`) em configurações parciais (`1..3/4`) ou arquivos inexistentes e bloquear `assembleRelease`/`bundleRelease`/`packageRelease` sem configuração `release` válida.
+   - Atualizado `.github/workflows/android-build.yml` com `build-tools;35.0.0`, validação prévia via `keytool -list -v` (`-storepass:env`), build condicional `:app:assembleRelease`, verificação pós-build via `apksigner verify --verbose --print-certs` comparando o fingerprint SHA-256 e publicação do relatório público em `$GITHUB_STEP_SUMMARY` e `NEXUS-Signing-Verification-Report`.
+4. **Documentação e artefatos sincronizados:**
+   - Criado `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md` e atualizados `docs/README.md`, `02_ESPECIFICACAO_PRODUTO.md`, `03_ARQUITETURA_ENGENHARIA.md`, `04_MODELO_DADOS.md`, `07_ESTADO_ATUAL.md`, `08_QUALIDADE_SEGURANCA.md`, `10_ROADMAP.md`, `11_DECISOES_ADRS.md` (`ADR-015`, `ADR-016`, `ADR-017`), `12_RASTREABILIDADE.md` (`REQ-025`, `REQ-027`), `HISTORICO_DOCUMENTACAO.md`, além dos artefatos `NEXUS_CONTINUIDADE.md`, `NEXUS_CURRENT_STATE.md` e `NEXUS_IMPLEMENTATION_ROADMAP.md`.
+
+### Limites e itens não alterados
+- **Compilação Kotlin/Gradle e testes JUnit NÃO EXECUTADOS localmente:** este container não possui JDK, Gradle, Android SDK (`keytool`/`apksigner`/`adb`) nem emulador; os `17` arquivos de teste (`131` `@Test`) permanecem como `NÃO EXECUTADO` localmente. Apenas os blocos bash de `.github/workflows/android-build.yml` foram verificados via `bash -n` (exit 0) junto com inspeção estática dos arquivos modificados/criados.
+- **Sem transporte externo/GitHub API ainda:** reservado exclusivamente à **Etapa 3** sobre o contrato `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`.
+- **`applicationId = "com.nexus.app"`, `DATABASE_VERSION = 6`, `NexusMigrations.kt`, `CURRENT_FORMAT_VERSION = 7` e `web-mirror-pilot/`** permaneceram inalterados. `BUG-001` segue em aberto.
+
+### Próximo passo
+Executar `.github/workflows/android-build.yml` no GitHub Actions (com ou sem os 8 Secrets de assinatura configurados conforme manual entregue) e validar `NEXUS-Signing-Verification-Report`, prévia dry-run/mesclagem em aparelho real e posteriormente iniciar a **Etapa 3** conectando o transporte externo ao `NexusRepository.processStructuredInputJson` / `processStructuredInputEnvelope`.
+
+---
+
+## 2026-11-25 — Correção Cirúrgica do Setup do Android SDK no CI (`#45733193619`)
+
+**Tipo:** correção pontual de pipeline GitHub Actions + sincronização cirúrgica de documentação/artefatos.
+
+### Motivação e evidência
+A execução `#45733193619` (`commit fc7a4d6752cab01d05fcd5bdb1f63130fcdd526f`) do workflow `NEXUS Android Build` falhou na etapa `android-actions/setup-android@v4` porque o parâmetro multilinha `packages: |` enviou `'platform-tools\nbuild-tools;35.0.0'` como um único argumento ao `sdkmanager` (`Warning: Failed to find package 'platform-tools\nbuild-tools;35.0.0'`).
+
+### Mudanças implementadas
+1. **`.github/workflows/android-build.yml`:**
+   - Ajustado `android-actions/setup-android@v4` para `packages: 'platform-tools'`.
+   - Adicionado o passo `Install and verify Android SDK tools (platform-tools & build-tools 35.0.0)` que localiza o `sdkmanager`, garante aceite de licenças sem erro de `SIGPIPE`, invoca `"$SDKMANAGER" --sdk_root="$SDK_ROOT" "platform-tools" "build-tools;35.0.0"` passando cada pacote como argumento independente, e valida existência executável + versão de `$SDK_ROOT/platform-tools/adb` e `$SDK_ROOT/build-tools/35.0.0/apksigner`.
+   - Atualizada a etapa `Verify APK Signatures and Certificate Fingerprints` para priorizar `$ANDROID_HOME/build-tools/35.0.0/apksigner`.
+2. **Documentação e artefatos sincronizados:**
+   - Atualizados pontualmente `docs/07_ESTADO_ATUAL.md`, `docs/08_QUALIDADE_SEGURANCA.md`, `docs/11_DECISOES_ADRS.md` (`ADR-015`), `docs/HISTORICO_DOCUMENTACAO.md` e os artefatos `NEXUS_CURRENT_STATE.md` e `NEXUS_CONTINUIDADE.md`.
+
+### Limites e itens não alterados
+- **Não executado em runner/ambiente Android:** neste container não há JDK, Gradle, Android SDK nem acesso Git (`NO_GIT_REPO_IN_CONTAINER`); a correção foi validada localmente apenas via `bash -n` nos 3 blocos de script do workflow (`exit 0`). A confirmação definitiva depende de nova execução do GitHub Actions na branch `main`.
+- **Código Android preservado:** nenhuma alteração foi feita em `app/`, `NexusDatabase` (`v6`), `BackupModels` (`v7`), `data/ingestion/`, `applicationId`, `versionCode`/`versionName`, testes JUnit ou `web-mirror-pilot/`.
+
+### Próximo passo
+Fazer push da correção para `main` e executar o workflow `NEXUS Android Build` no GitHub Actions para confirmar a instalação de `platform-tools` + `build-tools;35.0.0`, os testes unitários e o build/assinatura do APK.
+
+---
+
+## 2026-11-26 — Rodada 3: Ponte ChatGPT → `NEXUS-INBOX` → NEXUS Android (`ADR-018`)
+
+**Tipo:** evolução funcional implementada no código Android + atualização sincronizada de `/docs/` e artefatos do Google AI Studio.
+
+### Motivação e evidência
+Entregar a primeira versão funcional ponta a ponta da integração **ChatGPT → `NEXUS-INBOX` (repositório GitHub privado) → NEXUS Android** sobre a camada `data/ingestion/` (`contractVersion = 1`) e o banco Room único `v6`, mantendo acesso discreto em `"Mais"`, segurança criptográfica da credencial no aparelho e controle explícito do usuário antes de qualquer escrita.
+
+### Mudanças implementadas e documentadas
+1. **Extensão retrocompatível da entrada estruturada (`data/ingestion/` + `NexusDaos.kt` + `NexusRepository.kt`):**
+   - Adicionado `StructuredEntityType.CHECKLIST`, suporte a `subtasks` inline em `TASK`, ações explícitas `CREATE`/`UPDATE`/`UPSERT` preservando `createdAt` em atualizações, estado `UPDATED` e simulação dry-run `previewJson`/`previewEnvelope` via `PreviewOverlayGateway` (zero gravações no banco, suportando vínculos intra-lote como `TASK` → `CHECKLIST` e `TASK` → `TRANSACTION`).
+   - Expandido `NexusDaos.kt` (`SubtaskDao.getById` / `getByTaskId`, `AuditHistoryDao.observeLatestByEntityType`) sem alterar `DATABASE_VERSION = 6`, e adicionado `AUDIT_ENTITY_INBOX_IMPORT_LOG = "INBOX_IMPORT_LOG"` + `observeInboxImportLogs()` + implementação de `InboxIngestionPort` em `NexusRepository.kt`.
+   - Expandido `StructuredInputUnitTests.kt` de `7` para `10` `@Test`.
+2. **Conector `data/inbox/` + Worker + Notificações + UI (`SubRoute.InboxBridge`):**
+   - Criados `InboxModels.kt`, `InboxStores.kt` (`InboxInputValidator`, `SharedPrefsInboxConfigStorage`, `AndroidKeystoreInboxTokenStore` com `AES/GCM/NoPadding`), `GitHubInboxRemoteDataSource.kt` (`HttpsURLConnection` `GET` somente leitura, sem redirects, limite `2 MB`, zero credenciais hardcoded), `InboxRepository.kt` (`InboxSummaryFormatter` omitindo categorias sem alteração real, dry-run `checkInboxNow`, confirmação explícita `confirmAndImportPending` e deduplicação por `path::sha`) e `InboxSyncWorker.kt` (`WorkManager` opcional `>= 15 min`, nunca auto-importa).
+   - Adicionados `showInboxPendingNotification` + `EXTRA_OPEN_INBOX` (`NexusNotificationScheduler.kt`), instanciação lazy em `AppContainer` (`NexusApplication.kt`), estados/ações em `NexusViewModel.kt`, tela `NexusInboxScreen.kt`, entrada discreta em `MoreSettingsBackupDiagnosticsScreens.kt` (`"NEXUS-INBOX (Ponte ChatGPT)"`) e rota `SubRoute.InboxBridge` + deep-link em `MainActivity.kt`.
+   - Criada a suíte `InboxBridgeUnitTests.kt` (`3` `@Test`), elevando o total do projeto para `18` arquivos e `137` `@Test`.
+3. **Documentação e artefatos sincronizados:**
+   - Atualizados `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`, `docs/03_ARQUITETURA_ENGENHARIA.md`, `docs/07_ESTADO_ATUAL.md`, `docs/08_QUALIDADE_SEGURANCA.md`, `docs/10_ROADMAP.md`, `docs/11_DECISOES_ADRS.md` (`ADR-018`), `docs/12_RASTREABILIDADE.md` (`REQ-027`, `REQ-028`), `docs/HISTORICO_DOCUMENTACAO.md`, além dos artefatos `NEXUS_CURRENT_STATE.md`, `NEXUS_CONTINUIDADE.md` e `NEXUS_IMPLEMENTATION_ROADMAP.md`.
+
+### Limites e itens não alterados
+- **Compilação Kotlin/Gradle e testes JUnit NÃO EXECUTADOS localmente:** este container não possui JDK, Gradle, Android SDK (`keytool`/`apksigner`/`adb`) nem emulador; os `18` arquivos de teste (`137` `@Test`) permanecem como `NÃO EXECUTADO` localmente até execução no GitHub Actions ou Android Studio.
+- **`applicationId = "com.nexus.app"`, `versionCode = 8`, `versionName = "5.3.0"`, `DATABASE_VERSION = 6`, `NexusMigrations.kt`, `CURRENT_FORMAT_VERSION = 7` e `web-mirror-pilot/`** permaneceram inalterados. `BUG-001` segue em aberto.
+
+### Próximo passo
+Rodar `.github/workflows/android-build.yml` no GitHub Actions (ou `:app:testDebugUnitTest :app:assembleDebug` com JDK 17 + Android SDK), criar o repositório privado `NEXUS-INBOX` no GitHub com Fine-Grained PAT (`Contents: Read-only`), configurar em **Mais → NEXUS-INBOX** no app e testar o fluxo completo com JSON gerado pelo ChatGPT.
+
+
+
+
+
+
+## 2026-11-26 — Inventário consolidado de lacunas, recorrência e correções da Rodada 3
+
+**Tipo:** consolidação de pendências, correção documental e rastreabilidade de falhas de implementação/CI.
+
+### Motivação e evidência
+Durante o povoamento inicial pela ponte ChatGPT → NEXUS-INBOX, ficou evidente que uma rotina semanal de compromisso (corrida às quintas, 20h) não podia ser registrada como série recorrente. A revisão documental confirmou que `REQ-009` já classificava recorrência de Compromissos e Eventos como não implementada, e que a `ADR-008` adiava a expansão. A ponte `v1` também não permite criar regras recorrentes novas. A inspeção do contrato encontrou ainda nomes de campos de checklist divergentes no exemplo JSON.
+
+### Mudanças introduzidas
+1. Criado `docs/15_REGISTRO_LACUNAS_E_FALHAS.md` como inventário consolidado inicial, com `GAP-001` (recorrência de compromissos/eventos), `GAP-002` (limitação de recorrência na Inbox) e `DOC-001` (exemplo JSON incompatível), além de pendências técnicas já rastreadas e histórico de falhas da Rodada 3.
+2. Corrigidos no exemplo de `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md` os campos `isDone`/`orderIndex` para `isCompleted`/`sortOrder`, e documentada explicitamente a limitação atual de recorrência do contrato `v1`.
+3. Reforçada em `07_ESTADO_ATUAL.md`, `10_ROADMAP.md` e `12_RASTREABILIDADE.md` a ligação entre `REQ-009`, `GAP-001` e `GAP-002`.
+4. Atualizados o índice e a orientação documental para apontar o novo registro.
+5. Registrado o histórico de CI: #47 com erros de compilação, #48 com um teste falho posteriormente corrigido e #50 com build/testes/Debug APK concluídos com sucesso; Release permaneceu ignorado por falta de secrets.
+
+### Limites e itens não alterados
+- Nenhum código Android, schema Room ou contrato executável foi alterado nesta atualização.
+- Nenhuma decisão técnica sobre o modelo final de recorrência ou versão futura do contrato foi tomada.
+- A recorrência de Compromissos e Eventos continua **não implementada**.
+- A validação em dispositivo, migrações Room reais e atualização in-place continuam pendentes conforme `07_ESTADO_ATUAL.md`.
+- O documento do Claude foi consultado: trata série e opções “só esta/toda a série” como princípios de experiência e lista recorrência de compromissos/eventos entre evoluções futuras, mas não fornece especificação técnica suficiente para implementar `REQ-009`.
+- Espelho `NEXUS-DOCUMENTACAO/GOOGLE_IA/docs/` atualizado nesta sincronização; artefatos internos do AI Studio não foram acessados nesta operação.
+
+### Arquivos afetados
+- `docs/15_REGISTRO_LACUNAS_E_FALHAS.md` (novo)
+- `docs/README.md`
+- `docs/00_ORIENTACAO_E_AUTORIDADE.md`
+- `docs/07_ESTADO_ATUAL.md`
+- `docs/10_ROADMAP.md`
+- `docs/12_RASTREABILIDADE.md`
+- `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`
+- `docs/HISTORICO_DOCUMENTACAO.md`
+
