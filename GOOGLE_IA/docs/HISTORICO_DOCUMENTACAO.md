@@ -348,3 +348,60 @@ O usuário explicitou que tarefas recorrentes podem reutilizar um checklist, mas
 - Nenhum código Android, schema Room ou contrato Inbox foi alterado.
 - O comportamento atual ainda precisa ser inspecionado; não foi classificado como defeito confirmado nem como funcionalidade ausente.
 - A definição técnica deve partir da auditoria do motor de recorrência de tarefas e do modelo de subtarefas.
+
+---
+
+## 2026-11-26 — Continuidade e Fechamento Técnico Local da Rodada 3 (Reaplicação Build #47/#48/#50 + Contrato `EVENT`)
+
+**Tipo:** correção técnica no código Android local + alinhamento documental e de artefatos internos.
+
+### Motivação e evidência
+As correções da ponte `NEXUS-INBOX` que haviam sido validadas apenas na branch isolada `fix/inbox-build-47-kotlin-compile` (Build #50) não estavam presentes no código-fonte deste workspace, que ainda continha os erros de compilação da Build #47 (`continue` em lambdas inline, `palette.negative`, `NexusEmptyState(message = ...)`) e o erro semântico da Build #48/#49 em `StructuredInputProcessor.prepareAndApplyChecklist`. Além disso, a auditoria contra `StructuredInputModels.kt` revelou que o exemplo JSON de `EVENT` em `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md` usava `location`, `status` e `ticketUnitPriceCents` em vez de `locationName`, `eventStatus` e `ticketPriceCents`.
+
+### Mudanças implementadas
+1. **Código Android (`app/src/`):**
+   - `InboxRepository.kt`: substituído `continue` dentro de lambdas `getOrElse` por checagens explícitas de `Result.getOrNull()`/`exceptionOrNull()` diretamente no loop `for` (compatível com Kotlin `2.1.0`).
+   - `NexusInboxScreen.kt`: substituídas as 8 referências inexistentes `palette.negative` por `palette.danger` e corrigido `NexusEmptyState(message = ...)` para `subtitle = ...`.
+   - `StructuredInputProcessor.kt`: corrigido `prepareAndApplyChecklist` para `val isUpdate = true`, classificando corretamente operações `CHECKLIST` sobre tarefa existente como `UPDATED`/`WILL_UPDATE`.
+   - `InboxBridgeUnitTests.kt`: adicionado teste `official contract template parses strictly and discard leaves DB untouched` (`18` arquivos / `138` `@Test`), validando o template oficial completo com parser estrito (`ignoreUnknownKeys = false`) e confirmando zero gravações ao descartar a prévia.
+2. **Documentação (`/docs/`) e Artefatos AI Studio:**
+   - `docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`: corrigidos os campos `locationName`, `eventStatus` e `ticketPriceCents` no exemplo JSON oficial de `EVENT` e ajustada a descrição de `CHECKLIST` (`items` ou `title`).
+   - `docs/README.md`, `docs/07_ESTADO_ATUAL.md`, `docs/12_RASTREABILIDADE.md`, `docs/15_REGISTRO_LACUNAS_E_FALHAS.md` e `docs/HISTORICO_DOCUMENTACAO.md` atualizados com o novo total (`138` `@Test`), fechamento de `DOC-001` e status da reaplicação local aguardando CI na `main`.
+   - Artefatos `NEXUS_CONTINUIDADE.md`, `NEXUS_CURRENT_STATE.md` e `NEXUS_IMPLEMENTATION_ROADMAP.md` realinhados ao estado atual de `/docs/` (incluindo Rodada 3 `EM ANDAMENTO` e Rodada 4 / `GAP-001`..`GAP-003` / Rodada 5).
+
+### Limites e validações pendentes
+- Não há JDK, Gradle ou Android SDK neste container; compilação Kotlin/Compose, `:app:testDebugUnitTest`, `:app:assembleDebug` e fluxo real com `NEXUS-INBOX` no aparelho dependem da sincronização manual do usuário com o GitHub (`main`) e execução do CI/dispositivo.
+- `GAP-001`, `GAP-002`, `GAP-003` e `BUG-001` não foram implementados (reservados para a Rodada 4).
+- O repositório espelho `NEXUS-DOCUMENTACAO/GOOGLE_IA/docs/` e `CHATGPT/ATUALIZACAO/PLANO_MESTRE_DE_EVOLUCAO.md` não existem neste container e precisam ser sincronizados pelo usuário externamente se necessário.
+
+
+---
+
+## 2026-11-26 — Encerramento da Rodada 3 após CI na main e importação real
+
+**Tipo:** atualização de estado de implementação, CI e validação prática.
+
+### Motivação e evidências
+Após a revisão e correções da Ponte ChatGPT → NEXUS-INBOX → Android, o código foi sincronizado na branch `main`. A GitHub Actions #70 (run `45792119560`) terminou com sucesso, executando os testes unitários e gerando o APK Debug. O Release foi ignorado por ausência dos secrets de assinatura. Em seguida, o usuário confirmou que o aplicativo funcionou no aparelho e que conseguiu importar registros pela ponte.
+
+Commit de referência: `4041611a4ef4e111c3633790d0c09babdecb2ae8`.
+
+### Mudanças introduzidas
+1. Rodada 3 alterada de EM ANDAMENTO para CONCLUÍDA no roadmap técnico e no Plano Mestre.
+2. Registradas a CI verde na `main` e a confirmação de importação real pelo usuário.
+3. Mantidos como cenários de acompanhamento, sem alegar validação individual: descarte sem gravação, reconsulta sem duplicidade, sincronização periódica, notificações/deep-links, reinício/rotação e verificações adicionais de segurança do token.
+4. Próxima etapa operacional definida como início da Rodada 4, começando pela investigação conjunta de `GAP-001` e `GAP-003`; `GAP-002` permanece dependente da definição dos modelos de recorrência.
+
+### Arquivos afetados
+- `docs/10_ROADMAP.md`
+- `docs/07_ESTADO_ATUAL.md`
+- `docs/15_REGISTRO_LACUNAS_E_FALHAS.md`
+- `docs/HISTORICO_DOCUMENTACAO.md`
+- `NEXUS-DOCUMENTACAO/GOOGLE_IA/docs/` (espelho dos quatro documentos acima)
+- `NEXUS-DOCUMENTACAO/CHATGPT/ATUALIZACAO/PLANO_MESTRE_DE_EVOLUCAO.md`
+
+### Limites e itens não alterados
+- Nenhum código Android, schema Room ou contrato Inbox foi alterado nesta atualização documental.
+- A conclusão da Rodada 3 não comprova individualmente todos os cenários de confiabilidade listados no gate contínuo.
+- Release continua sem assinatura persistente configurada; a Actions #70 gerou APK Debug e não Release.
+- GAP-001, GAP-002 e GAP-003 permanecem abertos para a Rodada 4.
