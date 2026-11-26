@@ -5,6 +5,15 @@
 
 ## 1. Identidade visual
 
+A wordmark atual “NEXUS” deve ser preservada como ponto de partida: o usuário manifestou satisfação explícita com sua aparência e não solicitou redesenho. O símbolo isolado usado como ícone/capa do aplicativo é uma questão separada: o “N” simples atual não agradou e deve ser reavaliado por exploração visual, sem alterar a wordmark automaticamente.
+
+Direção capturada do usuário para a exploração:
+- Manter a base de símbolo branco sobre fundo preto como referência principal.
+- Explorar um símbolo proprietário que comunique conexão, convergência, continuidade, organização ou um ponto confiável de encontro das áreas da vida.
+- Não escolher antecipadamente um conceito ou desenho; comparar alternativas em contexto real de ícone Android, splash/abertura e marca.
+- Preservar o caráter reconhecível do NEXUS; não transformar a marca em um produto genérico nem copiar outra identidade.
+
+
 A base do NEXUS permanece sóbria — preto, branco e grafite —, mas isso não significa monocromia obrigatória, frieza ou ausência de personalidade.
 
 A direção é combinar:
@@ -29,7 +38,16 @@ Cada ambiente pode expressar sua finalidade sem parecer outro aplicativo:
 
 A variação deve acontecer por composição, hierarquia e acentos contextuais, não por temas arbitrariamente independentes.
 
-## 3. Proporção, superfícies e bordas
+## 3. Composição, tipografia e alinhamento
+
+A auditoria visual deve abranger não apenas cores e ícones, mas também a composição editorial da interface:
+- Alinhamento consistente de títulos, subtítulos, ícones, ações e conteúdo dentro de cada padrão de tela.
+- Hierarquia tipográfica clara entre título da tela, seção, nome do registro, metadados e texto auxiliar.
+- Espaçamento e margens consistentes, respeitando exceções justificadas pelo contexto.
+- Alinhamento entre telas equivalentes e componentes reutilizados, sem forçar posições idênticas quando a função for diferente.
+- Verificar truncamento, quebras de linha, títulos longos e densidade em diferentes tamanhos de tela.
+
+## 4. Proporção, superfícies e bordas
 
 Não aumentar raios, espessuras ou contornos indiscriminadamente. A decisão deve considerar tamanho, função, densidade e proximidade entre componentes.
 
@@ -42,7 +60,7 @@ A auditoria deve incluir:
 - Estados padrão, pressionado, selecionado, desabilitado e foco.
 - Hierarquia de superfícies e separação entre grupos.
 
-## 4. O conflito semântico que precisa ser resolvido
+## 5. O conflito semântico que precisa ser resolvido
 
 Há duas necessidades diferentes que podem competir pelo mesmo canal visual:
 
@@ -53,7 +71,7 @@ O NEXUS já possui semânticas de estado e regras documentadas no Design System,
 
 Essas regras não devem ser apagadas ou substituídas silenciosamente. Primeiro é necessário inventariar o uso real no código e compreender o significado de cada cor, contorno, ícone e papel visual.
 
-## 5. Canais visuais possíveis — ainda sem decisão final
+## 6. Canais visuais possíveis — ainda sem decisão final
 
 Uma hipótese é separar responsabilidades em canais distintos:
 
@@ -71,7 +89,7 @@ Registros com múltiplos vínculos tornam a questão mais complexa: não presumi
 
 **Nenhuma paleta ou regra de herança de cor está aprovada nesta fase.**
 
-## 6. Intensidade e significado dos estados
+## 7. Intensidade e significado dos estados
 
 A auditoria deve distinguir atraso, conflito, bloqueio, prioridade, conclusão, seleção e atenção. Não usar vermelho, amarelo ou qualquer outra cor como sinônimos intercambiáveis.
 
@@ -82,7 +100,7 @@ Também deve verificar:
 - Se tema claro e escuro preservam contraste e significado.
 - Se componentes pequenos continuam legíveis.
 
-## 7. Inventário e remapeamento de ícones
+## 8. Inventário e remapeamento de ícones
 
 Foi identificada uma inconsistência de expectativa: a tarefa aparece com um controle circular de conclusão na área Tarefas, enquanto em alguns contextos da Agenda aparece um quadrado que pode ser entendido como checkbox ou como marcador de tipo.
 
@@ -92,9 +110,11 @@ A auditoria deve separar:
 
 Um símbolo que parece checkbox deve efetivamente funcionar como controle de conclusão. Um ícone informativo deve ser visualmente distinto e não sugerir uma ação inexistente.
 
-Fazer inventário transversal de símbolos na Agenda e nos demais módulos, sem substituir ícones existentes antes de entender suas funções.
+Fazer inventário transversal de símbolos na Agenda e nos demais módulos, sem substituir ícones existentes antes de entender suas funções. Na Agenda, revisar com prioridade os símbolos atuais de tarefa e compromisso que podem ser confundidos com checkbox, seleção ou mero traço.
 
-## 8. Acessibilidade
+A família de ícones deve definir peso de traço, proporção, preenchimento, geometria e comportamento em tamanhos pequenos. Separar visualmente o símbolo que identifica o tipo de registro do controle que executa a ação de concluir. Se concluir tarefa pela Agenda for permitido, o controle deve ser reconhecível como ação e ter área de toque adequada; o ícone de tipo não deve simular essa ação.
+
+## 9. Acessibilidade
 
 Nenhuma informação essencial deve depender exclusivamente da cor. Combinar, quando necessário, cor com forma, texto, ícone, padrão ou descrição acessível.
 
@@ -106,7 +126,7 @@ Critérios:
 - Compatibilidade com recursos de acessibilidade.
 - Respeito à preferência de movimento reduzido.
 
-## 9. Questões abertas
+## 10. Questões abertas
 
 - Como representar relação sem competir com status?
 - Como lidar com registros de múltiplos vínculos?
