@@ -46,6 +46,10 @@ Não modificar o repositório ativo ao realizar manutenção documental neste re
 - [Rodada de arquitetura da informação — 24/11/2026](CHATGPT/PROPOSTAS/2026-11-24_ARQUITETURA_INFORMACAO/README.md): proposta Claude, alternativas, comparação crítica e prompt-base. Estado EM ANÁLISE.
 - [ATUALIZAÇÃO — Reformulação ampla da experiência](CHATGPT/ATUALIZACAO/README.md): iniciativa que consolida propostas de reconstrução da apresentação das telas, identidade visual, componentes, fichas, relações, interações e plano de evolução. Estado EM ANÁLISE; não autoriza implementação.
 
+## Nova proposta metodológica — 26/11/2026
+
+- [Diátaxis e exploração visual com Obsidian](CHATGPT/PROPOSTAS/2026-11-26_DOCUMENTACAO_DIATAXIS_OBSIDIAN/README.md): pesquisa futura sobre classificação da documentação técnica e visualização experimental de relações via Markdown/Obsidian. Estado CAPTURADA / EM PESQUISA; não altera código nem autoriza integração.
+
 ## Conteúdo legado
 
 O registro histórico [NEXUS_ARCHITECTURE_AND_PROGRESS.md](ARQUIVO/LEGADO_RAIZ/2026-11-20_NEXUS_ARCHITECTURE_AND_PROGRESS.md) foi retirado da raiz e preservado em `ARQUIVO/LEGADO_RAIZ/`; descreve uma fase anterior e não representa a arquitetura atual sem confirmação técnica.
