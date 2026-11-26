@@ -21,6 +21,7 @@ O NEXUS deve permitir que informações de naturezas diferentes se conectem sem 
 | 3 | Ponte ChatGPT → GitHub → Android | **CONCLUÍDA (26/11/2026)** | Correções na `main`, GitHub Actions #70 verde e importação real confirmada pelo usuário no aplicativo. Cenários adicionais seguem no gate contínuo |
 | 4 | Completude funcional e integração entre domínios | **EM ANDAMENTO — etapa atual** | Recorrência de compromissos/eventos, checklists por ocorrência e em compromissos/eventos, identidade contextual, demais lacunas e auditoria de completude. Não expandir a ponte nesta rodada |
 | 5 | Arquitetura da informação e experiência | **POSTERIOR — EM ANÁLISE** | Investigar, decidir, prototipar e implementar a experiência gradualmente; Claude é referência, não especificação final |
+| 6 | Integração bidirecional ChatGPT ↔ NEXUS | **FUTURA — após Rodadas 4 e 5** | Guia operacional validado, catálogo de capacidades, snapshot minimizado, recibos/feed de alterações, sincronização manual e automação opcional segura |
 
 ## 3. Rodada 3 — ponte concluída
 
@@ -36,7 +37,7 @@ O gate de encerramento da Rodada 3 foi atendido: código corrigido na `main`, CI
 ### Limites e acompanhamento
 A confirmação de importação não deve ser ampliada para afirmar que todos os cenários foram testados individualmente. Descarte sem gravação, reconsulta sem duplicidade, sincronização periódica em segundo plano, notificações/deep-links, reinício/rotação e verificações adicionais de segurança do token permanecem cenários de confiabilidade a acompanhar. Eles não bloqueiam o início da Rodada 4.
 
-A extensão da Inbox para regras recorrentes permanece na Rodada 4, depois da definição dos modelos de recorrência (`GAP-001`/`GAP-002`). Não fazer merge integral das antigas branches de correção.
+A expansão do contrato Inbox para recorrências (`GAP-002`) e a integração bidirecional completa ficam adiadas para a Rodada 6, após as Rodadas 4 e 5. A ponte v1 permanece funcional como entrada básica.
 
 ## 4. Rodada 4 — completude funcional antes da reformulação
 
@@ -64,53 +65,39 @@ Esta rodada deve verificar não só se cada módulo funciona isoladamente, mas s
 
 **Exemplo de aceite:** tarefa “Checklist semanal” toda segunda-feira com três itens. Na semana 1, os três itens são concluídos. Na semana 2, a nova ocorrência apresenta os mesmos três itens, todos pendentes. A semana 1 permanece concluída no histórico. As duas ocorrências são independentes.
 
-#### 4.3 Ponte Inbox e recorrência — GAP-002
-- Estender o contrato em versão compatível para criar/atualizar regras e exceções de recorrência.
-- Incluir preview, validação estrita, idempotência, conflitos e transação.
-- Não alterar silenciosamente o contrato v1 nem representar recorrência como ocorrências únicas.
+#### 4.3 Checklists opcionais em Compromissos e Eventos — REQ-029 / GAP-004
+- Permitir checklist próprio e opcional em cada Compromisso e Evento.
+- Diferenciar esses itens de tarefas vinculadas e notas.
+- Definir checklist-base e estado independente por ocorrência quando houver recorrência.
+- Cobrir editor, Agenda, ficha, backup, importação e histórico.
 
-#### 4.4 Fechar lacunas do domínio Eventos
+#### 4.4 Identidade contextual — REQ-030 / GAP-005
+- Definir catálogo controlado de ícones/contextos para Compromissos e Eventos.
+- Suportar exemplos reais como academia, corrida, consulta, viagem, show e reunião.
+- Diferenciar ícone de tipo/contexto dos estados e ações (concluir, editar, pagar).
+- Garantir consistência em Agenda, listas, fichas, widgets, temas e backup.
+
+#### 4.5 Fechar lacunas do domínio Eventos
 - REQ-012: compromissos na ficha do Evento.
 - REQ-014: campos avançados e apresentação de Evento.
 - REQ-026: backup ZIP e recursos de mídia de Eventos.
 - Verificar dependências com recorrência, custos, tarefas, notificações e backup.
 
-#### 4.5 Consistência transversal e defeitos conhecidos
+#### 4.6 Consistência transversal e defeitos conhecidos
 - INT-01: unificar consumidores da AgendaEngine, aposentando o motor legado conforme plano técnico.
 - INT-03: evitar persistência de checklist/subtarefas antes de salvar/confirmar edição.
 - BUG-001: preservar navegação, rota e rascunhos na recriação/rotação.
 - Verificar regras de conclusão, bloqueios, subtarefas pendentes, reabertura, tarefas recorrentes e ações em todos os contextos.
 - Conferir que uma entidade aparece em várias telas sem duplicação nem divergência de estado.
 
-#### 4.6 Auditoria de completude
+#### 4.7 Auditoria de completude
 - Cruzar requisitos, código, modelo de dados, telas, notificações, backup, importação e testes.
+- Incluir a criação/validação do guia operacional `docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md` pelo Google AI Studio após estabilização dos modelos. O guia deverá conter exemplos JSON completos validados pelos parsers/testes reais (incluindo rotina semanal de academia, checklists, compromissos e eventos recorrentes).
 - Para cada requisito, registrar: existe? completo? integrado? testado? validado em aparelho? dependências? evidência?
 - Classificar lacunas por impacto; não transformar todo item opcional em bloqueio.
 - Atualizar requisitos, estado atual, rastreabilidade, ADRs, roadmap, registro de lacunas e espelho.
 
 **Gate da Rodada 4:** fluxos críticos ponta a ponta especificados e validados, lacunas de alta prioridade fechadas ou explicitamente aceitas como pendentes, e mapa de capacidades atualizado. Não iniciar redesign amplo sobre comportamento incerto.
-
-## 6. Rodada 6 — finalizar a integração bidirecional ChatGPT ↔ NEXUS
-
-A ponte atual da Rodada 3 continua funcionando para importar entradas pelo contrato v1. A expansão não será feita agora. A integração definitiva só começa depois da Rodada 4 (domínio funcional completo) e da Rodada 5 (experiência estabilizada), para não construir contratos sobre modelos ainda sujeitos a mudanças.
-
-### Entregas
-1. **Guia operacional oficial:** completar `docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md` a partir do código real, com exemplos JSON executáveis e validados. O ChatGPT consulta esse guia antes de preparar entradas. O Google AI Studio gera/atualiza o guia com base nos DTOs, enums, validadores, relações e testes.
-2. **Catálogo de capacidades:** documento/JSON versionado que descreve o que a versão do NEXUS suporta: entidades, campos, relações, operações, limitações e versões de contrato. Separado dos dados pessoais.
-3. **Snapshot de estado:** exportação compacta, selecionável e minimizada do estado atual relevante do aplicativo, com timestamp, versão e escopo. O backup completo não será o contexto padrão.
-4. **Retorno de alterações:** recibos e/ou feed incremental das operações e mudanças produzidas pelo NEXUS.
-5. **Sincronização manual bidirecional:** uma ação pode buscar entradas pendentes, validar e mostrar prévia para confirmação, depois enviar snapshot/recibos/alterações ao repositório. Exibir claramente importações, exportações, conflitos e falhas.
-6. **Automação opcional:** avaliar sincronização periódica em segundo plano. WorkManager é best-effort; não prometer execução exata às 00h/05h. O usuário poderá pausar/desativar.
-7. **Segurança:** não ampliar automaticamente o PAT read-only atual para read/write dentro do APK. Comparar GitHub App com credenciais de curta duração, relay mínimo e token fine-grained separado, restrito ao único repositório e com expiração. Keystore protege em repouso, mas não elimina exposição durante uso pelo processo Android.
-8. **Local-first e privacidade:** NEXUS permanece útil sem internet/ChatGPT. Definir minimização de dados, escopo, retenção, exclusões, idempotência, conflitos, concorrência e fonte de verdade.
-
-### Separação de artefatos
-- Catálogo de capacidades: o que o aplicativo sabe fazer.
-- Snapshot de estado: o que existe atualmente no aplicativo.
-- Inbox: operações que o ChatGPT propõe ao NEXUS.
-- Recibos/feed de alterações: o que o NEXUS executou ou mudou.
-
-Os nomes e formatos finais serão definidos na especificação técnica da Rodada 6; não são contratos implementados hoje.
 
 ## 5. Rodada 5 — arquitetura da informação e experiência
 
@@ -151,6 +138,28 @@ A Rodada 5 aproveita a proposta Claude e os documentos de análise já existente
 - Celular e tablet recebem composições adequadas ao espaço.
 - Tema claro e escuro, acessibilidade e contraste permanecem corretos.
 - A wordmark preservada e o novo símbolo formam uma identidade coerente, caso o símbolo seja aprovado.
+
+## 6. Rodada 6 — finalizar a integração bidirecional ChatGPT ↔ NEXUS
+
+A ponte atual da Rodada 3 continua funcionando para importar entradas pelo contrato v1. A expansão não será feita agora. A integração definitiva só começa depois da Rodada 4 (domínio funcional completo) e da Rodada 5 (experiência estabilizada), para não construir contratos sobre modelos ainda sujeitos a mudanças.
+
+### Entregas
+1. **Guia operacional oficial:** completar `docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md` a partir do código real, com exemplos JSON executáveis e validados. O ChatGPT consulta esse guia antes de preparar entradas. O Google AI Studio gera/atualiza o guia com base nos DTOs, enums, validadores, relações e testes.
+2. **Catálogo de capacidades:** documento/JSON versionado que descreve o que a versão do NEXUS suporta: entidades, campos, relações, operações, limitações e versões de contrato. Separado dos dados pessoais.
+3. **Snapshot de estado:** exportação compacta, selecionável e minimizada do estado atual relevante do aplicativo, com timestamp, versão e escopo. O backup completo não será o contexto padrão.
+4. **Retorno de alterações:** recibos e/ou feed incremental das operações e mudanças produzidas pelo NEXUS.
+5. **Sincronização manual bidirecional:** uma ação pode buscar entradas pendentes, validar e mostrar prévia para confirmação, depois enviar snapshot/recibos/alterações ao repositório. Exibir claramente importações, exportações, conflitos e falhas.
+6. **Automação opcional:** avaliar sincronização periódica em segundo plano. WorkManager é best-effort; não prometer execução exata às 00h/05h. O usuário poderá pausar/desativar.
+7. **Segurança:** não ampliar automaticamente o PAT read-only atual para read/write dentro do APK. Comparar GitHub App com credenciais de curta duração, relay mínimo e token fine-grained separado, restrito ao único repositório e com expiração. Keystore protege em repouso, mas não elimina exposição durante uso pelo processo Android.
+8. **Local-first e privacidade:** NEXUS permanece útil sem internet/ChatGPT. Definir minimização de dados, escopo, retenção, exclusões, idempotência, conflitos, concorrência e fonte de verdade.
+
+### Separação de artefatos
+- Catálogo de capacidades: o que o aplicativo sabe fazer.
+- Snapshot de estado: o que existe atualmente no aplicativo.
+- Inbox: operações que o ChatGPT propõe ao NEXUS.
+- Recibos/feed de alterações: o que o NEXUS executou ou mudou.
+
+Os nomes e formatos finais serão definidos na especificação técnica da Rodada 6; não são contratos implementados hoje.
 
 ## 7. Gate contínuo de confiabilidade
 
