@@ -68,8 +68,8 @@ A pasta [docs/](docs/README.md) preserva documentos e registros da organização
 ## Estado da primeira organização
 
 - Estrutura CHATGPT criada e preenchida com memória estratégica recuperável, incluindo decisões de UX e marcos históricos.
-- GOOGLE_IA sincronizada com a branch `main` do repositório ativo: 13 documentos técnicos numerados, 1 histórico metodológico, 3 documentos arquivados e 1 índice (18 arquivos no total).
-- Os 18 arquivos espelhados foram comparados com a origem e confirmados idênticos byte a byte.
+- GOOGLE_IA sincronizada com a branch `main` do repositório ativo: documentos técnicos numerados `00–16`, 1 histórico metodológico, 3 documentos arquivados e 1 índice (22 arquivos Markdown no total).
+- A sincronização inicial de 2026-11-23 foi verificada por hashes; sincronizações posteriores são registradas em `GOOGLE_IA/ESTADO_DA_SINCRONIZACAO.md`.
 - Os documentos legados em `docs/` foram preservados.
 - A recuperação estratégica é parcial: não representa transcrição integral de todas as conversas.
 
