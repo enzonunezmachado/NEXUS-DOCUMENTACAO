@@ -1,6 +1,6 @@
 # Estado da sincronização GOOGLE_IA
 
-**Última sincronização:** 2026-11-23  
+**Última sincronização:** 2026-11-27  
 **Origem:** `enzonunezmachado/PROJETO-NEXUS-`  
 **Branch:** `main`  
 **Destino:** `enzonunezmachado/NEXUS-DOCUMENTACAO`  
@@ -67,3 +67,13 @@ Após a primeira atualização de autoridade, a varredura adicional identificou 
 - `docs/09_GUIA_DESENVOLVIMENTO.md`: regras permanentes e proibição absoluta de reescrita/backend.
 
 Os textos foram ajustados na origem e sincronizados para `GOOGLE_IA/docs/`. O Guia agora deixa explícito que as regras são vigentes enquanto as decisões correspondentes estiverem ativas, e que mudanças exigem justificativa, análise e aprovação formal.
+
+
+## Sincronização do Guia Operacional — 2026-11-27
+
+- Origem: `PROJETO-NEXUS-/docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md` (`v1.0.0`).
+- Destino: `NEXUS-DOCUMENTACAO/GOOGLE_IA/docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md`.
+- O espelho foi substituído integralmente pelo conteúdo da origem; a nota de compatibilidade registra que GitHub Actions #109 (`45990077810`) aprovou testes unitários e build Debug, enquanto a validação física permanece pendente.
+- O índice técnico foi atualizado para listar o guia e refletir Room `v7`, Backup `v8`, `19` suítes / `145` testes e a situação real da CI.
+- Nenhum código Android foi alterado.
+- Arquivos históricos em `docs/` e `ARQUIVO/` não foram removidos.
