@@ -31,6 +31,10 @@ A árvore `docs/` reproduz os caminhos da origem:
 - [11 — ADRs](docs/11_DECISOES_ADRS.md)
 - [12 — Rastreabilidade](docs/12_RASTREABILIDADE.md)
 - [13 — Governança Documental](docs/13_GOVERNANCA_DOCUMENTAL.md)
+- [14 — Contrato de Entrada Estruturada](docs/14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md)
+- [15 — Registro de Lacunas e Falhas](docs/15_REGISTRO_LACUNAS_E_FALHAS.md)
+- [16 — Guia Operacional do ChatGPT](docs/16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md)
+- [Histórico documental](docs/HISTORICO_DOCUMENTACAO.md)
 - [Histórico de evolução documental](docs/HISTORICO_DOCUMENTACAO.md)
 - [Arquivo histórico](docs/archive/)
 
