@@ -1,7 +1,7 @@
 # NEXUS — Documentação Oficial de Produto e Engenharia
 
 > **Entrada principal da documentação do repositório ativo `PROJETO-NEXUS-`.**  
-> **Última revisão documental:** 2026-11-26 · **Baseline de código auditada:** `com.nexus.app` (`versionCode = 8`, `versionName = "5.3.0"`, Room `DATABASE_VERSION = 6`, Backup `CURRENT_FORMAT_VERSION = 7`, entrada estruturada `contractVersion = 1` + ponte `NEXUS-INBOX` (Rodada 3 concluída; integração bidirecional final planejada na Rodada 6), `18` suítes / `138` `@Test`, Módulo Mercado Lotes `01–09` + Evolução Visual/Adaptativa).
+> **Última revisão documental:** 2026-11-27 · **Baseline de código auditada:** `com.nexus.app` (`versionCode = 8`, `versionName = "5.3.0"`, Room `DATABASE_VERSION = 7`, Backup `CURRENT_FORMAT_VERSION = 8`, entrada estruturada `contractVersion = 1` + ponte `NEXUS-INBOX` (Rodada 3 concluída; integração bidirecional final planejada na Rodada 6), `19` suítes / `145` `@Test`; GitHub Actions #109 (`45990077810`) aprovou testes unitários e build Debug; validação física da migração e funcionalidades da Rodada 4 pendente).
 
 ---
 
@@ -44,6 +44,7 @@ Antes de qualquer leitura técnica ou execução, leia [`00_ORIENTACAO_E_AUTORID
 | **12** | [`12_RASTREABILIDADE.md`](./12_RASTREABILIDADE.md) | Matriz `Requisito → Funcionalidade → Módulo → Componente → Dados → Fluxo → Teste/ADR` | Rastrear impacto completo de qualquer mudança |
 | **13** | [`13_GOVERNANCA_DOCUMENTAL.md`](./13_GOVERNANCA_DOCUMENTAL.md) | Ciclo de vida de ideias, revisão de decisões, autorização e continuidade | Antes de classificar ou reavaliar ideias |
 | **14** | [`14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md`](./14_CONTRATO_ENTRADA_ESTRUTURADA_ETAPA3.md) | Contrato JSON `v1`, entidades suportadas, estados e guia de integração da Entrada Estruturada para Etapa 3 | Antes de implementar ou integrar a Etapa 3 |
+| **16** | [`16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md`](./16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md) | Manual operacional do ChatGPT: capacidades reais, campos, regras, JSONs e NEXUS-INBOX | Antes de preparar lançamentos para o NEXUS |
 | **15** | [`HISTORICO_DOCUMENTACAO.md`](./HISTORICO_DOCUMENTACAO.md) | Registro das mudanças no próprio modelo documental | Entender a evolução das regras documentais |
 
 ### Documentos Históricos e Arquivados (`/docs/archive/`)
@@ -69,4 +70,4 @@ Quando o projeto for continuado dentro do Google AI Studio, os artefatos da sess
 - [`15_REGISTRO_LACUNAS_E_FALHAS.md`](./15_REGISTRO_LACUNAS_E_FALHAS.md) — inventário rastreável de lacunas funcionais, defeitos, inconsistências documentais, falhas de CI e validações pendentes.
 
 
-- [`16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md`](./16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md): estrutura inicial do guia futuro; não usar para gerar JSON até validação.
+- [`16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md`](./16_GUIA_OPERACIONAL_CHATGPT_NEXUS.md): guia operacional v1.0.0, baseado no código real; observar as limitações e estados de validação descritos no próprio documento.
